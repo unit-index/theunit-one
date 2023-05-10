@@ -1,6 +1,8 @@
 import {useLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import localFont from 'next/font/local';
+import MainLayout from '@/components/layout/MainLayout';
+import '../globals.css'
  
 const avenirFont = localFont({
   src: [
@@ -38,7 +40,11 @@ export default function LocaleLayout({
  
   return (
     <html lang={locale} className={avenirFont.className}>
-      <body>{children}</body>
+      <body className='bg-background text-secondary text-2xl'>
+        <MainLayout>
+          {children}
+        </MainLayout>
+      </body>
     </html>
   );
 }

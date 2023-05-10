@@ -1,5 +1,10 @@
 {
-    "Index": {
-      "title": "Hello world!"
-    }
+  "about": "About The Unit",
+  "developers": "Developers",
+  "community": "Community",
+  "blog": "2ØY Blog",
+  "launch-app": "Launch App",
+  "Index": {
+    "title": "Hello world!"
+  }
 }
