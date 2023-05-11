@@ -12,7 +12,7 @@ export default function Header() {
     return (
         <div className="sticky flex items-center pt-3 px-20 backdrop-blur-md bg-background/60">
             <Image className='flex-none' src={logo} alt='logo' />
-            <div className='flex-auto'>
+            <div className='flex-auto flex text-xl gap-20 justify-center'>
                 <Menu />
             </div>
             <div className='flex-none'>
