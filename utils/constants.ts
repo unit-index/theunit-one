@@ -35,3 +35,16 @@ export const navLinks: NavLink[] = [{
     key: "blog",
     external: true,
 }];
+
+export const partners: string[] = [
+    "Near", 
+    "Aave", 
+    "The Graph", 
+    "Chainlink", 
+    "CryptoYC", 
+    "Attention Ventures", 
+    "TradingView", 
+    "CoinGecko", 
+    "Unstoppable", 
+    "ENS"
+]
