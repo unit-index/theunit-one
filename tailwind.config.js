@@ -11,7 +11,9 @@ module.exports = {
         'background': '#151718',
         'secondary': '#A1A1A1',
         'white': '#FFFFFF',
-        'gray-medium': '#565657'
+        'gray-medium': '#565657',
+        'black-bgd': '#0A0A0A',
+        'gray-border': '#2D2D2D'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -20,6 +22,7 @@ module.exports = {
         'footer': 'url(/footer-bgd.svg)',
         'home-top': 'url(/home-top-bgd.png)',
         'partners': 'url(/partners-bgd.svg)',
+        'index': 'url(/index-bgd.png)'
       },
     },
   },

@@ -7,6 +7,15 @@
   "Index": {
     "launch-app": "Launch App",
     "slogan": "Unite Crypto and Earn Yield with UNIT, the first unbiased unit of account.",
-    "with-support": "With Support From"
+    "with-support": "With Support From",
+    "unit-algorithm": "The Unit comprises an algorithmic set of decentralized cryptocurrencies and produces UNIT (Ø), an index-based, crypto-native unit of account. Our vaults and farms are now in Beta.",
+    "to-play": "to play with it.",
+    "our-channel": "Our Channel",
+    "channel-intro": "The crypto industry is becoming increasingly fragmented. A fundamental way to unite crypto is for the crypto space to adopt a common unit of account.",
+    "traders-investors": "The Unit for Traders & Investors",
+    "manage-fund-desc": "Managing your own crypto index fund would accrue many trading and gas fees, while owning UNIT does all of this for you at no cost.",
+    "borrow-unit-desc": "By borrowing UNIT, a participant can now go short the whole market. A buyer of UNIT can now hold a coin that represents the whole market instead of an individual currency, cutting the risk of exposure to bugs in a specific coin.",
+    "from-blog": "From the 2ØY Blog",
+    "read-more": "Read more"
   }
 }
