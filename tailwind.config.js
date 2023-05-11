@@ -24,7 +24,12 @@ module.exports = {
         'partners': 'url(/partners-bgd.svg)',
         'index': 'url(/index-bgd.png)'
       },
+      aspectRatio: {
+        '3/2': '3 / 2',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

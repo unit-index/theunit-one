@@ -7,6 +7,7 @@ export const githubUrl = githubBaseUrl;
 export const serverUrl = serverBaseUrl;
 export const twitterUrl = 'https://twitter.com/TheUnit_one';
 export const mediumUrl = 'https://blog.20y.org';
+export const mediumApi = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@20y';
 export const discordUrl = 'https://discord.gg/4MjRckMJZN';
 export const valuesUrl = `${githubBaseUrl}/20y-values-paper/blob/main/toknowwhy-values.md`;
 export const unitPaperUrl = `${githubBaseUrl}/the-unit-paper/blob/main/the_unit_paper.pdf`;

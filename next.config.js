@@ -3,5 +3,14 @@ const withNextIntl = require('next-intl/plugin')(
 );
 
 module.exports = withNextIntl({
-    experimental: {appDir: true}
+    experimental: {appDir: true},
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'cdn-images-1.medium.com',
+            port: '',
+          },
+        ],
+      },
 });

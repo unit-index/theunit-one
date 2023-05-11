@@ -6,6 +6,7 @@ import LineButton from '@/components/button/LineButton'
 import { appUrl, partners } from '@/utils/constants'
 import { useTranslations } from 'next-intl'
 import indexFund from '@/public/index-fund.png'
+import Blogs from '@/components/Blogs'
 
 
 export default function Home() {
@@ -81,7 +82,8 @@ export default function Home() {
       className='max-w-4xl mx-auto w-full aspect-video shadow-2xl shadow-white/20'
     ></iframe>
 
-    <div className='px-32 py-16 bg-index bg-no-repeat bg-left-bottom mt-40'>
+    <div className='px-32 py-16 my-40 relative'>
+      <div className='absolute left-32 bottom-16 top-16 right-32 bg-index bg-no-repeat bg-left-bottom rounded-lg' />
       <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-9 py-24'>
         <div className='flex-1 pl-11'>
           <div className='text-4xl font-bold mb-4 text-white'>{t('traders-investors')}</div>
@@ -93,5 +95,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <Blogs readMore={t('read-more')} title={t('from-blog')} />
   </>
 }
