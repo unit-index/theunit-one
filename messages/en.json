@@ -16,6 +16,7 @@
     "manage-fund-desc": "Managing your own crypto index fund would accrue many trading and gas fees, while owning UNIT does all of this for you at no cost.",
     "borrow-unit-desc": "By borrowing UNIT, a participant can now go short the whole market. A buyer of UNIT can now hold a coin that represents the whole market instead of an individual currency, cutting the risk of exposure to bugs in a specific coin.",
     "from-blog": "From the 2ØY Blog",
-    "read-more": "Read more"
+    "read-more": "Read more",
+    "accounted-in": "Value Accounted in {unit}"
   }
 }

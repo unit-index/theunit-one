@@ -1,12 +1,13 @@
 import Partners from '@/components/Partners'
 import SplineClient from '@/components/SplineClient'
-import Button from '@/components/button/Button'
+import LinkButton from '@/components/button/LinkButton'
 import Image from 'next/image'
 import LineButton from '@/components/button/LineButton'
 import { appUrl, partners } from '@/utils/constants'
 import { useTranslations } from 'next-intl'
 import indexFund from '@/public/index-fund.png'
 import Blogs from '@/components/Blogs'
+import Accounted from '@/components/Accounted'
 
 
 export default function Home() {
@@ -63,7 +64,7 @@ export default function Home() {
         <div className='text-4xl font-bold mb-4 text-white'>UNIT Ø</div>
         <div className='text-xl'>{t('unit-algorithm')}</div>
         <div className='flex items-center gap-2 pt-2'>
-          <Button title={t('launch-app')} link={appUrl} small />
+          <LinkButton title={t('launch-app')} link={appUrl} small />
           <div className='text-xl'>{t('to-play')}</div>
         </div>
       </div>
@@ -95,6 +96,13 @@ export default function Home() {
         </div>
       </div>
     </div>
+
     <Blogs readMore={t('read-more')} title={t('from-blog')} />
+    
+    <div className='flex items-center gap-24 justify-center mb-32'>
+      <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
+      <div className='w-[1px] h-7 bg-gray-light'></div>
+      <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
+    </div>
   </>
 }

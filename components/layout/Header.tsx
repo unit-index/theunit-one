@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import logo from '@/public/logo.svg'
 import Menu from './Menu';
-import Button from '../button/Button';
+import LinkButton from '../button/LinkButton';
 import { useTranslations } from 'next-intl';
 import { appUrl } from '@/utils/constants';
 
@@ -16,7 +16,7 @@ export default function Header() {
                 <Menu />
             </div>
             <div className='flex-none'>
-                <Button title={t('launch-app')} link={appUrl} />
+                <LinkButton title={t('launch-app')} link={appUrl} />
             </div>
         </div>
     )

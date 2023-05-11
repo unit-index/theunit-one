@@ -22,6 +22,9 @@ export const siteUrl = 'https://theunit.one';
 export const graphUrl = 'https://graph.theunit.one';
 export const appUrl = 'https://app.theunit.one';
 
+export const currentWorldPopulation = 7953953000;
+export const averageLifeExpectancyInYears = 73.2;
+
 export const navLinks: NavLink[] = [{
     link: "/about",
     key: "about",

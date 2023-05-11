@@ -13,17 +13,19 @@ export default function Blogs({
     readMore: string,
     title: string,
 }) {
-    const { data } = useData<BlogType[]>(mediumApi);
+    const { data } = useData<any>(mediumApi);
 
-    if (!data) {
+    if (!data || data.items?.length < 3) {
         return null;
     }
 
+    const blogs = data.items.slice(0, 3) as BlogType[];
+
     return (
-        <div className="px-32">
+        <div className="px-32 mb-56">
             <div className='text-4xl text-center font-bold mb-10 text-white'>{title}</div>
             <div className="grid grid-cols-3 gap-12">
-                {data?.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
+                {blogs.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
             </div>
         </div>
     )
@@ -49,9 +51,11 @@ function Blog({
                     fill
                 />
             </div>
-            <div className="line-clamp-6 text-lg my-6">{ToText(blog.content)}</div>
+            <div className="line-clamp-6 text-lg my-6">
+                {ToText(blog.content)}
+            </div>
             <div className="text-right">
-                <Button title={readMore} link={blog.link} />
+                <Button title={readMore} />
             </div>
         </a>
     )
