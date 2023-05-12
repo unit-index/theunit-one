@@ -18,5 +18,22 @@
     "from-blog": "From the 2ØY Blog",
     "read-more": "Read more",
     "accounted-in": "Value Accounted in {unit}"
+  },
+  "About": {
+    "about-the-unit-title": "About The Unit",
+    "about-the-unit": "UNIT is the first index-based pure unit of account, a community-managed benchmark tied to global population data. UNIT's unbiased measure of value makes it a prime candidate to take on the new era. We envision a future in which we cease to depend on central bank fiat money to exchange value as value becomes increasingly more decentralized and disintermediated.\n\nUNIT is a benchmark that serves two purposes. First, it serves as an index similar to the S&P500 to benchmark portfolios. However, UNIT is also a unit of value. Without being a currency, UNIT is used to price coins accurately. The Unit is a changing set of top cryptocurrencies and algorithmically creates UNIT, which tracks the performance of the set.\n\nUNIT (value unit created by The Unit) cannot be bought or sold. However, we are also creating a UNIT (token) to hold the value contained in the unit of account.",
+    "faq": "FAQ",
+    "faq-what-is-the-unit": "What is The Unit and how does it work?",
+    "ans-what-is-the-unit": "The Unit is the name of the project, itself is a set of cryptocurrencies coming from an Open Selection Criteria and glued together through an Open Algorithm.\n\nThe Unit aggregates data of the coins that satisfy the selection criteria. It then uses the total human population and average life expectancy at birth to create a unit of value called UNIT.",
+    "faq-what-is-unit": "What is UNIT?",
+    "ans-what-is-unit": "UNIT is an unbiased unit of account and the name of the token that follows its value.",
+    "faq-is-unit-money": "Is UNIT money?",
+    "ans-is-unit-money": "Money has taken many forms through the ages, but it consistently has three functions: unit of account, medium of exchange, and store of value. None of the cryptocurrencies that exist today achieve all three aspects.\n\nUNIT now only fulfills the unit of account function of money. However, once the crypto space grows enough to serve as the world's financial system, UNIT will also be a standard for deferred payments, then the UNIT token will truly fulfill the remaining two functions⸺a medium of exchange and a store of value.",
+    "faq-what-features-the-unit": "What features make The Unit unique?",
+    "ans-what-features-the-unit": "Unlike all previous units of account, The Unit is not a currency but an index derived from the most important coin and market data.",
+    "faq-what-mission": "What is The Unit's mission?",
+    "ans-what-mission": "Unite Crypto",
+    "faq-what-features-unit": "What features make UNIT unique?",
+    "ans-what-features-unit": "Unlike all previous units of account, UNIT is not primarily a currency; it is an unbiased unit derived from the most important coins. In this way, UNIT doesn’t choose winners or losers and instead focuses on the most important portion of the fungible decentralized cryptocurrency market."
   }
 }

@@ -4,7 +4,7 @@ export interface NavLink {
     external?: boolean;
 }
 
-export type BlogType = {
+export interface BlogType {
     title: string;
     link: string;
     content: string;

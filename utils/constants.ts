@@ -52,3 +52,12 @@ export const partners: string[] = [
     "Unstoppable", 
     "ENS"
 ]
+
+export const faqs: string[] = [
+    'what-is-the-unit',
+    'what-is-unit',
+    'is-unit-money',
+    'what-features-the-unit',
+    'what-mission',
+    'what-features-unit',
+]
