@@ -9,7 +9,7 @@ export default function AboutPage() {
     return (
         <div className="bg-about bg-no-repeat bg-cover bg-left-top px-36 pt-28 pb-32">
             <div className="font-bold text-white text-6xl">
-                {t('about-the-unit-title')}
+                {t('title')}
             </div>
             <div className="mt-16 whitespace-pre-line">{t('about-the-unit')}</div>
             

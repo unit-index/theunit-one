@@ -20,7 +20,7 @@
     "accounted-in": "Value Accounted in {unit}"
   },
   "About": {
-    "about-the-unit-title": "About The Unit",
+    "title": "About The Unit",
     "about-the-unit": "UNIT is the first index-based pure unit of account, a community-managed benchmark tied to global population data. UNIT's unbiased measure of value makes it a prime candidate to take on the new era. We envision a future in which we cease to depend on central bank fiat money to exchange value as value becomes increasingly more decentralized and disintermediated.\n\nUNIT is a benchmark that serves two purposes. First, it serves as an index similar to the S&P500 to benchmark portfolios. However, UNIT is also a unit of value. Without being a currency, UNIT is used to price coins accurately. The Unit is a changing set of top cryptocurrencies and algorithmically creates UNIT, which tracks the performance of the set.\n\nUNIT (value unit created by The Unit) cannot be bought or sold. However, we are also creating a UNIT (token) to hold the value contained in the unit of account.",
     "faq": "FAQ",
     "faq-what-is-the-unit": "What is The Unit and how does it work?",
@@ -35,5 +35,26 @@
     "ans-what-mission": "Unite Crypto",
     "faq-what-features-unit": "What features make UNIT unique?",
     "ans-what-features-unit": "Unlike all previous units of account, UNIT is not primarily a currency; it is an unbiased unit derived from the most important coins. In this way, UNIT doesn’t choose winners or losers and instead focuses on the most important portion of the fungible decentralized cryptocurrency market."
+  },
+  "Developers": {
+    "title": "Developers",
+    "intro": "Uniting crypto is something we must all do together. Join our community to contribute to the conversation.",
+    "2021-q2-1": "The Unit White Paper",
+    "2021-q2-2": "Launch of the first version of UNIT",
+    "2021-q2-3": "Launch of theunit.one",
+    "2021-q4-1": "Our Defi proposals got attention in the governance forums",
+    "2021-q4-2": "Partnerships with The Graph and Chainlink",
+    "2022-q1-1": "Grants from Aave Grants DAO, Near Foundation, and The Graph Foundation",
+    "2022-q1-2": "Initial Airdrop",
+    "2022-q1-3": "Started Prize Pools Development",
+    "2022-q2-1": "Started UNIT token research",
+    "2022-q2-2": "Prize Pools on testnet ready",
+    "2022-q3-1": "Testing of The Unit Prize Pools on Several Networks",
+    "2022-q3-2": "Partnership with Technical Analysts",
+    "2023-q1-1": "Testing UNIT Vaults",
+    "2023-q1-2": "UNIT Farm Research",
+    "2023-q2-1": "Launch UNIT (token)",
+    "2023-q2-2": "Partnership with centralized Exchanges and Data Hubs",
+    "2023-q2-3": "IDO on decentralized exchanges"
   }
 }
