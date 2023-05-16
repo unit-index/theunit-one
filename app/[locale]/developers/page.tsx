@@ -2,8 +2,8 @@ import { useTranslations } from "next-intl"
 import quarterCheck from "@/public/timeline-check.svg"
 import Image from "next/image"
 import ExternalLinkButton from "@/components/button/ExternalLinkButton"
-import { docsUrl, githubUrl } from "@/utils/constants"
-import { unitPaperUrl } from "@/utils/constants"
+import { docsUrl, githubUrl, unitPaperUrl } from "@/utils/constants"
+import externalWhite from '@/public/external-white.svg';
 
 // number after -- means how many events that quarter has.
 const timelines = [
@@ -38,9 +38,9 @@ export default function DevelopersPage() {
             </div>
         </div>
         <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
-            <ExternalLinkButton title="Github" link={githubUrl} />
-            <ExternalLinkButton title={t('docs')} link={docsUrl} />
-            <ExternalLinkButton title={t('white-paper')} link={unitPaperUrl} />
+            <DeveloperLink title="Github" link={githubUrl} />
+            <DeveloperLink title={t('docs')} link={docsUrl} />
+            <DeveloperLink title={t('white-paper')} link={unitPaperUrl} />
         </div>
     </>
 }
@@ -90,4 +90,21 @@ function Timeline({
 
         </div>
     )
+}
+
+function DeveloperLink({
+    title,
+    link,
+} : {
+    title: string,
+    link: string,
+}) {
+ return (
+    <ExternalLinkButton link={link}>
+        <div className="flex justify-between items-center py-6 px-10 text-white text-xl">
+            <div>{title}</div>
+            <Image src={externalWhite} alt={title} />
+        </div>
+    </ExternalLinkButton>
+ )
 }

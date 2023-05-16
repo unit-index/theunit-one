@@ -58,5 +58,16 @@
     "2023-q2-3": "IDO on decentralized exchanges",
     "docs": "Docs",
     "white-paper": "White Paper"
+  },
+  "Community": {
+    "title": "Community",
+    "intro": "Uniting crypto is something we must all do together. Join our community to contribute to the conversation.",
+    "discord": "Join the discussion",
+    "twitter": "Follow our latest updates",
+    "youtube": "Discover how crypto is moving forward",
+    "brand-assets": "Brand Assets",
+    "download": "Download",
+    "stacked": "STACKED",
+    "horizontal": "HORIZONTAL"
   }
 }
