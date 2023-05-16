@@ -27,6 +27,7 @@ module.exports = {
         'partners': 'url(/partners-bgd.svg)',
         'index': 'url(/index-bgd.png)',
         'about': 'url(/about-bgd.png)',
+        'page': 'url(/page-bgd.png)'
       },
       aspectRatio: {
         '3/2': '3 / 2',

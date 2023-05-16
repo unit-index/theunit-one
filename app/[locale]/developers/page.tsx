@@ -1,6 +1,9 @@
 import { useTranslations } from "next-intl"
 import quarterCheck from "@/public/timeline-check.svg"
 import Image from "next/image"
+import ExternalLinkButton from "@/components/button/ExternalLinkButton"
+import { docsUrl, githubUrl } from "@/utils/constants"
+import { unitPaperUrl } from "@/utils/constants"
 
 // number after -- means how many events that quarter has.
 const timelines = [
@@ -17,8 +20,8 @@ export default function DevelopersPage() {
 
     const t = useTranslations('Developers')
 
-    return (
-        <div className="bg-about bg-no-repeat bg-cover bg-left-top pt-28 pb-32">
+    return <>
+        <div className="bg-page bg-no-repeat bg-contain bg-left pt-28 pb-32">
             <div className="font-bold text-white text-6xl px-36">
                 {t('title')}
             </div>
@@ -33,9 +36,13 @@ export default function DevelopersPage() {
                 <div className="absolute left-0 top-0 bottom-0 w-1/6 bg-gradient-to-r from-background via-background/80 to-background/0" />
                 <div className="absolute right-0 top-0 bottom-0 w-1/6 bg-gradient-to-r from-background/0 via-background/80 to-background" />
             </div>
-
         </div>
-    )
+        <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
+            <ExternalLinkButton title="Github" link={githubUrl} />
+            <ExternalLinkButton title={t('docs')} link={docsUrl} />
+            <ExternalLinkButton title={t('white-paper')} link={unitPaperUrl} />
+        </div>
+    </>
 }
 
 function Timelines() {
