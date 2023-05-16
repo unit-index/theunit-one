@@ -13,7 +13,8 @@ export default function ClientLink({
     children: ReactNode,
 }) {
     const pathname = usePathname();
-    let active = pathname === linkKey || (pathname?.startsWith(linkKey) && linkKey !== '/');
+    const path = pathname?.substring(1)
+    let active = path === linkKey || (path?.startsWith(linkKey) && linkKey !== '/');
 
     return (
         <div className={`group ${active ? 'is-active' : ''} ${className ?? ''}`}>

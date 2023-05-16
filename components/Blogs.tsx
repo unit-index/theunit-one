@@ -44,7 +44,7 @@ function Blog({
             href={blog.link}
             target="_blank"
         >
-            <div className="relative aspect-3/2">
+            <div className="relative aspect-2/1">
                 <Image 
                     src={blog.thumbnail} 
                     alt={blog.title} 

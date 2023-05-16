@@ -7,7 +7,7 @@ export default function AboutPage() {
     const t = useTranslations('About')
 
     return (
-        <div className="bg-about bg-no-repeat bg-cover bg-left-top px-36 pt-28 pb-32">
+        <div className="bg-about bg-no-repeat bg-cover bg-left-top px-36 pt-36 pb-32">
             <div className="font-bold text-white text-6xl">
                 {t('title')}
             </div>

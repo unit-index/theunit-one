@@ -40,7 +40,7 @@ export default function CommunityPage() {
     ]
 
     return <>
-        <div className="bg-page bg-no-repeat bg-contain bg-left pt-28 pb-32">
+        <div className="bg-page bg-no-repeat bg-contain bg-left pt-36 pb-32">
             <div className="font-bold text-white text-6xl px-36">
                 {t('title')}
             </div>
