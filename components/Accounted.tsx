@@ -28,11 +28,11 @@ export default function Accounted({
     }, [isUSD, data, accountedInUNIT])
 
     return <div className="text-center">
-            <div className="font-bold text-5xl text-white mb-5">
-                {numberWithCommas(value)}
-            </div>
-            <div className="text-gray-light">
+            <div className="text-gray-light mb-5">
                 {title}
+            </div>
+            <div className={"font-bold text-5xl text-white " + (isUSD ? 'line-through' : '')}>
+                {numberWithCommas(value)}
             </div>
     </div>
 }

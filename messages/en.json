@@ -17,7 +17,8 @@
     "borrow-unit-desc": "By borrowing UNIT, a participant can now go short the whole market. A buyer of UNIT can now hold a coin that represents the whole market instead of an individual currency, cutting the risk of exposure to bugs in a specific coin.",
     "from-blog": "From the 2ØY Blog",
     "read-more": "Read more",
-    "accounted-in": "Value Accounted in {unit}"
+    "accounted-in": "The Unit in {unit}",
+    "blog-desc": "2ØY is the organization working to unite crypto through The Unit and expand crypto through Blocktree (coming next)."
   },
   "About": {
     "title": "About The Unit",

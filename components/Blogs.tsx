@@ -9,9 +9,11 @@ import Button from "./button/Button";
 export default function Blogs({
     readMore,
     title,
+    subtitle,
 } : {
     readMore: string,
     title: string,
+    subtitle: string,
 }) {
     const { data } = useData<any>(mediumApi);
 
@@ -23,7 +25,8 @@ export default function Blogs({
 
     return (
         <div className="px-32 mb-56">
-            <div className='text-4xl text-center font-bold mb-10 text-white'>{title}</div>
+            <div className='text-4xl text-center font-semibold mb-4 text-white'>{title}</div>
+            <div className='text-xl text-center max-w-2xl mx-auto mb-10 w-full'>{subtitle}</div>
             <div className="grid grid-cols-3 gap-12">
                 {blogs.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
             </div>

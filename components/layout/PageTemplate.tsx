@@ -18,7 +18,7 @@ export default function PageTemplate({
 
     return (
         <div className={`${bgdClass} bg-left-top bg-no-repeat px-36 pt-36 pb-32 ${className}`}>
-            <div className="font-bold text-white text-5xl">
+            <div className="font-semibold text-white text-5xl">
                 {title}
             </div>
             <div className="mt-16 mb-20 whitespace-pre-line">
