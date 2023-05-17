@@ -7,6 +7,7 @@ import discord from '@/public/discord.svg'
 import twitter from '@/public/twitter.svg'
 import youtube from '@/public/youtube.svg'
 import LinkButton from "@/components/button/LinkButton";
+import PageTemplate from "@/components/layout/PageTemplate";
 
 interface BrandAssetType {
     name: string;
@@ -40,25 +41,24 @@ export default function CommunityPage() {
     ]
 
     return <>
-        <div className="bg-page bg-no-repeat bg-contain bg-left pt-36 pb-32">
-            <div className="font-bold text-white text-6xl px-36">
-                {t('title')}
-            </div>
-            <div className="mt-16 whitespace-pre-line px-36 mb-16">{t('intro')}</div>
+        <PageTemplate 
+            title={t('title')}
+            subtitle={t('intro')}
+        >
             <div className="grid gap-12 grid-cols-3 mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
                 <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />
                 <CommunityLink title={t('twitter')} icon={twitter} link={twitterUrl} />
                 <CommunityLink title={t('youtube')} icon={youtube} link={youtubeUrl} />
             </div>
-        </div>
-        <div className="pb-32 px-36">
-            <div className="font-bold text-4xl mb-6 text-white">
-                {t('brand-assets')}
+            <div className="px-36">
+                <div className="font-bold text-4xl mb-6 text-white">
+                    {t('brand-assets')}
+                </div>
+                {assets.map((asset) => (
+                        <BrandAssets key={asset.name} asset={asset} />
+                ))}
             </div>
-            {assets.map((asset) => (
-                    <BrandAssets key={asset.name} asset={asset} />
-            ))}
-        </div>
+        </PageTemplate>
     </>
 }
 

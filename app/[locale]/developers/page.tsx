@@ -4,6 +4,7 @@ import Image from "next/image"
 import ExternalLinkButton from "@/components/button/ExternalLinkButton"
 import { docsUrl, githubUrl, unitPaperUrl } from "@/utils/constants"
 import externalWhite from '@/public/external-white.svg';
+import PageTemplate from "@/components/layout/PageTemplate"
 
 // number after -- means how many events that quarter has.
 const timelines = [
@@ -21,27 +22,26 @@ export default function DevelopersPage() {
     const t = useTranslations('Developers')
 
     return <>
-        <div className="bg-page bg-no-repeat bg-contain bg-left pt-36 pb-32">
-            <div className="font-bold text-white text-6xl px-36">
-                {t('title')}
-            </div>
-            <div className="mt-16 whitespace-pre-line px-36 mb-16">{t('intro')}</div>
+        <PageTemplate
+            title={t('title')}
+            subtitle={t('intro')}
+        >
             <div className="w-full relative h-[440px]">
-                <div className="absolute left-0 top-0 bottom-0 right-0 pb-[100px] flex items-end">
+                <div className="absolute left-[-16.67%] top-0 bottom-0 right-[-16.67%] pb-[100px] flex items-end">
                     <div className="bg-white h-[1px] w-full" />
                 </div>
-                <div className="absolute left-0 top-0 bottom-0 right-0 overflow-x-scroll px-[16.67%]">
+                <div className="absolute left-[-16.67%] top-0 bottom-0 right-[-16.67%] overflow-x-scroll px-[16.67%]">
                     <Timelines />
                 </div>
-                <div className="absolute left-0 top-0 bottom-0 w-1/6 bg-gradient-to-r from-background via-background/80 to-background/0" />
-                <div className="absolute right-0 top-0 bottom-0 w-1/6 bg-gradient-to-r from-background/0 via-background/80 to-background" />
+                <div className="absolute left-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background via-background/95 to-background/0" />
+                <div className="absolute right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
-        </div>
-        <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
-            <DeveloperLink title="Github" link={githubUrl} />
-            <DeveloperLink title={t('docs')} link={docsUrl} />
-            <DeveloperLink title={t('white-paper')} link={unitPaperUrl} />
-        </div>
+            <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
+                <DeveloperLink title="Github" link={githubUrl} />
+                <DeveloperLink title={t('docs')} link={docsUrl} />
+                <DeveloperLink title={t('white-paper')} link={unitPaperUrl} />
+            </div>
+        </PageTemplate>
     </>
 }
 

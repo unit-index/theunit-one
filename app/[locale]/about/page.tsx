@@ -1,4 +1,5 @@
 import FAQ from "@/components/FAQ"
+import PageTemplate from "@/components/layout/PageTemplate"
 import { faqs } from "@/utils/constants"
 import { useTranslations } from "next-intl"
 
@@ -7,12 +8,11 @@ export default function AboutPage() {
     const t = useTranslations('About')
 
     return (
-        <div className="bg-about bg-no-repeat bg-cover bg-left-top px-36 pt-36 pb-32">
-            <div className="font-bold text-white text-6xl">
-                {t('title')}
-            </div>
-            <div className="mt-16 whitespace-pre-line">{t('about-the-unit')}</div>
-            
+        <PageTemplate 
+            unitBgd
+            title={t('title')}
+            subtitle={t('about-the-unit')}
+        >
             <div className="font-bold text-4xl text-white mt-56 mb-6">
                 {t('faq')}
             </div>
@@ -25,6 +25,6 @@ export default function AboutPage() {
                     />
                 ))}
             </div>
-        </div>
+        </PageTemplate>
     )
 }

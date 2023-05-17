@@ -29,6 +29,13 @@ module.exports = {
         'about': 'url(/about-bgd.png)',
         'page': 'url(/page-bgd.png)'
       },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '50%': '50%',
+        '100%': '100%',
+      },  
       aspectRatio: {
         '3/2': '3 / 2',
         '2/1': '2 / 1'
