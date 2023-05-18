@@ -37,9 +37,9 @@ export default function DevelopersPage() {
                 <div className="absolute right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
             <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
-                <DeveloperLink title="Github" link={githubUrl} />
-                <DeveloperLink title={t('docs')} link={docsUrl} />
-                <DeveloperLink title={t('white-paper')} link={unitPaperUrl} />
+                <DeveloperLink title="Github" subtitle={t('github-intro')} link={githubUrl} />
+                <DeveloperLink title={t('docs')} subtitle={t('docs-intro')} link={docsUrl} />
+                <DeveloperLink title={t('white-paper')} subtitle={t('white-paper-intro')} link={unitPaperUrl} />
             </div>
         </PageTemplate>
     </>
@@ -94,15 +94,20 @@ function Timeline({
 
 function DeveloperLink({
     title,
+    subtitle,
     link,
 } : {
     title: string,
+    subtitle: string,
     link: string,
 }) {
  return (
     <ExternalLinkButton link={link}>
-        <div className="flex justify-between items-center py-6 px-10 text-white text-xl">
-            <div>{title}</div>
+        <div className="flex justify-between items-center py-6 px-10">
+            <div>
+                <div className="text-white text-xl">{title}</div>
+                <div className="mt-2 text-xl pr-2">{subtitle}</div>
+            </div>
             <Image src={externalWhite} alt={title} />
         </div>
     </ExternalLinkButton>

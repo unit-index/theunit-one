@@ -10,11 +10,11 @@ export default function Header() {
     const t = useTranslations();
 
     return (
-        <div className="fixed top-0 left-0 right-0 flex items-center pt-3 px-20 backdrop-blur-md bg-background/60 z-[999]">
+        <div className="fixed top-0 left-0 right-0 flex items-center py-3 px-20 backdrop-blur-md bg-background/60 z-[999]">
             <Link href='/'>
                 <Image className='flex-none' src={logo} alt='logo' />
             </Link>
-            <div className='flex-auto flex text-xl gap-20 justify-center'>
+            <div className='flex-auto flex text-base gap-20 justify-center'>
                 <Menu />
             </div>
             <div className='flex-none'>

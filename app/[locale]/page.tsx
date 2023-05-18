@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl'
 import indexFund from '@/public/index-fund.png'
 import Blogs from '@/components/Blogs'
 import Accounted from '@/components/Accounted'
+import FadeWrapper from '@/components/FadeWrapper'
 
 
 export default function Home() {
@@ -39,81 +40,88 @@ export default function Home() {
 
 
       {/* -------------------- Value Accounted ------------------ */}
-
-      <div className='flex items-center gap-24 justify-center my-32'>
-        <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
-        <div className='w-[1px] h-7 bg-gray-light'></div>
-        <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
-      </div>
+      <FadeWrapper>
+        <div className='flex items-center gap-24 justify-center my-32'>
+          <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
+          <div className='w-[1px] h-7 bg-gray-light'></div>
+          <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
+        </div>
+      </FadeWrapper>
 
 
       {/* -------------------- Partners Section ------------------ */}
-
-      <div className='flex items-center gap-48 p-32 bg-partners bg-cover mt-20'>
-        <div className='flex-1'>
-          <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
-          <div className='text-xl'>
-            {partners.join(', ')}
+      <FadeWrapper>
+        <div className='flex items-center gap-48 p-32 bg-partners bg-cover mt-20'>
+          <div className='flex-1'>
+            <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
+            <div className='text-xl'>
+              {partners.join(', ')}
+            </div>
+          </div>
+          <div className='flex-1'>
+            <Partners />
           </div>
         </div>
-        <div className='flex-1'>
-          <Partners />
-        </div>
-      </div>
+      </FadeWrapper>
     </div>
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
-
-    <div className='flex items-center gap-40 px-40 py-24 my-32'>
-      <div className='flex-1'>
-        <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
-      </div>
-      <div className='flex-1'>
-        <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
-        <div className='text-xl'>{t('unit-algorithm')}</div>
-        <div className='flex items-center gap-2 pt-2'>
-          <LinkButton title={t('launch-app')} link={appUrl} small />
-          <div className='text-xl'>{t('to-play')}</div>
+    <FadeWrapper>
+      <div className='flex items-center gap-40 px-40 py-24 my-32'>
+        <div className='flex-1'>
+          <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
+        </div>
+        <div className='flex-1'>
+          <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
+          <div className='text-xl'>{t('unit-algorithm')}</div>
+          <div className='flex items-center gap-2 pt-2'>
+            <LinkButton title={t('launch-app')} link={appUrl} small />
+            <div className='text-xl'>{t('to-play')}</div>
+          </div>
         </div>
       </div>
-    </div>
+    </FadeWrapper>
     
 
     {/* -------------------- Youtube Channel ------------------ */}
-
-    <div className='text-4xl text-center font-semibold mb-4 text-white'>{t('our-channel')}</div>
-    <div className='text-xl text-center max-w-2xl mx-auto mb-7 w-full'>{t('channel-intro')}</div>
-    <iframe
-      src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className='max-w-4xl mx-auto w-full aspect-video shadow-2xl shadow-white/20'
-    ></iframe>
+    <FadeWrapper>
+      <div className='text-4xl text-center font-semibold mb-4 text-white'>{t('our-channel')}</div>
+      <div className='text-xl text-center max-w-2xl mx-auto mb-7 w-full'>{t('channel-intro')}</div>
+      <iframe
+        src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className='max-w-4xl mx-auto w-full aspect-video shadow-2xl shadow-white/20'
+      ></iframe>
+    </FadeWrapper>
 
     {/* -------------------- Index Table ------------------ */}
-
-    <div className='px-32 py-16 my-40 relative'>
-      <div className='absolute left-32 bottom-16 top-16 right-32 bg-index bg-no-repeat bg-left-bottom rounded-lg' />
-      <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-9 py-24'>
-        <div className='flex-1 pl-11'>
-          <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
-          <div className='text-xl'>{t('manage-fund-desc')}</div><br />
-          <div className='text-xl'>{t('borrow-unit-desc')}</div>
-        </div>
-        <div className='flex-1'>
-          <Image src={indexFund} alt='Index Fund' className='w-full' />
+    <FadeWrapper>
+      <div className='px-32 py-16 my-40 relative'>
+        <div className='absolute left-32 bottom-16 top-16 right-32 bg-index bg-no-repeat bg-left-bottom rounded-lg' />
+        <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-9 py-24'>
+          <div className='flex-1 pl-11'>
+            <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
+            <div className='text-xl'>{t('manage-fund-desc')}</div><br />
+            <div className='text-xl'>{t('borrow-unit-desc')}</div>
+          </div>
+          <div className='flex-1'>
+            <Image src={indexFund} alt='Index Fund' className='w-full' />
+          </div>
         </div>
       </div>
-    </div>
+    </FadeWrapper>
 
     {/* -------------------- From the blog ------------------ */}
 
-    <Blogs 
-      readMore={t('read-more')} 
-      title={t('from-blog')} 
-      subtitle={t('blog-desc')} 
-    />
+    <FadeWrapper>
+      <Blogs 
+        readMore={t('read-more')} 
+        title={t('from-blog')} 
+        subtitle={t('blog-desc')} 
+      />
+    </FadeWrapper>
   </>
 }
