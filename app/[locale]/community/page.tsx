@@ -25,6 +25,7 @@ export default function CommunityPage() {
             name: 'asset',
             width: 132,
             height: 132,
+            title: t('logo')
         },
         {
             name: 'vasset',
@@ -43,7 +44,7 @@ export default function CommunityPage() {
     return <>
         <PageTemplate 
             title={t('title')}
-            subtitle={t('intro')}
+            subtitle={t.rich('intro',{important: (chunks) => <span className="text-white">{chunks}</span>})}
         >
             <div className="grid gap-12 grid-cols-3 mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
                 <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />

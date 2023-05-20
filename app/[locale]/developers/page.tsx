@@ -24,7 +24,7 @@ export default function DevelopersPage() {
     return <>
         <PageTemplate
             title={t('title')}
-            subtitle={t('intro')}
+            subtitle={t.rich('intro',{important: (chunks) => <span className="text-white">{chunks}</span>})}
         >
             <div className="w-full relative h-[440px]">
                 <div className="absolute left-[-16.67%] top-0 bottom-0 right-[-16.67%] pb-[100px] flex items-end">
@@ -37,9 +37,9 @@ export default function DevelopersPage() {
                 <div className="absolute right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
             <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
-                <DeveloperLink title="Github" subtitle={t('github-intro')} link={githubUrl} />
-                <DeveloperLink title={t('docs')} subtitle={t('docs-intro')} link={docsUrl} />
-                <DeveloperLink title={t('white-paper')} subtitle={t('white-paper-intro')} link={unitPaperUrl} />
+                <DeveloperLink title="Github" subtitle={t.rich('github-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={githubUrl} />
+                <DeveloperLink title={t('docs')} subtitle={t.rich('docs-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={docsUrl} />
+                <DeveloperLink title={t('white-paper')} subtitle={t.rich('white-paper-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={unitPaperUrl} />
             </div>
         </PageTemplate>
     </>
