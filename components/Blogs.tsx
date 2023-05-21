@@ -24,10 +24,10 @@ export default function Blogs({
     const blogs = data.items.slice(0, 3) as BlogType[];
 
     return (
-        <div className="px-32 mb-56">
+        <div className="px-8 lg:px-32 mb-56">
             <div className='text-4xl text-center font-semibold mb-4 text-white'>{title}</div>
             <div className='text-xl text-center max-w-2xl mx-auto mb-10 w-full'>{subtitle}</div>
-            <div className="grid grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {blogs.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
             </div>
         </div>
@@ -57,7 +57,7 @@ function Blog({
             <div className="line-clamp-6 text-lg my-6">
                 {ToText(blog.content)}
             </div>
-            <div className="text-right">
+            <div className="text-center xl:text-right">
                 <Button title={readMore} />
             </div>
         </a>

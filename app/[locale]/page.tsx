@@ -20,8 +20,8 @@ export default function Home() {
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
 
-    <div className='flex items-center'>
-      <div className='ml-36 max-w-md flex-none'>
+    <div className='mt-32 lg:mt-16 xl:mt-0 flex items-center'>
+      <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-md flex-none'>
         <div className='text-7xl text-white mb-4'>
           <span className='font-light'>The </span>
           <span className='font-bold'>UNIT</span>
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <LineButton link={appUrl} title={t('launch-app')} />
       </div>
-      <div className='flex-auto h-screen'>
+      <div className='hidden lg:block lg:flex-auto lg:h-[480px] xl:h-[600px] 2xl:h-screen'>
         <iframe src='https://my.spline.design/interactivespherescopycopy-42e48f114d67ab4a32efddf569743588/' width='100%' height='100%'></iframe>
       </div>
     </div>
@@ -39,9 +39,9 @@ export default function Home() {
 
     {/* -------------------- Value Accounted ------------------ */}
     <FadeWrapper>
-      <div className='flex items-center gap-24 justify-center my-32'>
+      <div className='lg:flex items-center gap-24 justify-center my-32'>
         <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
-        <div className='w-[1px] h-7 bg-gray-light'></div>
+        <div className='w-0 h-12 lg:block lg:w-[1px] lg:h-7 bg-gray-light'></div>
         <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
       </div>
     </FadeWrapper>
@@ -49,14 +49,14 @@ export default function Home() {
 
     {/* -------------------- Partners Section ------------------ */}
     <FadeWrapper>
-      <div className='flex items-center gap-48 p-32 bg-partners bg-cover mt-20'>
-        <div className='flex-1'>
+      <div className='block xl:flex items-center xl:gap-48 p-8 xl:p-32 bg-partners bg-cover mt-20'>
+        <div className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1'>
           <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
           <div className='text-xl'>
             {partners.join(', ')}
           </div>
         </div>
-        <div className='flex-1'>
+        <div className='block xl:flex-1'>
           <Partners />
         </div>
       </div>
@@ -65,16 +65,16 @@ export default function Home() {
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
     <FadeWrapper>
-      <div className='flex items-center gap-40 px-40 py-24 my-32'>
-        <div className='flex-1'>
+      <div className='flex items-center gap-40 px-8 lg:px-40 py-24 my-32'>
+        <div className='hidden lg:flex-1'>
           <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
         </div>
-        <div className='flex-1'>
+        <div className='text-center lg:text-left flex-1'>
           <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
           <div className='text-xl'>
             {t.rich('unit-algorithm', whiteTrans)}
           </div>
-          <div className='flex items-center gap-2 pt-2'>
+          <div className='flex items-center justify-center lg:justify-start gap-2 pt-2'>
             <LinkButton 
               title={t.rich('launch-app', whiteTrans)} 
               link={appUrl} 
@@ -104,15 +104,15 @@ export default function Home() {
 
     {/* -------------------- Index Table ------------------ */}
     <FadeWrapper>
-      <div className='px-32 py-16 my-40 relative'>
-        <div className='absolute left-32 bottom-16 top-16 right-32 bg-index bg-no-repeat bg-left-bottom rounded-lg' />
+      <div className='px-8 lg:px-32 py-16 my-40 relative'>
+        <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 bg-index bg-no-repeat bg-left-bottom rounded-lg' />
         <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-9 py-24'>
-          <div className='flex-1 pl-11'>
+          <div className='flex-1 px-3 lg:pl-11 lg:pr-0 text-center lg:text-left'>
             <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
             <div className='text-xl'>{t.rich('manage-fund-desc', whiteTrans)}</div><br />
             <div className='text-xl'>{t.rich('borrow-unit-desc', whiteTrans)}</div>
           </div>
-          <div className='flex-1'>
+          <div className='hidden lg:block flex-1'>
             <Image src={indexFund} alt='Index Fund' className='w-full' />
           </div>
         </div>

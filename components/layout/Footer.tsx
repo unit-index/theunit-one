@@ -8,10 +8,12 @@ import { discordUrl, twitterUrl, youtubeUrl } from '@/utils/constants'
 
 export default function Footer() {
     return (
-        <div className="flex items-center pt-10 pb-44 px-20 bg-footer bg-contain bg-no-repeat bg-right border-t border-t-white text-base">
-            <div className='flex-auto flex items-center gap-20 text-white'>
+        <div className="flex items-center justify-center sm:justify-between pt-10 pb-10 lg:pb-44 px-20 bg-footer bg-contain bg-no-repeat bg-right border-t border-t-white text-base">
+            <div className='hidden flex-auto sm:flex items-center gap-20 text-white'>
                 <Image width={190} className='inline-block mt-[-7px]' src={logo} alt='logo' />
-                <Menu isWhite />
+                <div className='hidden xl:flex items-center gap-20'>
+                    <Menu isWhite />
+                </div>
             </div>
             <div className='flex-none flex items-center gap-10'>
                 <SocialLink icon={discord} link={discordUrl} />
