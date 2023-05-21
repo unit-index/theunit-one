@@ -29,16 +29,16 @@ export default function DevelopersPage() {
             subtitle={t.rich('intro', whiteTrans)}
         >
             <div className="w-full relative h-[440px]">
-                <div className="absolute left-[-16.67%] top-0 bottom-0 right-[-16.67%] pb-[100px] flex items-end">
+                <div className="absolute left-0 lg:left-[-16.67%] top-0 bottom-0 right-0 lg:right-[-16.67%] pb-[100px] flex items-end">
                     <div className="bg-white h-[1px] w-full" />
                 </div>
-                <div className="absolute left-[-16.67%] top-0 bottom-0 right-[-16.67%] overflow-x-scroll px-[16.67%]">
+                <div className="absolute left-0 lg:left-[-16.67%] top-0 bottom-0 right-0 lg:right-[-16.67%] overflow-x-scroll px-[16.67%]">
                     <Timelines />
                 </div>
-                <div className="absolute left-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background via-background/95 to-background/0" />
-                <div className="absolute right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
+                <div className="hidden lg:block absolute left-0 lg:left-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background via-background/95 to-background/0" />
+                <div className="hidden lg:block absolute right-0 lg:right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
-            <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
+            <div className="grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-8 2xl:mx-36 py-32 border-y border-y-gray-border mb-32">
                 <DeveloperLink 
                     title="Github" 
                     subtitle={t.rich('github-intro', whiteTrans)} 
