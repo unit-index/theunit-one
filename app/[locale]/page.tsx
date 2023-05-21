@@ -9,6 +9,7 @@ import indexFund from '@/public/index-fund.png'
 import Blogs from '@/components/Blogs'
 import Accounted from '@/components/Accounted'
 import FadeWrapper from '@/components/FadeWrapper'
+import { whiteTrans } from '@/utils/TranslationHelper'
 
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
             <span className='font-bold'>UNIT</span>
           </div>
           <div className='mb-10'>
-            {t.rich('slogan',{important: (chunks) => <span className="text-white">{chunks}</span>})}
+            {t.rich('slogan', whiteTrans)}
           </div>
           <LineButton link={appUrl} title={t('launch-app')} />
         </div>
@@ -74,10 +75,18 @@ export default function Home() {
         </div>
         <div className='flex-1'>
           <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
-          <div className='text-xl'>{t.rich('unit-algorithm',{important: (chunks) => <span className="text-white">{chunks}</span>})}</div>
+          <div className='text-xl'>
+            {t.rich('unit-algorithm', whiteTrans)}
+          </div>
           <div className='flex items-center gap-2 pt-2'>
-            <LinkButton title={t.rich('launch-app',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={appUrl} small />
-            <div className='text-xl'>{t.rich('to-play',{important: (chunks) => <span className="text-white">{chunks}</span>})}</div>
+            <LinkButton 
+              title={t.rich('launch-app', whiteTrans)} 
+              link={appUrl} 
+              small 
+            />
+            <div className='text-xl'>
+              {t.rich('to-play', whiteTrans)}
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +96,7 @@ export default function Home() {
     {/* -------------------- Youtube Channel ------------------ */}
     <FadeWrapper>
       <div className='text-4xl text-center font-semibold mb-4 text-white'>{t('our-channel')}</div>
-      <div className='text-xl text-center max-w-2xl mx-auto mb-7 w-full'>{t.rich('channel-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})}</div>
+      <div className='text-xl text-center max-w-2xl mx-auto mb-7 w-full'>{t.rich('channel-intro', whiteTrans)}</div>
       <iframe
         src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
         title="YouTube video player"
@@ -104,8 +113,8 @@ export default function Home() {
         <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-9 py-24'>
           <div className='flex-1 pl-11'>
             <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
-            <div className='text-xl'>{t.rich('manage-fund-desc',{important: (chunks) => <span className="text-white">{chunks}</span>})}</div><br />
-            <div className='text-xl'>{t.rich('borrow-unit-desc',{important: (chunks) => <span className="text-white">{chunks}</span>})}</div>
+            <div className='text-xl'>{t.rich('manage-fund-desc', whiteTrans)}</div><br />
+            <div className='text-xl'>{t.rich('borrow-unit-desc', whiteTrans)}</div>
           </div>
           <div className='flex-1'>
             <Image src={indexFund} alt='Index Fund' className='w-full' />
@@ -120,7 +129,7 @@ export default function Home() {
       <Blogs 
         readMore={t('read-more')} 
         title={t('from-blog')} 
-        subtitle={t.rich('blog-desc',{important: (chunks) => <span className="text-white">{chunks}</span>})} 
+        subtitle={t.rich('blog-desc', whiteTrans)} 
       />
     </FadeWrapper>
   </>

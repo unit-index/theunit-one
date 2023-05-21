@@ -5,6 +5,8 @@ import ExternalLinkButton from "@/components/button/ExternalLinkButton"
 import { docsUrl, githubUrl, unitPaperUrl } from "@/utils/constants"
 import externalWhite from '@/public/external-white.svg';
 import PageTemplate from "@/components/layout/PageTemplate"
+import { whiteTrans } from "@/utils/TranslationHelper"
+import { Translated } from "@/utils/types"
 
 // number after -- means how many events that quarter has.
 const timelines = [
@@ -24,7 +26,7 @@ export default function DevelopersPage() {
     return <>
         <PageTemplate
             title={t('title')}
-            subtitle={t.rich('intro',{important: (chunks) => <span className="text-white">{chunks}</span>})}
+            subtitle={t.rich('intro', whiteTrans)}
         >
             <div className="w-full relative h-[440px]">
                 <div className="absolute left-[-16.67%] top-0 bottom-0 right-[-16.67%] pb-[100px] flex items-end">
@@ -37,9 +39,9 @@ export default function DevelopersPage() {
                 <div className="absolute right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
             <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
-                <DeveloperLink title="Github" subtitle={t.rich('github-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={githubUrl} />
-                <DeveloperLink title={t('docs')} subtitle={t.rich('docs-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={docsUrl} />
-                <DeveloperLink title={t('white-paper')} subtitle={t.rich('white-paper-intro',{important: (chunks) => <span className="text-white">{chunks}</span>})} link={unitPaperUrl} />
+                <DeveloperLink title="Github" subtitle={t.rich('github-intro', whiteTrans)} link={githubUrl} />
+                <DeveloperLink title={t('docs')} subtitle={t.rich('docs-intro', whiteTrans)} link={docsUrl} />
+                <DeveloperLink title={t('white-paper')} subtitle={t.rich('white-paper-intro', whiteTrans)} link={unitPaperUrl} />
             </div>
         </PageTemplate>
     </>
@@ -98,7 +100,7 @@ function DeveloperLink({
     link,
 } : {
     title: string,
-    subtitle: string,
+    subtitle: Translated,
     link: string,
 }) {
  return (

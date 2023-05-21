@@ -1,8 +1,10 @@
+import { Translated } from "@/utils/types";
+
 export default function Button({
     title,
     small = false,
 } : {
-    title: string,
+    title: Translated,
     small?: boolean,
 }) {
 
