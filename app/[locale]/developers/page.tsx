@@ -39,9 +39,21 @@ export default function DevelopersPage() {
                 <div className="absolute right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
             <div className="grid gap-12 grid-cols-3 mx-36 py-32 border-y border-y-gray-border mb-32">
-                <DeveloperLink title="Github" subtitle={t.rich('github-intro', whiteTrans)} link={githubUrl} />
-                <DeveloperLink title={t('docs')} subtitle={t.rich('docs-intro', whiteTrans)} link={docsUrl} />
-                <DeveloperLink title={t('white-paper')} subtitle={t.rich('white-paper-intro', whiteTrans)} link={unitPaperUrl} />
+                <DeveloperLink 
+                    title="Github" 
+                    subtitle={t.rich('github-intro', whiteTrans)} 
+                    link={githubUrl} 
+                />
+                <DeveloperLink 
+                    title={t('docs')} 
+                    subtitle={t.rich('docs-intro', whiteTrans)} 
+                    link={docsUrl} 
+                />
+                <DeveloperLink 
+                    title={t('white-paper')} 
+                    subtitle={t.rich('white-paper-intro', whiteTrans)} 
+                    link={unitPaperUrl} 
+                />
             </div>
         </PageTemplate>
     </>
