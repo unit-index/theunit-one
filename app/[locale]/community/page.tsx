@@ -8,6 +8,7 @@ import twitter from '@/public/twitter.svg'
 import youtube from '@/public/youtube.svg'
 import LinkButton from "@/components/button/LinkButton";
 import PageTemplate from "@/components/layout/PageTemplate";
+import { whiteTrans } from "@/utils/TranslationHelper";
 
 interface BrandAssetType {
     name: string;
@@ -44,7 +45,7 @@ export default function CommunityPage() {
     return <>
         <PageTemplate 
             title={t('title')}
-            subtitle={t.rich('intro',{important: (chunks) => <span className="text-white">{chunks}</span>})}
+            subtitle={t.rich('intro', whiteTrans)}
         >
             <div className="grid gap-12 grid-cols-3 mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
                 <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />
