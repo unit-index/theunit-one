@@ -47,12 +47,12 @@ export default function CommunityPage() {
             title={t('title')}
             subtitle={t.rich('intro', whiteTrans)}
         >
-            <div className="grid gap-12 grid-cols-3 mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
+            <div className="grid gap-12 grid-cols-1 md:grid-cols-3 mx-8 xl:mx-16 2xl:mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
                 <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />
                 <CommunityLink title={t('twitter')} icon={twitter} link={twitterUrl} />
                 <CommunityLink title={t('youtube')} icon={youtube} link={youtubeUrl} />
             </div>
-            <div className="px-36">
+            <div className="px-8 lg:px-36 mt-32">
                 <div className="font-bold text-4xl mb-6 text-white">
                     {t('brand-assets')}
                 </div>
@@ -83,7 +83,7 @@ function CommunityLink({
             <ExternalLinkButton link={link}>
                 <div className="text-center py-8 px-2 gap-2">
                     <Image className="inline-block scale-[2]" src={icon} alt={title} />
-                    <div className="flex items-center justify-center pt-9">
+                    <div className="flex items-center justify-center pt-9 h-24">
                         {title} <Image src={externalWhite} alt={title} />
                     </div>
                 </div>
@@ -102,7 +102,7 @@ function BrandAssets({asset} : {asset: BrandAssetType}) {
                 {asset.title}
             </div>
         )}
-        <div className="flex gap-36">
+        <div className="flex gap-8 md:gap-36">
             {[1, 2].map((index) => (
                 <div key={index} className="flex flex-col gap-8">
                     <ExternalLinkButton link="#">
