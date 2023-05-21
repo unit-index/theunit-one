@@ -1,7 +1,7 @@
 'use client'
 
 import { mediumApi } from "@/utils/constants";
-import { BlogType } from "@/utils/types";
+import { BlogType, Translated } from "@/utils/types";
 import useData from "@/utils/useData"
 import Image from "next/image";
 import Button from "./button/Button";
@@ -13,7 +13,7 @@ export default function Blogs({
 } : {
     readMore: string,
     title: string,
-    subtitle: string,
+    subtitle: Translated,
 }) {
     const { data } = useData<any>(mediumApi);
 

@@ -41,9 +41,9 @@ export const navLinks: NavLink[] = [{
 }];
 
 export const partners: string[] = [
-    "Near", 
-    "Aave", 
-    "The Graph", 
+    "Near Foundation", 
+    "Aave Grants DAO", 
+    "The Graph Foundation", 
     "Chainlink", 
     "CryptoYC", 
     "Attention Ventures", 

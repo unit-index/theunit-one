@@ -1,3 +1,4 @@
+import { Translated } from "@/utils/types";
 import Button from "./Button";
 
 export default function LinkButton({
@@ -7,7 +8,7 @@ export default function LinkButton({
     target = '_blank',
     small = false,
 } : {
-    title: string,
+    title: Translated,
     link: string,
     download?: boolean,
     target?: string,

@@ -15,7 +15,7 @@ function PartnersRow({names} : {names: string[]}) {
 
     return (
         <div className="flex gap-5 justify-center mb-5">
-            {names.map((name, index) => <Partner key={index} url={name.toLowerCase().replace(' ', '-')} />)}
+            {names.map((name, index) => <Partner key={index} url={name.toLowerCase().replaceAll(' ', '-')} />)}
         </div>
     )
 }

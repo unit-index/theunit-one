@@ -4,13 +4,14 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import useMeasure from 'react-use-measure'
 import angleDown from "@/public/angle-down.svg"
+import { Translated } from "@/utils/types"
 
 export default function FAQ({
     question,
     answer,
 } : {
-    question: string,
-    answer: string,
+    question: Translated,
+    answer: Translated,
 }) {
 
     const [show, setShow] = useState(false)
