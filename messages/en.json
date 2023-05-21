@@ -12,7 +12,7 @@
     "to-play": "to <important>boost your crypto returns</important>.",
     "our-channel": "Our Channel",
     "channel-intro": "The crypto industry is becoming increasingly fragmented. A fundamental way to unite crypto is for the crypto space to adopt an <important>unbiased unit of account</important>.",
-    "traders-investors": "The Unit for Traders & Investors",
+    "traders-investors": "UNIT for Traders & Investors",
     "manage-fund-desc": "Managing your own crypto index fund would accrue many trading and gas fees, while owning UNIT does all of this for you at <important>no cost</important>.",
     "borrow-unit-desc": "By borrowing UNIT, a participant can now act on <important>the whole crypto market</important>. A buyer of UNIT can now hold a coin that represents the whole market instead of an individual currency, <important>cutting the risk of exposure</important> to bugs in any specific coin.",
     "from-blog": "From the 2ØY Blog",
@@ -25,9 +25,9 @@
     "about-the-unit": "The Unit is the list of <important>top cryptocurrencies</important> used to create UNIT. UNIT is both the <important>first unbiased unit of account</important> and <important>crypto's first unbiased benchmark</important>. \n\nWe foresee a future where people no longer depend on central banks’ fiat currency as the value benchmark. As we journey further into an era of increasing <important>decentralization</important> and <important>disintermediation</important>, we believe that an unbiased standard is emerging and that standard is <important>UNIT</important>.",
     "faq": "FAQ",
     "faq-what-is-the-unit": "What is The Unit and how does it work?",
-    "ans-what-is-the-unit": "The Unit is a set of cryptocurrencies coming from an <important><docsSelectionCriteria>Open Selection Criteria</docsSelectionCriteria></important> and glued together through an <important>Open Algorithm</important>.\n\nThe Unit aggregates data of the coins that satisfy the <important>selection criteria</important>. It then uses the <important>total human population</important> and <important>average life expectancy at birth</important> to create a unit of value called <important>UNIT</important>.",
+    "ans-what-is-the-unit": "The Unit is a set of cryptocurrencies coming from <important><docsSelectionCriteria>Open Selection Criteria</docsSelectionCriteria></important> and glued together through an <important><docsAlgorithm>Open Algorithm</docsAlgorithm></important>.\n\nThe Unit aggregates data of the coins that satisfy the <important>selection criteria</important>. It then uses the <important>total human population</important> and <important>average life expectancy at birth</important> to create a unit of value called <important>UNIT</important>.",
     "faq-what-is-unit": "What is UNIT?",
-    "ans-what-is-unit": "UNIT is an <important>unbiased unit of account</important> and the name of the token that follows its value.",
+    "ans-what-is-unit": "UNIT is an <important>unbiased unit of account</important> and <important>the name of the toke</important> that follows its value.",
     "faq-is-unit-money": "Is UNIT money?",
     "ans-is-unit-money": "Money has taken many forms through the ages, but it consistently has <important>three functions</important>: unit of account, medium of exchange, and store of value. None of the cryptocurrencies that exist today achieve all three aspects.\n\nUNIT aims at fulfilling the <important>unit of account function of money</important>. Once the crypto space grows enough to serve as the world's financial system, UNIT can also be a <important>standard for deferred payments</important>.",
     "faq-what-features-the-unit": "What features make The Unit unique?",
@@ -73,7 +73,7 @@
     "brand-assets": "Brand Assets",
     "download": "Download",
     "logo": "LOGO",
-    "stacked": "STACKED",
+    "stacked": "VERTICAL",
     "horizontal": "HORIZONTAL"
   }
 }

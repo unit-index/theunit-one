@@ -26,7 +26,8 @@ export default function AboutPage() {
                         answer={
                             t.rich(`ans-${faq}`, { 
                                 ...whiteTrans, 
-                                ...linkTrans('docsSelectionCriteria', 'https://docs.theunit.one/theunit/the-unit/the-unit-selection-criteria')
+                                ...linkTrans('docsSelectionCriteria', 'https://docs.theunit.one/theunit/the-unit/the-unit-selection-criteria'),
+                                ...linkTrans('docsAlgorithm', 'https://docs.theunit.one/theunit/the-unit/algorithm')
                             })
                         } 
                     />
