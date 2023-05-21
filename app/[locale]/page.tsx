@@ -24,7 +24,7 @@ export default function Home() {
 
       <div className='flex items-center'>
         <div className='ml-36 max-w-md flex-none'>
-          <div className='text-8xl text-white mb-4'>
+          <div className='text-7xl text-white mb-4'>
             <span className='font-light'>The </span>
             <span className='font-bold'>UNIT</span>
           </div>
