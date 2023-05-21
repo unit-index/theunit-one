@@ -117,8 +117,8 @@ function DeveloperLink({
 }) {
  return (
     <ExternalLinkButton link={link}>
-        <div className="flex justify-between items-center py-6 px-10">
-            <div>
+        <div className="flex justify-between items-center py-6 px-10 h-full">
+            <div className="h-full">
                 <div className="text-white text-xl">{title}</div>
                 <div className="mt-2 text-xl pr-2">{subtitle}</div>
             </div>
