@@ -11,8 +11,6 @@ export default function Partners() {
 
 function PartnersRow({names} : {names: string[]}) {
 
-    const len = names.length;
-
     return (
         <div className="flex gap-5 justify-center mb-5">
             {names.map((name, index) => <Partner key={index} url={name.toLowerCase().replaceAll(' ', '-')} />)}

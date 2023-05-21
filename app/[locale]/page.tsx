@@ -16,55 +16,51 @@ export default function Home() {
   const t = useTranslations('Index')
 
   return <>
-    {/* -------------------- Top Three Sections Wrapper ------------------ */}
-
-    <div className='bg-home-top bg-no-repeat bg-right-top'>
 
 
-      {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
+    {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
 
-      <div className='flex items-center'>
-        <div className='ml-36 max-w-md flex-none'>
-          <div className='text-7xl text-white mb-4'>
-            <span className='font-light'>The </span>
-            <span className='font-bold'>UNIT</span>
-          </div>
-          <div className='mb-10'>
-            {t.rich('slogan', whiteTrans)}
-          </div>
-          <LineButton link={appUrl} title={t('launch-app')} />
+    <div className='flex items-center'>
+      <div className='ml-36 max-w-md flex-none'>
+        <div className='text-7xl text-white mb-4'>
+          <span className='font-light'>The </span>
+          <span className='font-bold'>UNIT</span>
         </div>
-        <div className='flex-auto h-[770px]'>
-          <iframe src='https://my.spline.design/interactivespherescopycopy-42e48f114d67ab4a32efddf569743588/' width='100%' height='100%'></iframe>
+        <div className='mb-10'>
+          {t.rich('slogan', whiteTrans)}
+        </div>
+        <LineButton link={appUrl} title={t('launch-app')} />
+      </div>
+      <div className='flex-auto h-screen'>
+        <iframe src='https://my.spline.design/interactivespherescopycopy-42e48f114d67ab4a32efddf569743588/' width='100%' height='100%'></iframe>
+      </div>
+    </div>
+
+
+    {/* -------------------- Value Accounted ------------------ */}
+    <FadeWrapper>
+      <div className='flex items-center gap-24 justify-center my-32'>
+        <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
+        <div className='w-[1px] h-7 bg-gray-light'></div>
+        <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
+      </div>
+    </FadeWrapper>
+
+
+    {/* -------------------- Partners Section ------------------ */}
+    <FadeWrapper>
+      <div className='flex items-center gap-48 p-32 bg-partners bg-cover mt-20'>
+        <div className='flex-1'>
+          <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
+          <div className='text-xl'>
+            {partners.join(', ')}
+          </div>
+        </div>
+        <div className='flex-1'>
+          <Partners />
         </div>
       </div>
-
-
-      {/* -------------------- Value Accounted ------------------ */}
-      <FadeWrapper>
-        <div className='flex items-center gap-24 justify-center my-32'>
-          <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
-          <div className='w-[1px] h-7 bg-gray-light'></div>
-          <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
-        </div>
-      </FadeWrapper>
-
-
-      {/* -------------------- Partners Section ------------------ */}
-      <FadeWrapper>
-        <div className='flex items-center gap-48 p-32 bg-partners bg-cover mt-20'>
-          <div className='flex-1'>
-            <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
-            <div className='text-xl'>
-              {partners.join(', ')}
-            </div>
-          </div>
-          <div className='flex-1'>
-            <Partners />
-          </div>
-        </div>
-      </FadeWrapper>
-    </div>
+    </FadeWrapper>
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
