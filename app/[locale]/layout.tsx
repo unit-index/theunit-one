@@ -37,10 +37,15 @@ export default function LocaleLayout({
   if (params.locale !== locale) {
     notFound();
   }
+
+  let textStyle = 'text-2xl';
+  if (locale === 'cn') {
+    textStyle = 'text-xl leading-8';
+  }
  
   return (
     <html lang={locale} className={avenirFont.className}>
-      <body className='bg-background text-secondary text-2xl'>
+      <body className={'bg-background text-secondary ' + textStyle}>
         <MainLayout>
           {children}
         </MainLayout>
