@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <LineButton link={appUrl} title={t('launch-app')} />
       </div>
-      <div className='hidden lg:block lg:flex-auto lg:h-[480px] xl:h-[600px] 2xl:h-screen'>
+      <div className='hidden lg:block lg:flex-auto lg:h-[480px] xl:h-[600px] 2xl:h-screen pointer-events-none'>
         <iframe src='https://my.spline.design/interactivespherescopycopy-42e48f114d67ab4a32efddf569743588/' width='100%' height='100%'></iframe>
       </div>
     </div>
@@ -66,7 +66,7 @@ export default function Home() {
     {/* -------------------- UNIT Ø Introduction ------------------ */}
     <FadeWrapper>
       <div className='flex items-center gap-40 px-8 lg:px-40 py-24 my-32'>
-        <div className='hidden lg:flex-1'>
+        <div className='hidden lg:block lg:flex-1 pointer-events-none'>
           <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
         </div>
         <div className='text-center lg:text-left flex-1'>
