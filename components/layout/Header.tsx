@@ -5,6 +5,7 @@ import LinkButton from '../button/LinkButton';
 import { Link, useTranslations } from 'next-intl';
 import { appUrl } from '@/utils/constants';
 import MobileMenu from './MobileMenu';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header() {
 
@@ -18,8 +19,9 @@ export default function Header() {
             <div className='hidden xl:flex flex-auto text-base gap-20 justify-center'>
                 <Menu />
             </div>
-            <div className='hidden xl:flex flex-none'>
+            <div className='hidden xl:flex items-center gap-12 flex-none'>
                 <LinkButton title={t('launch-app')} link={appUrl} />
+                <LanguageSwitcher />
             </div>
             <div className='xl:hidden'>
                 <MobileMenu>
