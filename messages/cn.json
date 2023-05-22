@@ -25,7 +25,7 @@
     "about-the-unit": "The Unit是一个用于创建UNIT的<important>数字货币集合</important>。UNIT既是数字货币行业中出现的<important>第一个公正的计量单位</important>,也是数字货币的<important>第一个无偏基准</important>。\n\n我们预见一个人们不再依赖中央银行的法定货币作为数字货币价值基准的未来。随着我们进一步深入<important>去中心化</important>和<important>去中介化</important>的时代,我们相信一个公正的标准正在崛起,那就是<important>UNIT</important>。",
     "faq": "常见问题",
     "faq-what-is-the-unit": "The Unit是什么?它是如何运作的?",
-    "ans-what-is-the-unit": "The Unit是一个根据<important><docsSelectionCriteria>公开选择标准</docsSelectionCriteria></important>筛选出的加密货币集合,然后通过<important><docsAlgorithm>公开算法</docsAlgorithm></important>将其联接在一起。\n\nThe Unit的工作是汇总满足<important>选择标准</important>的数字货币的数据后,使用<important>全球人口总数</important>和<important>人类出生时的平均预期寿命</important>来创建一个叫做<important>UNIT</important>的价值单位。",
+    "ans-what-is-the-unit": "The Unit是一个根据<docsSelectionCriteria>公开选择标准</docsSelectionCriteria>筛选出的加密货币集合,然后通过<docsAlgorithm>公开算法</docsAlgorithm>将其联接在一起。\n\nThe Unit的工作是汇总满足<important>选择标准</important>的数字货币的数据后,使用<important>全球人口总数</important>和<important>人类出生时的平均预期寿命</important>来创建一个叫做<important>UNIT</important>的价值单位。",
     "faq-what-is-unit": "什么是UNIT?",
     "ans-what-is-unit": "UNIT是一个<important>公正的计量单位</important>,同时也是跟随其价值变动的<important>代币的名称</important>。",
     "faq-is-unit-money": "UNIT是货币吗?",

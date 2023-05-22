@@ -18,11 +18,17 @@ export const linkTrans = (
     return {
         [key]: (chunks: ReactNode) => (
             <a 
-                className="inline" 
+                className="text-white items-center" 
+                style={{ display: 'inline-flex' }}
                 href={link}
                 target={external ? "_blank" : "_self"}
             >
-                {chunks} {external && <Image className="inline" src="/external-white.svg" width="20" height="20" alt="link" />}
+                <div>{chunks}</div> 
+                {external && (
+                    <div>
+                        <Image className="inline" src="/external-white.svg" width="20" height="20" alt="link" />
+                    </div>
+                )}
             </a>
         )
     }
