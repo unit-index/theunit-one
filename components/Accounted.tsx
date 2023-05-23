@@ -20,7 +20,7 @@ export default function Accounted({
                 {title}
             </div>
             <div className={"font-bold text-5xl text-white " + (isUSD ? 'line-through' : '')}>
-                {numberWithCommas(accountedValue)}
+                {isUSD ? '$' : 'Ø'}{numberWithCommas(accountedValue)}
             </div>
     </div>
 }

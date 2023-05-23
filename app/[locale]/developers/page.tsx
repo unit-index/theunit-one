@@ -7,6 +7,9 @@ import externalWhite from '@/public/external-white.svg';
 import PageTemplate from "@/components/layout/PageTemplate"
 import { whiteTrans } from "@/utils/TranslationHelper"
 import { Translated } from "@/utils/types"
+import github from "@/public/github.svg"
+import docs from "@/public/docs.svg"
+import paper from "@/public/paper.svg"
 
 // number after -- means how many events that quarter has.
 const timelines = [
@@ -44,16 +47,19 @@ export default function DevelopersPage() {
             <div className="grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-8 2xl:mx-36 py-32 border-y border-y-gray-border mb-32">
                 <DeveloperLink 
                     title="Github" 
+                    icon={github}
                     subtitle={t.rich('github-intro', whiteTrans)} 
                     link={githubUrl} 
                 />
                 <DeveloperLink 
                     title={t('docs')} 
+                    icon={docs}
                     subtitle={t.rich('docs-intro', whiteTrans)} 
                     link={docsUrl} 
                 />
                 <DeveloperLink 
                     title={t('white-paper')} 
+                    icon={paper}
                     subtitle={t.rich('white-paper-intro', whiteTrans)} 
                     link={unitPaperUrl} 
                 />
@@ -111,10 +117,12 @@ function Timeline({
 
 function DeveloperLink({
     title,
+    icon,
     subtitle,
     link,
 } : {
     title: string,
+    icon: string,
     subtitle: Translated,
     link: string,
 }) {
@@ -122,7 +130,10 @@ function DeveloperLink({
     <ExternalLinkButton link={link}>
         <div className="flex justify-between items-center py-6 px-10 h-full">
             <div className="h-full">
-                <div className="text-white text-xl">{title}</div>
+                <div className="text-gray-light text-xl flex items-center gap-2">
+                    <Image src={icon} alt={title} />
+                    {title}
+                </div>
                 <div className="mt-2 text-xl pr-2">{subtitle}</div>
             </div>
             <Image src={externalWhite} alt={title} />
