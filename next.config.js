@@ -11,6 +11,16 @@ module.exports = withNextIntl({
             hostname: 'cdn-images-1.medium.com',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'play.google.com',
+            port: '',
+          },
+          {
+            protocol: 'https',
+            hostname: 'medium.com',
+            port: '',
+          },
         ],
       },
 });
