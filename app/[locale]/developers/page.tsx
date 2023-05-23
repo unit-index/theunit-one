@@ -28,6 +28,9 @@ export default function DevelopersPage() {
             title={t('title')}
             subtitle={t.rich('intro', whiteTrans)}
         >
+            <div className="text-4xl mb-12 text-white font-semibold">
+                {t('milestones')}
+            </div>
             <div className="w-full relative h-[440px]">
                 <div className="absolute left-0 lg:left-[-16.67%] top-0 bottom-0 right-0 lg:right-[-16.67%] pb-[100px] flex items-end">
                     <div className="bg-white h-[1px] w-full" />

@@ -47,15 +47,16 @@ function Blog({
             href={blog.link}
             target="_blank"
         >
-            <div className="relative aspect-2/1">
-                <Image 
-                    src={blog.thumbnail} 
-                    alt={blog.title} 
-                    fill
-                />
-            </div>
-            <div className="line-clamp-6 text-lg my-6">
-                {ToText(blog.content)}
+            <div className="w-full aspect-2/1 bg-cover bg-center" 
+                style={{backgroundImage: `url(${blog.thumbnail})`}}
+            />
+            <div className="mt-6 mb-6 h-48 line-clamp-6">
+                <span className="text-white font-semibold text-xl">
+                    {blog.title}
+                </span><br />
+                <span className="text-lg">
+                    {ToText(blog.content)}
+                </span>
             </div>
             <div className="text-center xl:text-right">
                 <Button title={readMore} />
