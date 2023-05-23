@@ -5,7 +5,7 @@ import LinkButton from '../button/LinkButton';
 import { Link, useTranslations } from 'next-intl';
 import { appUrl } from '@/utils/constants';
 import MobileMenu from './MobileMenu';
-import LanguageSwitcher from '../LanguageSwitcher';
+import LanguageSwitcher, { AvailableLocales } from '../LanguageSwitcher';
 
 export default function Header() {
 
@@ -28,6 +28,9 @@ export default function Header() {
                     <div className='flex flex-col text-base gap-14'>
                         <Menu />
                         <LinkButton title={t('launch-app')} link={appUrl} />
+                        <div className='flex flex-col text-white gap-6'>
+                            <AvailableLocales />
+                        </div>
                     </div>
                 </MobileMenu>
             </div>

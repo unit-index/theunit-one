@@ -44,12 +44,12 @@ function Home({
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
 
     <div className='mt-32 lg:mt-16 xl:mt-0 flex items-center'>
-      <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-md flex-none'>
+      <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-xs sm:max-w-md flex-none'>
         <div className='text-7xl text-white mb-4'>
           <span className='font-light'>The </span>
           <span className='font-bold'>UNIT</span>
         </div>
-        <div className='mb-10'>
+        <div className='mb-10 px-2 sm:px-0'>
           {t.rich('slogan', whiteTrans)}
         </div>
         <LineButton link={appUrl} title={t('launch-app')} />
@@ -97,13 +97,13 @@ function Home({
           <div className='text-xl'>
             {t.rich('unit-algorithm', whiteTrans)}
           </div>
-          <div className='flex items-center justify-center lg:justify-start gap-2 pt-2'>
+          <div className='block sm:flex items-center justify-center lg:justify-start gap-2 pt-2'>
             <LinkButton 
               title={t.rich('launch-app', whiteTrans)} 
               link={appUrl} 
               small 
             />
-            <div className='text-xl'>
+            <div className='text-xl mt-2 sm:mt-0'>
               {t.rich('to-play', whiteTrans)}
             </div>
           </div>
@@ -128,8 +128,8 @@ function Home({
     {/* -------------------- Index Table ------------------ */}
     <FadeWrapper>
       <div className='px-8 lg:px-32 py-16 my-40 relative'>
-        <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 bg-index bg-no-repeat bg-left-bottom rounded-lg' />
-        <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-9 py-24'>
+        <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 bg-none md:bg-index bg-no-repeat bg-left-bottom rounded-lg' />
+        <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-1 md:px-9 py-8 md:py-24'>
           <div className='flex-1 px-3 lg:pl-11 lg:pr-0 text-center lg:text-left'>
             <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
             <div className='text-xl'>{t.rich('manage-fund-desc', whiteTrans)}</div><br />

@@ -19,13 +19,21 @@ function PartnersRow({names} : {names: string[]}) {
 }
 
 function Partner({url} : {url: string}) {
-    return (
+    // To avoid using client component
+    return <>
         <Image 
-            className="opacity-75 cursor-pointer hover:opacity-100 rounded-2xl hover:scale-110 transition-transform duration-400 ease-in-out"
+            className="hidden md:inline-block opacity-75 cursor-pointer hover:opacity-100 rounded-2xl hover:scale-110 transition-transform duration-400 ease-in-out"
             src={`/${url}.png`}
             width={110}
             height={110}
             alt="partner"
         />
-    )
+        <Image 
+            className="inline-block md:hidden opacity-75 cursor-pointer hover:opacity-100 rounded-2xl hover:scale-110 transition-transform duration-400 ease-in-out"
+            src={`/${url}.png`}
+            width={60}
+            height={60}
+            alt="partner"
+        />
+    </>
 }
