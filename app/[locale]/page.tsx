@@ -10,13 +10,36 @@ import Blogs from '@/components/Blogs'
 import Accounted from '@/components/Accounted'
 import FadeWrapper from '@/components/FadeWrapper'
 import { whiteTrans } from '@/utils/TranslationHelper'
+import clientPromise from '@/utils/mongodb'
+import { getUnitHourlyData } from "@/utils/db";
+
+async function getUnitData() {
+  try {
+    const client = await clientPromise;
+    const db = client.db();
+    const data = await getUnitHourlyData(db);
+    return data;
+  } catch(e) {
+    throw e;
+  }
+}
 
 
-export default function Home() {
+export default async function HomePage() {
+  const data = await getUnitData();
+  
+  return <Home usdData={data} />
+}
+
+
+function Home({
+  usdData
+} : {
+  usdData: number
+}) {
   const t = useTranslations('Index')
 
   return <>
-
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
 
@@ -40,9 +63,9 @@ export default function Home() {
     {/* -------------------- Value Accounted ------------------ */}
     <FadeWrapper>
       <div className='lg:flex items-center gap-24 justify-center my-32'>
-        <Accounted title={t('accounted-in', {unit: 'UNIT'})} unit='unit' />
+        <Accounted title={t('accounted-in', {unit: 'UNIT'})} />
         <div className='w-0 h-12 lg:block lg:w-[1px] lg:h-7 bg-gray-light'></div>
-        <Accounted title={t('accounted-in', {unit: 'USD'})} unit='usd' />
+        <Accounted title={t('accounted-in', {unit: 'USD'})} usdData={usdData} />
       </div>
     </FadeWrapper>
 
