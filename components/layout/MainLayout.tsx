@@ -1,12 +1,14 @@
+import { Suspense } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import Loading from "@/app/[locale]/loading";
 
 export default function MainLayout({children} : {children: React.ReactNode}) {
     return <>
         <Header />
-        <div className="overflow-x-hidden">
-        { children }
-        </div>
+        <Suspense fallback={<Loading />}>
+            { children }
+        </Suspense>
         <Footer />
     </>
 }

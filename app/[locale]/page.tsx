@@ -4,6 +4,7 @@ import LinkButton from '@/components/button/LinkButton'
 import Image from 'next/image'
 import LineButton from '@/components/button/LineButton'
 import { appUrl, partners } from '@/utils/constants'
+import { headers } from 'next/headers';
 import { useTranslations } from 'next-intl'
 import indexFund from '@/public/index-fund.png'
 import Blogs from '@/components/Blogs'
@@ -12,6 +13,7 @@ import FadeWrapper from '@/components/FadeWrapper'
 import { whiteTrans } from '@/utils/TranslationHelper'
 import clientPromise from '@/utils/mongodb'
 import { getUnitHourlyData } from "@/utils/db";
+import homeTop from '@/public/home-top.png'
 
 async function getUnitData() {
   try {
@@ -27,15 +29,24 @@ async function getUnitData() {
 
 export default async function HomePage() {
   const data = await getUnitData();
+  const headerList = headers();
+  const userAgent = headerList.get('user-agent') ?? '';
+  const isMobile = Boolean(
+    userAgent.match(
+      /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+    )
+  );
   
-  return <Home usdData={data} />
+  return <Home usdData={data} isMobile={isMobile} />
 }
 
 
 function Home({
-  usdData
+  usdData,
+  isMobile
 } : {
-  usdData: number
+  usdData: number,
+  isMobile: boolean
 }) {
   const t = useTranslations('Index')
 
@@ -54,14 +65,12 @@ function Home({
         </div>
         <LineButton link={appUrl} title={t('launch-app')} />
       </div>
-      <div className='hidden lg:block lg:flex-auto lg:h-[480px] xl:h-[600px] 2xl:h-screen pointer-events-none'>
-        <iframe src='https://my.spline.design/interactivespherescopycopy-42e48f114d67ab4a32efddf569743588/' width='100%' height='100%'></iframe>
-      </div>
+      <div className='hidden lg:block lg:flex-auto bg-home-top bg-contain bg-no-repeat bg-center lg:h-[480px] xl:h-[660px] 2xl:h-screen' />
     </div>
 
 
     {/* -------------------- Value Accounted ------------------ */}
-    <FadeWrapper>
+    <FadeWrapper isMobile={isMobile}>
       <div className='lg:flex items-center gap-24 justify-center my-32'>
         <Accounted title={t('accounted-in', {unit: 'UNIT'})} />
         <div className='w-0 h-12 lg:block lg:w-[1px] lg:h-7 bg-gray-light'></div>
@@ -71,7 +80,7 @@ function Home({
 
 
     {/* -------------------- Partners Section ------------------ */}
-    <FadeWrapper>
+    <FadeWrapper isMobile={isMobile}>
       <div className='block xl:flex items-center xl:gap-48 p-8 xl:p-32 bg-partners bg-cover mt-20'>
         <div className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1'>
           <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
@@ -87,7 +96,7 @@ function Home({
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
-    <FadeWrapper>
+    <FadeWrapper isMobile={isMobile}>
       <div className='flex items-center gap-40 px-8 lg:px-40 py-24 my-32'>
         <div className='hidden lg:block lg:flex-1 pointer-events-none'>
           <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
@@ -113,7 +122,7 @@ function Home({
     
 
     {/* -------------------- Youtube Channel ------------------ */}
-    <FadeWrapper>
+    <FadeWrapper isMobile={isMobile}>
       <div className='text-4xl text-center font-semibold mb-4 text-white'>{t('our-channel')}</div>
       <div className='text-xl text-center max-w-2xl mx-auto mb-7 w-full'>{t.rich('channel-intro', whiteTrans)}</div>
       <iframe
@@ -126,7 +135,7 @@ function Home({
     </FadeWrapper>
 
     {/* -------------------- Index Table ------------------ */}
-    <FadeWrapper>
+    <FadeWrapper isMobile={isMobile}>
       <div className='px-8 lg:px-32 py-16 my-40 relative'>
         <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 bg-none md:bg-index bg-no-repeat bg-left-bottom rounded-lg' />
         <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-1 md:px-9 py-8 md:py-24'>
@@ -144,7 +153,7 @@ function Home({
 
     {/* -------------------- From the blog ------------------ */}
 
-    <FadeWrapper>
+    <FadeWrapper isMobile={isMobile}>
       <Blogs 
         readMore={t('read-more')} 
         title={t('from-blog')} 

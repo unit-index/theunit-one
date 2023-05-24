@@ -5,6 +5,7 @@ import { BlogType, Translated } from "@/utils/types";
 import useData from "@/utils/useData"
 import Image from "next/image";
 import Button from "./button/Button";
+import { useState } from "react";
 
 export default function Blogs({
     readMore,
@@ -41,15 +42,26 @@ function Blog({
     blog: BlogType, 
     readMore: string
 }) {
+    const [blogUrl, setBlogUrl] = useState('');
+
     return (
         <a 
             className="px-6 py-8 border border-transparent hover:bg-black-bgd/40 hover:backdrop-blur-sm rounded-2xl hover:border-gray-border cursor-pointer"
             href={blog.link}
             target="_blank"
         >
-            <div className="w-full aspect-2/1 bg-cover bg-center" 
-                style={{backgroundImage: `url(${blog.thumbnail})`}}
-            />
+            <div className="w-full aspect-2/1 relative object-cover overflow-hidden">
+                <Image 
+                    src={blogUrl ? blogUrl : blog.thumbnail}
+                    alt={blog.title} 
+                    fill
+                    placeholder="blur"
+                    blurDataURL="/post-placeholder.png"
+                    onError={() => {
+                        setBlogUrl("/post-placeholder.png");
+                    }}
+                />
+            </div>
             <div className="mt-6 mb-6 h-48 line-clamp-6">
                 <span className="text-white font-semibold text-xl">
                     {blog.title}

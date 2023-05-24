@@ -23,7 +23,7 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'footer': 'url(/footer-bgd.svg)',
-        'home-top': 'url(/home-top-bgd.png)',
+        'home-top': 'url(/home-top.png)',
         'partners': 'url(/partners-bgd.svg)',
         'index': 'url(/index-bgd.png)',
         'about': 'url(/about-bgd.png)',
