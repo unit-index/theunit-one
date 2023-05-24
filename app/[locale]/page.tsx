@@ -98,9 +98,9 @@ function Home({
     {/* -------------------- UNIT Ø Introduction ------------------ */}
     <FadeWrapper isMobile={isMobile}>
       <div className='flex items-center gap-40 px-8 lg:px-40 py-24 my-32'>
-        <div className='hidden lg:block lg:flex-1 pointer-events-none'>
+        {!isMobile && <div className='flex-1 pointer-events-none'>
           <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
-        </div>
+        </div>}
         <div className='text-center lg:text-left flex-1'>
           <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
           <div className='text-xl'>
