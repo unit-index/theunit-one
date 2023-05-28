@@ -11,17 +11,11 @@ export default function LineButton({
 }) {
     return (
         <a className="relative group inline-block py-6 px-12 text-white" href={link}>
-            <Image 
-                src={ellipse} 
-                alt="Launch App"
-                fill
-                className="absolute left-0 top-0 transition-transform duration-700 ease-in-out group-hover:rotate-180" 
+            <div
+                className="absolute left-0 top-0 w-60 h-20 rounded-[80%] border border-unit-blue transition-transform duration-700 ease-in-out group-hover:rotate-180" 
             />
-            <Image 
-                src={ellipse} 
-                alt="Launch App"
-                fill
-                className="absolute left-0 top-0 -rotate-6 transition-transform duration-700 ease-in-out group-hover:-rotate-[186deg]" 
+            <div
+                className="absolute left-0 top-0 w-60 h-20 rounded-[80%] -rotate-[7deg] border border-unit-orange transition-transform duration-700 ease-in-out group-hover:-rotate-[187deg]" 
             />
             <div className="flex items-center gap-2 text-lg">
                 <div>{title}</div>

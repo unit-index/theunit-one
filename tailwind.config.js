@@ -29,7 +29,8 @@ module.exports = {
         'partners': 'url(/partners-bgd.svg)',
         'index': 'url(/index-bgd.png)',
         'about': 'url(/about-bgd.png)',
-        'page': 'url(/page-bgd.png)'
+        'page': 'url(/page-bgd.png)',
+        'home-bgd1': 'url(/home-bgd-1.png)'
       },
       backgroundSize: {
         'auto': 'auto',

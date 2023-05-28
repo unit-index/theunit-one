@@ -58,7 +58,7 @@ function Home({
       <Image src={homeTop} alt='The Unit' />
     </div>
 
-    <div className='mt-16 lg:mt-16 xl:mt-0 flex items-center'>
+    <div className='mt-16 lg:mt-0 xl:mt-0 flex items-center'>
       <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-xs sm:max-w-md flex-none'>
         <div className='text-7xl text-white mb-4'>
           <span className='font-light'>The </span>
@@ -73,6 +73,7 @@ function Home({
     </div>
 
 
+    <div className='bg-home-bgd1 bg-no-repeat bg-left pt-16 pb-16'>
     {/* -------------------- Value Accounted ------------------ */}
     <FadeWrapper isMobile={isMobile}>
       <div className='lg:flex items-center gap-24 justify-center my-32'>
@@ -97,12 +98,13 @@ function Home({
         </div>
       </div>
     </FadeWrapper>
+    </div>
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
     <FadeWrapper isMobile={isMobile}>
-      <div className='flex items-center gap-40 px-8 lg:px-40 py-24 my-32'>
-        {!isMobile && <div className='flex-1 pointer-events-none'>
+      <div className='flex items-center gap-40 px-8 lg:px-40 py-24 mb-32'>
+        {!isMobile && <div className='flex-1 pointer-events-none h-96'>
           <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
         </div>}
         <div className='text-center lg:text-left flex-1'>

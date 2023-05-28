@@ -7,12 +7,14 @@ export default function LinkButton({
     download = false,
     target = '_blank',
     small = false,
+    gradient = false,
 } : {
     title: Translated,
     link: string,
     download?: boolean,
     target?: string,
     small?: boolean,
+    gradient?: boolean,
 }) {
 
     return (
@@ -21,7 +23,7 @@ export default function LinkButton({
             target={target}
             href={link}
         >
-            <Button title={title} small={small} />
+            <Button title={title} small={small} gradient={gradient} />
         </a>
     )
 }

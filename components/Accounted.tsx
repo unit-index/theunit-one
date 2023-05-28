@@ -16,11 +16,11 @@ export default function Accounted({
     }
 
     return <div className="text-center">
-            <div className="text-gray-light mb-2 sm:mb-5">
-                {title}
-            </div>
-            <div className={"font-bold sm:text-5xl text-white " + (isUSD ? 'line-through' : '')}>
+            <div className={"mb-2 sm:mb-5 font-bold sm:text-5xl " + (isUSD ? 'line-through text-unit-blue' : 'text-unit-orange')}>
                 {isUSD ? '$' : 'Ø'}{numberWithCommas(accountedValue)}
+            </div>
+            <div className="text-gray-light">
+                {title}
             </div>
     </div>
 }
