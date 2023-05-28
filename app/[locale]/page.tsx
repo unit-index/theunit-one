@@ -54,7 +54,11 @@ function Home({
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
 
-    <div className='mt-32 lg:mt-16 xl:mt-0 flex items-center'>
+    <div className='lg:hidden mt-12'>
+      <Image src={homeTop} alt='The Unit' />
+    </div>
+
+    <div className='mt-16 lg:mt-16 xl:mt-0 flex items-center'>
       <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-xs sm:max-w-md flex-none'>
         <div className='text-7xl text-white mb-4'>
           <span className='font-light'>The </span>
