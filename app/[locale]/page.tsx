@@ -3,7 +3,7 @@ import SplineClient from '@/components/SplineClient'
 import LinkButton from '@/components/button/LinkButton'
 import Image from 'next/image'
 import LineButton from '@/components/button/LineButton'
-import { appUrl, partners } from '@/utils/constants'
+import { appUrl, localUSDPlaceholder, partners } from '@/utils/constants'
 import { headers } from 'next/headers';
 import { useTranslations } from 'next-intl'
 import indexFund from '@/public/index-fund.png'
@@ -27,7 +27,10 @@ async function getUnitData() {
 
 
 export default async function HomePage() {
-  const data = await getUnitData();
+  let data = localUSDPlaceholder;
+  if (process.env.NODE_ENV === 'production') {
+    data = await getUnitData();
+  }
   const headerList = headers();
   const userAgent = headerList.get('user-agent') ?? '';
   const isMobile = Boolean(
