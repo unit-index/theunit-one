@@ -25,7 +25,7 @@ export default function Blogs({
     const blogs = data.items.slice(0, 3) as BlogType[];
 
     return (
-        <div className="px-2 md:px-8 lg:px-32 mb-56">
+        <div className="px-2 md:px-8 lg:px-32">
             <div className='text-4xl text-center font-semibold mb-4 text-white'>{title}</div>
             <div className='text-xl text-center max-w-2xl mx-auto mb-10 w-full'>{subtitle}</div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -46,15 +46,16 @@ function Blog({
 
     return (
         <a 
-            className="px-6 py-8 border border-transparent hover:bg-black-bgd/40 hover:backdrop-blur-sm rounded-2xl hover:border-gray-border cursor-pointer"
+            className="px-6 py-8 border hover:bg-gradient-to-r hover:from-unit-blue hover:to-unit-orange hover:text-white rounded-2xl border-gray-border cursor-pointer"
             href={blog.link}
             target="_blank"
         >
-            <div className="w-full aspect-2/1 relative object-cover overflow-hidden">
+            <div className="w-full aspect-2/1 relative overflow-hidden">
                 <Image 
                     src={blogUrl ? blogUrl : blog.thumbnail}
                     alt={blog.title} 
                     fill
+                    className="object-cover"
                     placeholder="blur"
                     blurDataURL="/post-placeholder.png"
                     onError={() => {

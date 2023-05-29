@@ -24,13 +24,14 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'footer': 'url(/footer-bgd.svg)',
+        'footer': 'url(/footer-bgd.png)',
         'home-top': 'url(/home-top.png)',
         'partners': 'url(/partners-bgd.svg)',
         'index': 'url(/index-bgd.png)',
         'about': 'url(/about-bgd.png)',
         'page': 'url(/page-bgd.png)',
-        'home-bgd1': 'url(/home-bgd-1.png)'
+        'home-bgd1': 'url(/home-bgd-1.png)',
+        'home-bottom': 'url(/home-bottom.png)'
       },
       backgroundSize: {
         'auto': 'auto',

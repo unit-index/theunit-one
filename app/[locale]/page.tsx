@@ -49,12 +49,12 @@ function Home({
 }) {
   const t = useTranslations('Index')
 
-  return <>
+  return <div className='bg-home-bottom bg-no-repeat bg-bottom bg-contain pb-56'>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
 
     <div className='lg:hidden mt-12'>
-      <Image src={homeTop} alt='The Unit' />
+      <Image src={homeTop} alt='The Unit' priority />
     </div>
 
     <div className='mt-16 lg:mt-0 xl:mt-0 flex items-center'>
@@ -83,7 +83,7 @@ function Home({
 
       {/* -------------------- Partners Section ------------------ */}
       <div className='block xl:flex items-center xl:gap-48 p-8 xl:p-32 bg-partners bg-cover mt-20'>
-        <div className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1'>
+        <div className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1 backdrop-blur-sm rounded-xl border border-gray-border py-12 px-16 bg-black-bgd/40'>
           <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
           <div className='text-xl'>
             {partners.join(', ')}
@@ -97,11 +97,11 @@ function Home({
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
-    <div className='flex items-center gap-40 px-8 lg:px-40 py-24 mb-32'>
-      {!isMobile && <div className='flex-1 pointer-events-none h-96'>
+    <div className='flex items-center gap-32 xl:gap-40 px-8 xl:px-40 py-24 mb-32'>
+      {!isMobile && <div className='hidden lg:block flex-none xl:flex-1 pointer-events-none lg:h-80 lg:w-40 xl:h-96'>
         <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
       </div>}
-      <div className='text-center lg:text-left flex-1'>
+      <div className='text-center lg:text-left flex-1 backdrop-blur-sm rounded-xl border border-gray-border py-12 px-16'>
         <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
         <div className='text-xl'>
           {t.rich('unit-algorithm', whiteTrans)}
@@ -133,7 +133,7 @@ function Home({
 
     {/* -------------------- Index Table ------------------ */}
     <div className='px-8 lg:px-32 py-16 my-40 relative'>
-      <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 bg-none md:bg-index bg-no-repeat bg-left-bottom rounded-lg' />
+      <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 rounded-lg' />
       <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-1 md:px-9 py-8 md:py-24'>
         <div className='flex-1 px-3 lg:pl-11 lg:pr-0 text-center lg:text-left'>
           <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
@@ -152,5 +152,5 @@ function Home({
       title={t('from-blog')} 
       subtitle={t.rich('blog-desc', whiteTrans)} 
     />
-  </>
+  </div>
 }
