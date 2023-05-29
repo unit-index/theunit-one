@@ -20,7 +20,7 @@ export default function Header() {
                 <Menu />
             </div>
             <div className='hidden xl:flex items-center gap-12 flex-none'>
-                <LinkButton title={t('launch-app')} link={appUrl} gradient />
+                <LinkButton title={t('launch-app')} link={appUrl} />
                 <LanguageSwitcher />
             </div>
             <div className='xl:hidden'>

@@ -67,7 +67,7 @@ function Home({
         <div className='mb-10 px-2 sm:px-0'>
           {t.rich('slogan', whiteTrans)}
         </div>
-        <LineButton link={appUrl} title={t('launch-app')} />
+        <LineButton link={appUrl} title={t('launch-app')} className='w-60' />
       </div>
       <div className='hidden lg:block lg:flex-auto bg-home-top bg-contain bg-no-repeat bg-center lg:h-[480px] xl:h-[660px] 2xl:h-screen' />
     </div>
@@ -130,7 +130,7 @@ function Home({
     {/* -------------------- Youtube Channel ------------------ */}
     <FadeWrapper isMobile={isMobile}>
       <div className='text-4xl text-center font-semibold mb-4 text-white'>{t('our-channel')}</div>
-      <div className='text-xl text-center max-w-2xl mx-auto mb-7 w-full'>{t.rich('channel-intro', whiteTrans)}</div>
+      <div className='text-xl text-center max-w-[44rem] mx-auto mb-7 w-full'>{t.rich('channel-intro', whiteTrans)}</div>
       <iframe
         src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
         title="YouTube video player"
