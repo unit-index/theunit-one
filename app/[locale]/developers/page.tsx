@@ -128,20 +128,18 @@ function DeveloperLink({
     link: string,
 }) {
  return (
-    <ExternalLinkButton link={link} className="h-full">
-        <div className="px-8 py-10 h-full">
-            <div className="text-gray-light text-xl flex items-center gap-2 justify-between">
-                <div className="flex-1">
-                    <Image 
-                        className="inline-block -mt-1 mr-1" 
-                        src={icon} alt={title} 
-                    />
-                    {title}
-                </div>
-                <Image className="flex-none" src={externalWhite} alt={title} />
+    <ExternalLinkButton hover link={link} className="h-full">
+        <div className="text-gray-light text-xl flex items-center gap-2 justify-between">
+            <div className="flex-1">
+                <Image 
+                    className="inline-block -mt-1 mr-1" 
+                    src={icon} alt={title} 
+                />
+                {title}
             </div>
-            <div className="mt-4 text-xl">{subtitle}</div>
+            <Image className="flex-none" src={externalWhite} alt={title} />
         </div>
+        <div className="mt-4 text-xl">{subtitle}</div>
     </ExternalLinkButton>
  )
 }

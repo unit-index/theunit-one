@@ -13,6 +13,7 @@ import { whiteTrans } from '@/utils/TranslationHelper'
 import clientPromise from '@/utils/mongodb'
 import { getUnitHourlyData } from "@/utils/db";
 import homeTop from '@/public/home-top.png'
+import BlurContainer from '@/components/BlurContainer'
 
 async function getUnitData() {
   try {
@@ -86,12 +87,12 @@ function Home({
 
       {/* -------------------- Partners Section ------------------ */}
       <div className='block xl:flex items-center xl:gap-48 p-8 xl:p-32 bg-partners bg-cover mt-20'>
-        <div className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1 backdrop-blur-sm rounded-xl border border-gray-border py-12 px-8 lg:px-16 bg-black-bgd/40'>
+        <BlurContainer className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1 lg:px-16'>
           <div className='text-4xl font-semibold mb-4 text-white'>{t('with-support')}</div>
           <div className='text-xl'>
             {partners.join(', ')}
           </div>
-        </div>
+        </BlurContainer>
         <div className='block xl:flex-1'>
           <Partners />
         </div>
@@ -100,11 +101,11 @@ function Home({
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
-    <div className='flex items-center gap-32 xl:gap-40 px-8 xl:px-40 py-24 mb-32'>
-      {!isMobile && <div className='hidden lg:block lg:flex-1 pointer-events-none lg:h-80 lg:w-40 xl:h-96'>
+    <div className='flex items-center gap-32 xl:gap-40 px-8 xl:px-40 mb-32'>
+      {!isMobile && <div className='hidden lg:block lg:flex-1 pointer-events-none lg:h-96 lg:w-40 xl:h-[36rem]'>
         <SplineClient url='https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode' />
       </div>}
-      <div className='text-center lg:text-left flex-1 backdrop-blur-sm rounded-xl border border-gray-border py-6 px-8 xl:py-12 xl:px-16'>
+      <BlurContainer className='text-center lg:text-left flex-1 xl:py-12 xl:px-16'>
         <div className='text-4xl font-semibold mb-4 text-white'>UNIT Ø</div>
         <div className='text-xl'>
           {t.rich('unit-algorithm', whiteTrans)}
@@ -119,7 +120,7 @@ function Home({
           &nbsp;
           {t.rich('to-play', whiteTrans)}
         </div>
-      </div>
+      </BlurContainer>
     </div>
     
 

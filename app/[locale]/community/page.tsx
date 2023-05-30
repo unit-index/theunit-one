@@ -48,12 +48,12 @@ export default function CommunityPage() {
             subtitle={t.rich('intro', whiteTrans)}
             className="bg-[url(/community.png),url(/page-bgd.png)]"
         >
-            <div className="grid gap-12 grid-cols-1 md:grid-cols-3 mx-8 xl:mx-16 2xl:mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
+            <div className="grid gap-12 grid-cols-1 md:grid-cols-3 mx-8 xl:mx-16 2xl:mx-36 pb-32 text-xl text-white">
                 <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />
                 <CommunityLink title={t('twitter')} icon={twitter} link={twitterUrl} />
                 <CommunityLink title={t('youtube')} icon={youtube} link={youtubeUrl} />
             </div>
-            <div className="px-8 lg:px-36 mt-32">
+            <div className="border-t border-t-gray-border pt-32">
                 <div className="font-semibold text-4xl mb-6 text-white">
                     {t('brand-assets')}
                 </div>
@@ -81,17 +81,15 @@ function CommunityLink({
                 src={icon} 
                 alt={title} 
             /> 
-            <ExternalLinkButton link={link} className="h-full">
-                <div className="text-center py-8 px-2 gap-2 h-full">
-                    <Image className="inline-block scale-[2]" src={icon} alt={title} />
-                    <div className="mt-6">
-                        {title} 
-                        <Image 
-                            src={externalWhite} 
-                            alt={title} 
-                            className="inline-block pl-1"
-                        />
-                    </div>
+            <ExternalLinkButton hover link={link} className="h-full text-center">
+                <Image className="inline-block scale-[2]" src={icon} alt={title} />
+                <div className="mt-6">
+                    {title} 
+                    <Image 
+                        src={externalWhite} 
+                        alt={title} 
+                        className="inline-block pl-1"
+                    />
                 </div>
             </ExternalLinkButton>
         </div>
@@ -111,7 +109,7 @@ function BrandAssets({asset} : {asset: BrandAssetType}) {
         <div className="flex gap-8 md:gap-36">
             {[1, 2].map((index) => (
                 <div key={index} className="flex flex-col gap-8">
-                    <ExternalLinkButton link="#">
+                    <ExternalLinkButton link="#" className={index == 1 ? 'bg-black-bgd/60' : ''}>
                         <div className="p-8">
                             <Image 
                                 src={`/${asset.name}-${index}.png`}  
