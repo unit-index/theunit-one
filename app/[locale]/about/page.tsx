@@ -11,7 +11,7 @@ export default function AboutPage() {
 
     return (
         <PageTemplate 
-            unitBgd
+            className="bg-[url(/about-the-unit.png),url(/page-bgd.png)]"
             title={t('title')}
             subtitle={t.rich('about-the-unit', whiteTrans)}
         >

@@ -46,6 +46,7 @@ export default function CommunityPage() {
         <PageTemplate 
             title={t('title')}
             subtitle={t.rich('intro', whiteTrans)}
+            className="bg-[url(/community.png),url(/page-bgd.png)]"
         >
             <div className="grid gap-12 grid-cols-1 md:grid-cols-3 mx-8 xl:mx-16 2xl:mx-36 pb-32 border-b border-b-gray-border text-xl text-white">
                 <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />

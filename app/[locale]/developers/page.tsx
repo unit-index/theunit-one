@@ -30,11 +30,12 @@ export default function DevelopersPage() {
         <PageTemplate
             title={t('title')}
             subtitle={t.rich('intro', whiteTrans)}
+            className="bg-[url(/developers.png),url(/page-bgd.png)] bg-[position:right_top,left_bottom]"
         >
             <div className="text-4xl mb-12 text-white font-semibold">
                 {t('milestones')}
             </div>
-            <div className="w-full relative h-[440px]">
+            <div className="w-full relative h-[440px] mb-24">
                 <div className="absolute left-0 lg:left-[-16.67%] top-0 bottom-0 right-0 lg:right-[-16.67%] pb-[100px] flex items-end">
                     <div className="bg-white h-[1px] w-full" />
                 </div>
@@ -44,7 +45,7 @@ export default function DevelopersPage() {
                 <div className="hidden lg:block absolute left-0 lg:left-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background via-background/95 to-background/0" />
                 <div className="hidden lg:block absolute right-0 lg:right-[-16.67%] top-0 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
-            <div className="grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-8 2xl:mx-36 py-32 border-t border-t-gray-border mb-32">
+            <div className="grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-8 2xl:mx-36 py-32 border-t border-t-gray-border mb-24">
                 <DeveloperLink 
                     title="Github" 
                     icon={github}
