@@ -28,8 +28,6 @@ module.exports = {
         'home-top': 'url(/home-top.png)',
         'partners': 'url(/partners-bgd.svg)',
         'index': 'url(/index-bgd.png)',
-        'about': 'url(/about-bgd.png)',
-        'page': 'url(/page-bgd.png)',
         'home-bgd1': 'url(/home-bgd-1.png)',
         'home-bottom': 'url(/home-bottom.png)'
       },
