@@ -128,16 +128,19 @@ function DeveloperLink({
     link: string,
 }) {
  return (
-    <ExternalLinkButton link={link}>
-        <div className="flex justify-between items-center py-6 px-10 h-full">
-            <div className="h-full">
-                <div className="text-gray-light text-xl flex items-center gap-2">
-                    <Image src={icon} alt={title} />
+    <ExternalLinkButton link={link} className="h-full">
+        <div className="px-8 py-10 h-full">
+            <div className="text-gray-light text-xl flex items-center gap-2 justify-between">
+                <div className="flex-1">
+                    <Image 
+                        className="inline-block -mt-1 mr-1" 
+                        src={icon} alt={title} 
+                    />
                     {title}
                 </div>
-                <div className="mt-2 text-xl pr-2">{subtitle}</div>
+                <Image className="flex-none" src={externalWhite} alt={title} />
             </div>
-            <Image src={externalWhite} alt={title} />
+            <div className="mt-4 text-xl">{subtitle}</div>
         </div>
     </ExternalLinkButton>
  )

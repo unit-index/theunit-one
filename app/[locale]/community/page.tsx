@@ -54,7 +54,7 @@ export default function CommunityPage() {
                 <CommunityLink title={t('youtube')} icon={youtube} link={youtubeUrl} />
             </div>
             <div className="px-8 lg:px-36 mt-32">
-                <div className="font-bold text-4xl mb-6 text-white">
+                <div className="font-semibold text-4xl mb-6 text-white">
                     {t('brand-assets')}
                 </div>
                 {assets.map((asset) => (
@@ -81,11 +81,16 @@ function CommunityLink({
                 src={icon} 
                 alt={title} 
             /> 
-            <ExternalLinkButton link={link}>
-                <div className="text-center py-8 px-2 gap-2">
+            <ExternalLinkButton link={link} className="h-full">
+                <div className="text-center py-8 px-2 gap-2 h-full">
                     <Image className="inline-block scale-[2]" src={icon} alt={title} />
-                    <div className="flex items-center justify-center pt-9 h-24">
-                        {title} <Image src={externalWhite} alt={title} />
+                    <div className="mt-6">
+                        {title} 
+                        <Image 
+                            src={externalWhite} 
+                            alt={title} 
+                            className="inline-block pl-1"
+                        />
                     </div>
                 </div>
             </ExternalLinkButton>

@@ -4,7 +4,7 @@ import { ReactNode } from "react"
 export default function PageTemplate({
     title,
     subtitle,
-    className,
+    className = '',
     children
 } : {
     title: string,
