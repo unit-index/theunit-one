@@ -18,8 +18,26 @@ export default function LanguageSwitcher() {
 
 export function AvailableLocales() {
     return <>
-        <Link href="/" locale="en">English</Link>
-        <Link href="/" locale="es">Español</Link>
-        <Link href="/" locale="cn">中文</Link>
+        <LocaleLink key="en" title='English' />
+        <LocaleLink key="es" title='Español' />
+        <LocaleLink key="cn" title='中文' />
     </>
+}
+
+function LocaleLink({
+    key,
+    title,
+} : {
+    key: string,
+    title: string,
+}) {
+    return (
+        <Link 
+            className='hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-unit-blue to-unit-orange' 
+            href="/" 
+            locale={key}
+        >
+            {title}
+        </Link>
+    )
 }

@@ -14,7 +14,7 @@ export default function PageTemplate({
 }) {
 
     return (
-        <div className={`bg-[position:right_top,left] bg-no-repeat bg-[length:50%,30%] px-8 lg:px-36 pt-36 pb-32 ${className}`}>
+        <div className={`bg-[position:right_top,left] bg-no-repeat bg-[length:100%,80%] lg:bg-[length:50%,30%] px-8 lg:px-36 pt-36 pb-32 ${className}`}>
             <div className="font-semibold text-white text-5xl">
                 {title}
             </div>

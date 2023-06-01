@@ -16,7 +16,7 @@ export default function Header() {
             <Link href='/'>
                 <Image className='flex-none' src={logo} alt='logo' />
             </Link>
-            <div className='hidden xl:flex flex-auto text-base gap-20 justify-center'>
+            <div className='hidden xl:flex flex-auto text-base gap-20 justify-center text-white'>
                 <Menu />
             </div>
             <div className='hidden xl:flex items-center gap-12 flex-none'>

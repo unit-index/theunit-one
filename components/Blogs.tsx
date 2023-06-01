@@ -6,6 +6,7 @@ import useData from "@/utils/useData"
 import Image from "next/image";
 import Button from "./button/Button";
 import { useState } from "react";
+import BlurContainer from "./BlurContainer";
 
 export default function Blogs({
     readMore,
@@ -45,36 +46,38 @@ function Blog({
     const [blogUrl, setBlogUrl] = useState('');
 
     return (
-        <a 
-            className="px-6 py-8 border hover:bg-gradient-to-r hover:from-unit-blue hover:to-unit-orange hover:text-white rounded-2xl border-gray-border cursor-pointer"
-            href={blog.link}
-            target="_blank"
-        >
-            <div className="w-full aspect-2/1 relative overflow-hidden">
-                <Image 
-                    src={blogUrl ? blogUrl : blog.thumbnail}
-                    alt={blog.title} 
-                    fill
-                    className="object-cover"
-                    placeholder="blur"
-                    blurDataURL="/post-placeholder.png"
-                    onError={() => {
-                        setBlogUrl("/post-placeholder.png");
-                    }}
-                />
-            </div>
-            <div className="mt-6 mb-6 h-48 line-clamp-6">
-                <span className="text-white font-semibold text-xl">
-                    {blog.title}
-                </span><br />
-                <span className="text-lg">
-                    {ToText(blog.content)}
-                </span>
-            </div>
-            <div className="text-center xl:text-right">
-                <Button title={readMore} />
-            </div>
-        </a>
+        <BlurContainer hover>
+            <a 
+                className="cursor-pointer"
+                href={blog.link}
+                target="_blank"
+            >
+                <div className="w-full aspect-2/1 relative overflow-hidden">
+                    <Image 
+                        src={blogUrl ? blogUrl : blog.thumbnail}
+                        alt={blog.title} 
+                        fill
+                        className="object-cover"
+                        placeholder="blur"
+                        blurDataURL="/post-placeholder.png"
+                        onError={() => {
+                            setBlogUrl("/post-placeholder.png");
+                        }}
+                    />
+                </div>
+                <div className="mt-6 mb-6 h-48 line-clamp-6">
+                    <span className="text-white font-semibold text-xl">
+                        {blog.title}
+                    </span><br />
+                    <span className="text-lg">
+                        {ToText(blog.content)}
+                    </span>
+                </div>
+                <div className="text-center xl:text-right">
+                    <Button title={readMore} />
+                </div>
+            </a>
+        </BlurContainer>
     )
 }
 

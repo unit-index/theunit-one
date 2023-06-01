@@ -1,27 +1,29 @@
 import { ReactNode } from 'react';
+import BlurContainer from '../BlurContainer';
 
 export default function ExternalLinkButton({
     link,
     dark = false,
+    hover = false,
     className = '',
     children,
 } : {
     link: string,
     dark?: boolean,
+    hover?: boolean,
     className?: string,
     children: ReactNode
 }) {
 
     return (
-        <a 
-            className={
-                "block backdrop-blur-sm rounded-xl border border-gray-border hover:bg-gradient-to-r hover:from-unit-blue hover:to-unit-orange hover:text-white " +
-                className + (dark ? " bg-black-bgd/40" : " bg-gray-heavy/60")
-            }
-            href={link}
-            target="_blank"
-        >
-            {children}
-        </a>
+        <BlurContainer hover={hover} className={className}>
+            <a 
+                className="block"
+                href={link}
+                target="_blank"
+            >
+                {children}
+            </a>
+        </BlurContainer>
     )
 }

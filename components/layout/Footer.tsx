@@ -12,7 +12,7 @@ export default function Footer() {
             <div className='hidden flex-auto sm:flex items-center gap-20 text-white'>
                 <Image width={190} className='inline-block mt-[-7px]' src={logo} alt='logo' />
                 <div className='hidden xl:flex items-center gap-20'>
-                    <Menu isWhite />
+                    <Menu isFooter />
                 </div>
             </div>
             <div className='flex-none flex items-center gap-10'>
