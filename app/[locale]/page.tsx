@@ -138,7 +138,7 @@ function Home({
     {/* -------------------- Index Table ------------------ */}
     <div className='px-8 lg:px-32 py-16 my-40 relative'>
       <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 rounded-lg' />
-      <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-1 md:px-9 py-8 md:py-24'>
+      <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-1 md:px-9 py-8 md:py-24 bg-index bg-no-repeat bg-[length:60%] bg-right-bottom'>
         <div className='flex-1 px-3 lg:pl-11 lg:pr-0 text-center lg:text-left'>
           <div className='text-4xl font-semibold mb-4 text-white'>{t('traders-investors')}</div>
           <div className='text-xl'>{t.rich('manage-fund-desc', whiteTrans)}</div><br />

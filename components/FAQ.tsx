@@ -32,7 +32,7 @@ export default function FAQ({
 
     return (
         <div 
-            className="bg-gray-heavy/60 backdrop-blur-sm rounded-lg border border-gray-border px-10 transition-all duration-500 ease-in-out overflow-hidden"
+            className="bg-gray-heavy/60 backdrop-blur-sm rounded-lg border border-gray-border px-10 transition-all duration-500 ease-in-out overflow-hidden hover:bg-black-bgd/60"
             style={{ height: show ? faqHeight+ansHeight+'px' : faqHeight+'px' }}
         >
             <div 

@@ -42,8 +42,8 @@ export default function DevelopersPage() {
                 <div className="absolute left-0 lg:left-[-16.67%] top-0 bottom-0 right-0 lg:right-[-16.67%] overflow-x-scroll px-[16.67%]">
                     <Timelines />
                 </div>
-                <div className="hidden lg:block absolute left-0 lg:left-[-16.67%] -top-16 bottom-0 w-1/4 bg-gradient-to-r from-background via-background/95 to-background/0" />
-                <div className="hidden lg:block absolute right-0 lg:right-[-16.67%] -top-16 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
+                <div className="hidden lg:block absolute left-0 lg:left-[-16.67%] -top-12 bottom-0 w-1/4 bg-gradient-to-r from-background via-background/95 to-background/0" />
+                <div className="hidden lg:block absolute right-0 lg:right-[-16.67%] -top-12 bottom-0 w-1/4 bg-gradient-to-r from-background/0 via-background/95 to-background" />
             </div>
             <div className="grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-8 2xl:mx-36 py-32 border-t border-t-gray-border mb-24">
                 <DeveloperLink 
