@@ -6,8 +6,8 @@ export default function LanguageSwitcher() {
 
     return (
         <div className="relative group">
-            <Image src={earth} alt="language" /> 
-            <div className='hidden group-hover:block absolute pt-4 rounded-lg'>
+            <Image className='cursor-pointer' src={earth} alt="language" />
+            <div className='hidden group-hover:block absolute pt-4 rounded-lg bg-gray-heavy/60 backdrop-blur-sm'>
                 <div className='flex flex-col gap-4 p-4 rounded-lg border border-gray-medium text-white text-base'>
                     <AvailableLocales />
                 </div>
@@ -18,24 +18,24 @@ export default function LanguageSwitcher() {
 
 export function AvailableLocales() {
     return <>
-        <LocaleLink key="en" title='English' />
-        <LocaleLink key="es" title='Español' />
-        <LocaleLink key="cn" title='中文' />
+        <LocaleLink language="en" title='English' />
+        <LocaleLink language="es" title='Español' />
+        <LocaleLink language="cn" title='中文' />
     </>
 }
 
 function LocaleLink({
-    key,
+    language,
     title,
 } : {
-    key: string,
+    language: string,
     title: string,
 }) {
     return (
         <Link 
             className='hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-unit-blue to-unit-orange' 
             href="/" 
-            locale={key}
+            locale={language}
         >
             {title}
         </Link>
