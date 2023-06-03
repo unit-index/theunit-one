@@ -33,11 +33,11 @@ function LocaleLink({
 }) {
     return (
         <Link 
-            className='hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-unit-blue to-unit-orange' 
+            className='group/locale' 
             href="/" 
             locale={language}
         >
-            {title}
+            <span className='group-hover/locale:text-gradient'>{title}</span>
         </Link>
     )
 }

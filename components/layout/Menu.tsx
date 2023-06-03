@@ -12,19 +12,19 @@ export default function Menu({isFooter = false} : {isFooter?: boolean}) {
         <>
             {navLinks.map((link) => {
                 return <ClientLink 
-                            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-unit-blue hover:to-unit-orange"
                             linkKey={link.key} 
                             key={link.key}
                         >
                     <Link 
                         key={link.key}
-                        className={isFooter ? '' :
-                            'block group-[.is-active]:text-transparent group-[.is-active]:bg-clip-text group-[.is-active]:bg-gradient-to-r group-[.is-active]:from-unit-blue group-[.is-active]:to-unit-orange'
-                        }
+                        className='block'
                         href={link.link}
                         target={link.external ? '_blank' : '_self'}
                     >
-                        {t(link.key)} {link.external && <>
+                        <span className={"group-hover:text-gradient" + (isFooter ? '' : ' group-[.is-active]:text-gradient')}>
+                            {t(link.key)}
+                        </span> 
+                        {link.external && <>
                             <Image 
                                 width={24} 
                                 src={externalWhite} 
