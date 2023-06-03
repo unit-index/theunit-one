@@ -19,7 +19,7 @@ export default function Menu({isFooter = false} : {isFooter?: boolean}) {
                     <Link 
                         key={link.key}
                         className={isFooter ? '' :
-                            'group-[.is-active]:text-transparent group-[.is-active]:bg-clip-text group-[.is-active]:bg-gradient-to-r group-[.is-active]:from-unit-blue group-[.is-active]:to-unit-orange'
+                            'block group-[.is-active]:text-transparent group-[.is-active]:bg-clip-text group-[.is-active]:bg-gradient-to-r group-[.is-active]:from-unit-blue group-[.is-active]:to-unit-orange'
                         }
                         href={link.link}
                         target={link.external ? '_blank' : '_self'}

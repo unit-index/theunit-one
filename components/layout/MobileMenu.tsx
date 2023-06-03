@@ -20,7 +20,12 @@ export default function MobileMenu({children} : {children: ReactNode}) {
 
     return <div className={`group/mobile ${active ? 'is-show' : ''}`}>
         <Image width={20} height={20} onClick={onClick} src={active ? cross : menu } alt="menu" />
-        <div className="hidden fixed right-0 bottom-0 top-14 h-screen shadow-lg shadow-white/20 bg-background group-[.is-show]/mobile:block w-4/5 pl-8 pt-10 text-white">
+        <div 
+            onClick={() => {
+                setActive(false)
+            }}
+            className="hidden fixed right-0 bottom-0 top-14 h-screen shadow-lg shadow-white/20 bg-black-bgd/90 backdrop-blur-md group-[.is-show]/mobile:block w-3/5 pl-8 pt-10 text-white"
+        >
             {children}
         </div>
     </div>
