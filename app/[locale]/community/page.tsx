@@ -111,7 +111,7 @@ function BrandAssets({asset} : {asset: BrandAssetType}) {
             {[1, 2].map((index) => (
                 <div key={index} className="flex flex-col gap-8">
                     <BlurContainer className={index == 1 ? ' bg-black-bgd/60' : ''}>
-                        <div className="p-8">
+                        <div className="lg:p-8">
                             <Image 
                                 src={`/${asset.name}-${index}.png`}  
                                 width={asset.width}
