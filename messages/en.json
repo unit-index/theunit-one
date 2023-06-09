@@ -1,5 +1,5 @@
 {
-  "about": "About The Unit",
+  "about": "About The UNIT",
   "developers": "Developers",
   "community": "Community",
   "blog": "2ØY Blog",
@@ -31,9 +31,9 @@
     "faq-is-unit-money": "Is UNIT money?",
     "ans-is-unit-money": "Money has taken many forms through the ages, but it consistently has <important>three functions</important>: unit of account, medium of exchange, and store of value. None of the cryptocurrencies that exist today achieve all three aspects.\n\nUNIT aims at fulfilling the <important>unit of account function of money</important> but not the other two. Once the crypto space grows enough to serve as the world's financial system, UNIT can also be a <important>standard for deferred payments</important> which is a subfunction of a unit of account.",
     "faq-what-features-the-unit": "What features make UNIT unique?",
-    "ans-what-features-the-unit": "Unlike all previous units of account, <important>UNIT</important> is not primarily a currency; it is an unbiased unit derived from the most important cryptocurrencies. In this way, UNIT doesn't choose winners or losers and instead <important>focuses on the most important portion</important> of the fungible decentralized cryptocurrency market.",
-    "faq-what-mission": "What is The UNIT's mission?",
-    "ans-what-mission": "<important>Unite Crypto</important>",
+    "ans-what-features-the-unit": "Unlike all previous units of account, <important>UNIT</important> is not a currency; it is an unbiased unit derived from the most important cryptocurrencies. In this way, UNIT doesn't choose winners or losers and instead <important>focuses on the most important portion</important> of the fungible decentralized cryptocurrency market.",
+    "faq-what-mission": "What is The UNIT's mission and motto?",
+    "ans-what-mission": "<important>Unite and Build</important>",
     "faq-what-features-unit": "UNIT is the First Just Unit of Account, what does \"Just\" here mean?",
     "ans-what-features-unit": "The term \"Just\" in this context carries two meanings. Firstly, it implies that <important>UNIT</important> is an <important>unbiased unit of account</important>. Secondly, it refers to <important>UNIT</important> only being a <important>pure unit</important>. It's not a currency, instead, it provides a steady benchmark in the crypto world."
   },
@@ -41,7 +41,7 @@
     "title": "Developers",
     "intro": "Uniting crypto is something <important>we must all do together</important>. Join our developer community to <important>contribute to the code</important>.",
     "milestones": "Milestones",
-    "2021-q2-1": "The Unit White Paper",
+    "2021-q2-1": "The UNIT White Paper",
     "2021-q2-2": "Launch of the first version of UNIT",
     "2021-q2-3": "Launch of theunit.one",
     "2021-q4-1": "Our Defi proposals got attention in the governance forums",
