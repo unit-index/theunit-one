@@ -18,9 +18,9 @@ export const youtubeUrl =
   'https://www.youtube.com/channel/UCvm-dscVWZi7PtNxjKJ84Kg';
 export const snapshotUrl = 'https://snapshot.org/#/shuajj.eth';
 export const resourcesUrl = `${githubBaseUrl}/the-blocktree-resources-paper/blob/main/the-blocktree-resources-paper.pdf`;
-export const siteUrl = 'https://theunit.one';
+export const siteUrl = 'https://unitindex.org';
 export const graphUrl = 'https://graph.theunit.one';
-export const appUrl = 'https://app.theunit.one';
+export const appUrl = 'https://app.unitindex.org';
 
 export const currentWorldPopulation = 7953953000;
 export const averageLifeExpectancyInYears = 73.2;
