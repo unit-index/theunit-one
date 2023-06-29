@@ -1,4 +1,4 @@
-import { NavLink } from "./types";
+import { NavLink, SiteLocale } from "./types";
 
 const githubBaseUrl = 'https://github.com/toknowwhy';
 const serverBaseUrl = 'https://api.20y.org';
@@ -61,4 +61,19 @@ export const faqs: string[] = [
     'what-features-the-unit',
     'what-mission',
     'what-features-unit',
+]
+
+export const AVAILABLE_LOCALES: SiteLocale[] = [
+    {
+        locale: 'en',
+        title: 'English'
+    },
+    {
+        locale: 'es',
+        title: 'Español'
+    },
+    {
+        locale: 'cn',
+        title: '中文'
+    },
 ]

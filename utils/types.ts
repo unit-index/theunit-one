@@ -14,3 +14,8 @@ export interface BlogType {
 };
 
 export type Translated = string | ReactElement | ReactNodeArray;
+
+export interface SiteLocale {
+    locale: string;
+    title: string;
+}

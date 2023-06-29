@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Link } from 'next-intl';
 import earth from '@/public/earth.svg'
+import AvailableLocales from './LocaleLinks';
 
 export default function LanguageSwitcher() {
 
@@ -13,31 +13,5 @@ export default function LanguageSwitcher() {
                 </div>
             </div>
         </div>
-    )
-}
-
-export function AvailableLocales() {
-    return <>
-        <LocaleLink language="en" title='English' />
-        <LocaleLink language="es" title='Español' />
-        <LocaleLink language="cn" title='中文' />
-    </>
-}
-
-function LocaleLink({
-    language,
-    title,
-} : {
-    language: string,
-    title: string,
-}) {
-    return (
-        <Link 
-            className='group/locale' 
-            href="/" 
-            locale={language}
-        >
-            <span className='group-hover/locale:text-gradient'>{title}</span>
-        </Link>
     )
 }

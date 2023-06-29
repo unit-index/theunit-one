@@ -2,10 +2,12 @@ import Image from 'next/image'
 import logo from '@/public/logo.svg'
 import Menu from './Menu';
 import LinkButton from '../button/LinkButton';
-import { Link, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import Link from 'next-intl/link';
 import { appUrl } from '@/utils/constants';
 import MobileMenu from './MobileMenu';
-import LanguageSwitcher, { AvailableLocales } from '../LanguageSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher';
+import AvailableLocales from '../LocaleLinks';
 
 export default function Header() {
 
