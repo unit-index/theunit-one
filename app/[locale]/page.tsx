@@ -64,7 +64,6 @@ function Home({
     <div className='mt-16 lg:mt-0 xl:mt-0 flex items-center'>
       <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-xs sm:max-w-md flex-none'>
         <div className='text-7xl text-white mb-4'>
-          <span className='font-light'>The </span>
           <span className='font-bold'>UNIT</span>
         </div>
         <div className='mb-10 px-2 sm:px-0'>
