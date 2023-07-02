@@ -1,12 +1,12 @@
 {
-  "about": "About The UNIT",
+  "about": "About the UNIT",
   "developers": "Developers",
   "community": "Community",
   "blog": "2ØY Blog",
   "launch-app": "Launch App",
   "Index": {
     "launch-app": "Launch App",
-    "slogan": "<important>Unite</important> Crypto, <important>Boost</important> your Returns, and <important>Defend</important> from Volatility with <important>UNIT</important> - the <important>First Unbiased Unit of Account</important>.",
+    "slogan": "<important>Unite</important> Crypto, <important>Boost</important> your Returns, and <important>Defend</important> from Volatility with <important>UNIT</important> - the <important>Indexed Unit of Account</important>.",
     "with-support": "With Support From",
     "unit-algorithm": "A dynamic, algorithmic set of decentralized cryptocurrencies produces UNIT (Ø), an unbiased, crypto-native unit of account. Our vaults and farms are now in Beta.",
     "to-play": "to <important>boost your crypto returns</important>.",
@@ -18,10 +18,10 @@
     "from-blog": "From the 2ØY Blog",
     "read-more": "Read more",
     "accounted-in": "Index Market Cap in {unit}",
-    "blog-desc": "2ØY is the organization working to <important>unite crypto</important> through The UNIT and <important>expand crypto</important> through Blocktree (coming next)."
+    "blog-desc": "2ØY is the organization working to <important>unite crypto</important> through the UNIT and <important>expand crypto</important> through Blocktree (coming next)."
   },
   "About": {
-    "title": "About The UNIT",
+    "title": "About the UNIT",
     "about-the-unit": "A list of <important>top cryptocurrencies</important> creates UNIT. UNIT is both the <important>first unbiased unit of account</important> and <important>crypto's first unbiased benchmark</important>. \n\nWe foresee a future where people no longer depend on central banks’ fiat currency as the value benchmark. As we journey further into an era of increasing <important>decentralization</important> and <important>disintermediation</important>, we believe that an unbiased standard is emerging and that standard is <important>UNIT</important>. \n\nSince UNIT is a pure unit of account and <important>not a currency</important>, we created <important>TINU</important>, the first token pegged to the value of the benchmark. To mint TINU, enter our <important>vaults</important>, and boost your returns with UN rewards using our <important>farms</important>.",
     "faq": "FAQ",
     "faq-what-is-the-unit": "What is UNIT?",
@@ -32,7 +32,7 @@
     "ans-is-unit-money": "Money has taken many forms through the ages, but it consistently has <important>three functions</important>: unit of account, medium of exchange, and store of value. None of the cryptocurrencies that exist today achieve all three aspects.\n\nUNIT aims at fulfilling the <important>unit of account function of money</important> but not the other two. Once the crypto space grows enough to serve as the world's financial system, UNIT can also be a <important>standard for deferred payments</important> which is a subfunction of a unit of account.",
     "faq-what-features-the-unit": "What features make UNIT unique?",
     "ans-what-features-the-unit": "Unlike all previous units of account, <important>UNIT</important> is not a currency; it is an unbiased unit derived from the most important cryptocurrencies. In this way, UNIT doesn't choose winners or losers and instead <important>focuses on the most important portion</important> of the fungible decentralized cryptocurrency market.",
-    "faq-what-mission": "What is The UNIT's mission and motto?",
+    "faq-what-mission": "What is the UNIT's mission and motto?",
     "ans-what-mission": "<important>Unite and Build</important>",
     "faq-what-features-unit": "UNIT is the First Just Unit of Account, what does \"Just\" here mean?",
     "ans-what-features-unit": "The term \"Just\" in this context carries two meanings. Firstly, it implies that <important>UNIT</important> is an <important>unbiased unit of account</important>. Secondly, it refers to <important>UNIT</important> only being a <important>pure unit</important>. It's not a currency, instead, it provides a steady benchmark in the crypto world."
@@ -41,7 +41,7 @@
     "title": "Developers",
     "intro": "Uniting crypto is something <important>we must all do together</important>. Join our developer community to <important>contribute to the code</important>.",
     "milestones": "Milestones",
-    "2021-q2-1": "The UNIT White Paper",
+    "2021-q2-1": "UNIT White Paper",
     "2021-q2-2": "Launch of the first version of UNIT",
     "2021-q2-3": "Launch of unitindex.org",
     "2021-q4-1": "Our Defi proposals got attention in the governance forums",
@@ -51,7 +51,7 @@
     "2022-q1-3": "Started Prize Pools Development",
     "2022-q2-1": "Started TINU research",
     "2022-q2-2": "Prize Pools on testnet ready",
-    "2022-q3-1": "Testing of The UNIT Prize Pools on Several Networks",
+    "2022-q3-1": "Testing of UNIT Prize Pools on Several Networks",
     "2022-q3-2": "Partnership with Technical Analysts",
     "2023-q1-1": "Testing UNIT Vaults",
     "2023-q1-2": "UNIT Farm Research",
@@ -60,7 +60,7 @@
     "2023-q2-3": "IDO/IEO on exchanges",
     "docs": "Docs",
     "white-paper": "White Paper",
-    "github-intro": "Contribute to The Unit and build the <important>unbiased benchmark</important>.",
+    "github-intro": "Contribute to the UNIT and build the <important>unbiased benchmark</important>.",
     "docs-intro": "Learn more about how UNIT works.",
     "white-paper-intro": "Introducing UNIT to crypto."
   },
