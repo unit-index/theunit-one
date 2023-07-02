@@ -128,8 +128,8 @@ function Home({
     <div className='text-4xl text-center font-semibold mb-4 text-white'>{t('our-channel')}</div>
     <div className='text-xl text-center max-w-[44rem] mx-auto mb-7 w-full'>{t.rich('channel-intro', whiteTrans)}</div>
     <iframe
-      src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
-      title="YouTube video player"
+      src="https://www.youtube.com/embed/AY21_jBE-oQ?controls=0"
+      title="How to Create and Update a UNIT Vault"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       className='max-w-4xl mx-auto w-full aspect-video shadow-2xl shadow-white/20'
