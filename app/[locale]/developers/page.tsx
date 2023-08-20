@@ -20,6 +20,8 @@ const timelines = [
     "2022-q3--2",
     "2023-q1--2",
     "2023-q2--3",
+    "2023-q3--3",
+    "2023-q4--3",
 ]
 
 export default function DevelopersPage() {
