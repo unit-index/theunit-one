@@ -14,7 +14,7 @@ export default function Header() {
     const t = useTranslations();
 
     return (
-        <div className="fixed top-0 left-0 right-0 flex items-center justify-between py-3 px-8 xl:px-20 backdrop-blur-md bg-background/60 z-[999]">
+        <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-3 px-8 xl:px-20 backdrop-blur-md bg-background/60 z-[999]">
             <Link href='/'>
                 <Image className='flex-none' src={logo} alt='logo' />
             </Link>
@@ -36,6 +36,6 @@ export default function Header() {
                     </div>
                 </MobileMenu>
             </div>
-        </div>
+        </nav>
     )
 }

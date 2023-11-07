@@ -21,6 +21,8 @@ export const resourcesUrl = `${githubBaseUrl}/the-blocktree-resources-paper/blob
 export const siteUrl = 'https://unitindex.org';
 export const graphUrl = 'https://graph.theunit.one';
 export const appUrl = 'https://app.unitindex.org';
+export const siteTitle = 'UNIT, Crypto\'s Indexed Benchmark';
+export const siteDescription = 'The UNIT runs an algorithm that tracks the market to put together a self-updating basket of cryptocurrencies with the most important human metrics to create a benchmark for the future financial system. As USD pairs and charts become more irrelevant, the UNIT takes the role of pricing in the new era. As an indexed unit, UNIT through its ETF TINU can be used to trade the market share of cryptocurrencies, not only bitcoin dominance. This makes UNIT a true long-term asset, a flatcoin or inflation hedge, and a powerful force to unite the space of many blockchains with a decentralized unbiased unit.'
 
 export const currentWorldPopulation = 7953953000;
 export const averageLifeExpectancyInYears = 73.2;
