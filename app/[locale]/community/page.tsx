@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl"
 import Image from "next/image"
 import ExternalLinkButton from "@/components/button/ExternalLinkButton"
 import externalWhite from '@/public/external-white.svg';
-import { discordUrl, githubUrl, twitterUrl } from "@/utils/constants";
+import { communityUrl, discordUrl, githubUrl, twitterUrl } from "@/utils/constants";
 import discord from '@/public/discord.svg'
 import twitter from '@/public/twitter.svg'
 import github from '@/public/github.svg'
@@ -50,7 +50,7 @@ export default function CommunityPage() {
             className="bg-[url(/community.png),url(/page-bgd.png)]"
         >
             <div className="grid gap-12 grid-cols-1 md:grid-cols-3 mx-8 xl:mx-16 2xl:mx-36 pb-32 text-xl text-white">
-                <CommunityLink title={t('discord')} icon={discord} link={discordUrl} />
+                <CommunityLink title={t('discord')} icon={twitter} link={communityUrl} />
                 <CommunityLink title={t('twitter')} icon={twitter} link={twitterUrl} />
                 <CommunityLink title={t('github')} icon={github} link={githubUrl} />
             </div>

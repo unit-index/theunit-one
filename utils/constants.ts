@@ -9,6 +9,7 @@ export const twitterUrl = 'https://x.com/unit_index';
 export const mediumUrl = 'https://blog.20y.org';
 export const mediumApi = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@20y';
 export const discordUrl = 'https://discord.gg/4MjRckMJZN';
+export const communityUrl = 'https://twitter.com/i/communities/1675073163980591111';
 export const valuesUrl = `${githubBaseUrl}/20y-values-paper/blob/main/toknowwhy-values.md`;
 export const unitPaperUrl = `${githubBaseUrl}/the-unit-paper/blob/main/the_unit_paper.pdf`;
 export const docsUrl = 'https://docs.unitindex.org';
