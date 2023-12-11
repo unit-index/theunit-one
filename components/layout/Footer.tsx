@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import logo from '@/public/logo.svg'
-import discord from '@/public/discord.svg'
 import twitter from '@/public/twitter.svg'
 import github from '@/public/github.svg'
 import Menu from './Menu';
-import { discordUrl, twitterUrl, githubUrl } from '@/utils/constants'
+import { twitterUrl, githubUrl, communityUrl } from '@/utils/constants'
 
 export default function Footer() {
     return (
@@ -16,7 +15,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='flex-none flex items-center gap-10'>
-                <SocialLink icon={discord} link={discordUrl} />
+                <SocialLink icon={twitter} link={communityUrl} />
                 <SocialLink icon={twitter} link={twitterUrl} />
                 <SocialLink icon={github} link={githubUrl} />
             </div>

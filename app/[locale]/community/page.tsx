@@ -2,8 +2,7 @@ import { useTranslations } from "next-intl"
 import Image from "next/image"
 import ExternalLinkButton from "@/components/button/ExternalLinkButton"
 import externalWhite from '@/public/external-white.svg';
-import { communityUrl, discordUrl, githubUrl, twitterUrl } from "@/utils/constants";
-import discord from '@/public/discord.svg'
+import { communityUrl, githubUrl, twitterUrl } from "@/utils/constants";
 import twitter from '@/public/twitter.svg'
 import github from '@/public/github.svg'
 import LinkButton from "@/components/button/LinkButton";

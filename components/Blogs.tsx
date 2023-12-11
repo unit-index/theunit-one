@@ -19,7 +19,7 @@ export default function Blogs({
 }) {
     const { data } = useData<any>(mediumApi);
 
-    if (!data || data.items?.length < 3) {
+    if (!data?.items || data.items.length < 3) {
         return null;
     }
 
