@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
   
-export default function useData<T>(url: string, enabled: boolean = true) {
+export default function useData<T>(
+    url: string, 
+    headers?: any,
+    enabled: boolean = true,
+) {
   
     const [data, setData] = useState<T|undefined>()
     const [error, setError] = useState<any>()
@@ -15,7 +19,9 @@ export default function useData<T>(url: string, enabled: boolean = true) {
             async function(){
                 try{
                     setLoading(true)
-                    const response = await fetch(url)
+                    const response = await fetch(url, {
+                        headers
+                    })
                     const rdata = await response.json();
                     setData(rdata)
                 } catch(err){
@@ -25,7 +31,7 @@ export default function useData<T>(url: string, enabled: boolean = true) {
                 }
             }
         )()
-    }, [url, enabled])
+    }, [url, enabled, headers])
 
     return { data, error, loading }
   

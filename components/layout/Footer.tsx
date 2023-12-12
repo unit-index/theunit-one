@@ -2,6 +2,7 @@ import Image from 'next/image'
 import logo from '@/public/logo.svg'
 import twitter from '@/public/twitter.svg'
 import github from '@/public/github.svg'
+import community from '@/public/community.svg'
 import Menu from './Menu';
 import { twitterUrl, githubUrl, communityUrl } from '@/utils/constants'
 
@@ -15,7 +16,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='flex-none flex items-center gap-10'>
-                <SocialLink icon={twitter} link={communityUrl} />
+                <SocialLink icon={community} link={communityUrl} width={30} />
                 <SocialLink icon={twitter} link={twitterUrl} />
                 <SocialLink icon={github} link={githubUrl} />
             </div>
@@ -25,14 +26,16 @@ export default function Footer() {
 
 function SocialLink({
     icon, 
-    link
+    link,
+    width = 48,
 } : {
     icon: string,
     link: string,
+    width?: number,
 }) {
     return (
         <a href={link} target="_blank">
-            <Image src={icon} alt='social' />
+            <Image src={icon} alt='social' width={width} />
         </a>
     )
 }

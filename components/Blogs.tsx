@@ -54,14 +54,14 @@ function Blog({
             >
                 <div className="w-full aspect-2/1 relative overflow-hidden">
                     <Image 
-                        src={blogUrl ? blogUrl : blog.thumbnail}
+                        src={blogUrl ?? blog.thumbnail}
                         alt={blog.title} 
                         fill
                         className="object-cover"
                         placeholder="blur"
-                        blurDataURL="/post-placeholder.png"
+                        blurDataURL="/post-placeholder.JPG"
                         onError={() => {
-                            setBlogUrl("/post-placeholder.png");
+                            setBlogUrl("/post-placeholder.JPG");
                         }}
                     />
                 </div>
