@@ -5,7 +5,7 @@ import { BlogType, Translated } from "@/utils/types";
 import useData from "@/utils/useData"
 import Image from "next/image";
 import Button from "./button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlurContainer from "./BlurContainer";
 
 export default function Blogs({
@@ -45,6 +45,16 @@ function Blog({
 }) {
     const [blogUrl, setBlogUrl] = useState('');
 
+    useEffect(() => {
+        if (blog.thumbnail) {
+            setBlogUrl(blog.thumbnail)
+        } else if (blog.content.indexOf('https://cdn-images') > -1) {
+            setBlogUrl(blog.content.substring(blog.content.indexOf('https://cdn-images'), blog.content.indexOf('></figure>')-1));
+        } else {
+            setBlogUrl('/post-placeholder.JPG')
+        }
+    }, [blog])
+
     return (
         <BlurContainer hover>
             <a 
@@ -54,7 +64,7 @@ function Blog({
             >
                 <div className="w-full aspect-2/1 relative overflow-hidden">
                     <Image 
-                        src={blogUrl ?? blog.thumbnail}
+                        src={blogUrl}
                         alt={blog.title} 
                         fill
                         className="object-cover"
