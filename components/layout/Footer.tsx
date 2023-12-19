@@ -16,7 +16,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='flex-none flex items-center gap-10'>
-                <SocialLink icon={community} link={communityUrl} width={30} />
+                <SocialLink icon={community} link={communityUrl} />
                 <SocialLink icon={twitter} link={twitterUrl} />
                 <SocialLink icon={github} link={githubUrl} />
             </div>
