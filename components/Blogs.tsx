@@ -55,6 +55,8 @@ function Blog({
         }
     }, [blog])
 
+    const blogTitle = blog.title.replaceAll('&amp;', '&');
+
     return (
         <BlurContainer hover>
             <a 
@@ -65,7 +67,7 @@ function Blog({
                 <div className="w-full aspect-2/1 relative overflow-hidden">
                     <Image 
                         src={blogUrl}
-                        alt={blog.title} 
+                        alt={blogTitle} 
                         fill
                         className="object-cover"
                         placeholder="blur"
@@ -77,7 +79,7 @@ function Blog({
                 </div>
                 <div className="mt-6 mb-6 h-48 line-clamp-6">
                     <span className="text-white font-semibold text-xl">
-                        {blog.title}
+                        {blogTitle}
                     </span><br />
                     <span className="text-lg">
                         {ToText(blog.content)}
