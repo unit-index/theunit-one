@@ -36,6 +36,12 @@ export default function Blogs({
     )
 }
 
+function decodeHtml(html: string) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
 function Blog({
     blog, 
     readMore
@@ -43,19 +49,22 @@ function Blog({
     blog: BlogType, 
     readMore: string
 }) {
-    const [blogUrl, setBlogUrl] = useState('');
+    const [blogUrl, setBlogUrl] = useState('/post-placeholder.JPG');
 
     useEffect(() => {
         if (blog.thumbnail) {
             setBlogUrl(blog.thumbnail)
-        } else if (blog.content.indexOf('https://cdn-images') > -1) {
-            setBlogUrl(blog.content.substring(blog.content.indexOf('https://cdn-images'), blog.content.indexOf('></figure>')-1));
         } else {
-            setBlogUrl('/post-placeholder.JPG')
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(blog.content, 'text/html');
+            const firstImageSrc = doc.querySelector('img')?.src;
+            if (firstImageSrc) {
+                setBlogUrl(firstImageSrc)
+            }
         }
     }, [blog])
 
-    const blogTitle = blog.title.replaceAll('&amp;', '&');
+    const blogTitle = decodeHtml(blog.title);
 
     return (
         <BlurContainer hover>
@@ -73,7 +82,7 @@ function Blog({
                         placeholder="blur"
                         blurDataURL="/post-placeholder.JPG"
                         onError={() => {
-                            setBlogUrl("/post-placeholder.JPG");
+                            // setBlogUrl("/post-placeholder.JPG");
                         }}
                     />
                 </div>
