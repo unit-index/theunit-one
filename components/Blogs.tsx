@@ -5,7 +5,7 @@ import { BlogType, Translated } from "@/utils/types";
 import useData from "@/utils/useData"
 import Image from "next/image";
 import Button from "./button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlurContainer from "./BlurContainer";
 
 export default function Blogs({
@@ -19,7 +19,7 @@ export default function Blogs({
 }) {
     const { data } = useData<any>(mediumApi);
 
-    if (!data || data.items?.length < 3) {
+    if (!data?.items || data.items.length < 3) {
         return null;
     }
 
@@ -36,6 +36,12 @@ export default function Blogs({
     )
 }
 
+function decodeHtml(html: string) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
 function Blog({
     blog, 
     readMore
@@ -43,7 +49,22 @@ function Blog({
     blog: BlogType, 
     readMore: string
 }) {
-    const [blogUrl, setBlogUrl] = useState('');
+    const [blogUrl, setBlogUrl] = useState('/post-placeholder.JPG');
+
+    useEffect(() => {
+        if (blog.thumbnail) {
+            setBlogUrl(blog.thumbnail)
+        } else {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(blog.content, 'text/html');
+            const firstImageSrc = doc.querySelector('img')?.src;
+            if (firstImageSrc) {
+                setBlogUrl(firstImageSrc)
+            }
+        }
+    }, [blog])
+
+    const blogTitle = decodeHtml(blog.title);
 
     return (
         <BlurContainer hover>
@@ -54,20 +75,20 @@ function Blog({
             >
                 <div className="w-full aspect-2/1 relative overflow-hidden">
                     <Image 
-                        src={blogUrl ? blogUrl : blog.thumbnail}
-                        alt={blog.title} 
+                        src={blogUrl}
+                        alt={blogTitle} 
                         fill
                         className="object-cover"
                         placeholder="blur"
-                        blurDataURL="/post-placeholder.png"
+                        blurDataURL="/post-placeholder.JPG"
                         onError={() => {
-                            setBlogUrl("/post-placeholder.png");
+                            // setBlogUrl("/post-placeholder.JPG");
                         }}
                     />
                 </div>
                 <div className="mt-6 mb-6 h-48 line-clamp-6">
                     <span className="text-white font-semibold text-xl">
-                        {blog.title}
+                        {blogTitle}
                     </span><br />
                     <span className="text-lg">
                         {ToText(blog.content)}

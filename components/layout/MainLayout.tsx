@@ -6,9 +6,11 @@ import Loading from "@/app/[locale]/loading";
 export default function MainLayout({children} : {children: React.ReactNode}) {
     return <>
         <Header />
-        <Suspense fallback={<Loading />}>
-            { children }
-        </Suspense>
+        <main>
+            <Suspense fallback={<Loading />}>
+                { children }
+            </Suspense>
+        </main>
         <Footer />
     </>
 }

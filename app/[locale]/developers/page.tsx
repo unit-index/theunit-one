@@ -7,7 +7,7 @@ import externalWhite from '@/public/external-white.svg';
 import PageTemplate from "@/components/layout/PageTemplate"
 import { whiteTrans } from "@/utils/TranslationHelper"
 import { Translated } from "@/utils/types"
-import github from "@/public/github.svg"
+import github from "@/public/github-dev.svg"
 import docs from "@/public/docs.svg"
 import paper from "@/public/paper.svg"
 
@@ -135,7 +135,8 @@ function DeveloperLink({
             <div className="flex-1">
                 <Image 
                     className="inline-block -mt-1 mr-1" 
-                    src={icon} alt={title} 
+                    src={icon} 
+                    alt={title}
                 />
                 {title}
             </div>
