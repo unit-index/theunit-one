@@ -3,11 +3,11 @@ import logo from '@/public/logo.svg'
 import Menu from './Menu';
 import LinkButton from '../button/LinkButton';
 import { useTranslations } from 'next-intl';
-import Link from 'next-intl/link';
 import { appUrl } from '@/utils/constants';
 import MobileMenu from './MobileMenu';
 import LanguageSwitcher from '../LanguageSwitcher';
 import AvailableLocales from '../LocaleLinks';
+import Link from 'next/link';
 
 export default function Header() {
 

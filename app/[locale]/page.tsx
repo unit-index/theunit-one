@@ -10,28 +10,11 @@ import indexFund from '@/public/index-fund.png'
 import Blogs from '@/components/Blogs'
 import Accounted from '@/components/Accounted'
 import { whiteTrans } from '@/utils/TranslationHelper'
-import clientPromise from '@/utils/mongodb'
-import { getUnitHourlyData } from "@/utils/db";
 import homeTop from '@/public/home-top.png'
 import BlurContainer from '@/components/BlurContainer'
 
-async function getUnitData() {
-  try {
-    const client = await clientPromise;
-    const db = client.db();
-    const data = await getUnitHourlyData(db);
-    return data;
-  } catch(e) {
-    throw e;
-  }
-}
-
-
 export default async function HomePage() {
   let data = localUSDPlaceholder;
-  if (process.env.NODE_ENV === 'production') {
-    data = await getUnitData();
-  }
   const headerList = headers();
   const userAgent = headerList.get('user-agent') ?? '';
   const isMobile = Boolean(

@@ -1,8 +1,8 @@
 'use client'
 
 import { AVAILABLE_LOCALES } from '@/utils/constants';
-import { usePathname } from 'next-intl/client';
-import Link from 'next-intl/link';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function AvailableLocales() {
 

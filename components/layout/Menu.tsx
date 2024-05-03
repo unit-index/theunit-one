@@ -1,10 +1,10 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next-intl/link';
 import Image from 'next/image';
 import ClientLink from './ClientLink';
 import { navLinks } from '@/utils/constants';
 import activeArrow from '@/public/active-arrow.svg';
 import externalWhite from '@/public/external-white.svg';
+import Link from 'next/link';
 
 export default function Menu({isFooter = false} : {isFooter?: boolean}) {
     const t = useTranslations();
