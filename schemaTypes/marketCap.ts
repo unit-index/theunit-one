@@ -12,18 +12,22 @@ export const marketCap = defineType({
     defineField({
       name: 'unitCapTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'unitCap',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'usdCapTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'usdCap',
       type: 'string',
+      validation: rule => rule.required()
     }),
   ],
 })

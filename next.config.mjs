@@ -21,6 +21,11 @@ const nextConfig = {
           hostname: 'medium.com',
           port: '',
         },
+        {
+          protocol: 'https',
+          hostname: 't5s3kjm00darflgm.public.blob.vercel-storage.com',
+          port: '',
+        },
       ],
     },
 };

@@ -7,7 +7,8 @@ export const homepage = defineType({
   fields: [
     defineField({
       name: 'language',
-      type: 'string'
+      type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'sections',
@@ -26,7 +27,8 @@ export const homepage = defineType({
             {type: 'youtube'},
           ]
         }
-      ]
+      ],
+      validation: rule => rule.required()
     }),
   ],
 })

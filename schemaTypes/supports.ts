@@ -12,11 +12,13 @@ export const supports = defineType({
     defineField({
       name: 'sectionTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'description',
       type: 'array', 
-      of: [{type: 'block'}]
+      of: [{type: 'block'}],
+      validation: rule => rule.required()
     }),
   ],
 })

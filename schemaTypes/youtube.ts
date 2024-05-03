@@ -12,19 +12,23 @@ export const youtube = defineType({
     defineField({
       name: 'sectionTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'description',
       type: 'array', 
-      of: [{type: 'block'}]
+      of: [{type: 'block'}],
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'videoTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'videoUrl',
       type: 'url',
+      validation: rule => rule.required()
     }),
   ],
 })

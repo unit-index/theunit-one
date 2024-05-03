@@ -15,7 +15,8 @@ export const partners = defineType({
             {type: 'partner'}
           ]
         }
-      ]
+      ],
+      validation: rule => rule.required()
     }),
   ],
 })

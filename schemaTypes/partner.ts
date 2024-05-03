@@ -8,10 +8,12 @@ export const partner = defineType({
     defineField({
       name: 'name',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'logo',
       type: 'string',
+      validation: rule => rule.required()
     }),
   ],
 })
