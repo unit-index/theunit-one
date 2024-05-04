@@ -26,4 +26,4 @@ export async function sanityFetch<QueryResponse>({
   });
 }
 
-export const sanityGraphqlEndpoint = process.env.SANITY_API;
+export const sanityGraphqlEndpoint = process.env.SANITY_API ?? '';

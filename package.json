@@ -8,7 +8,8 @@
     "start": "PORT=3002 next start",
     "lint": "next lint",
     "schema": "npx sanity schema extract --enforce-required-fields",
-    "gen": "npx sanity typegen generate"
+    "gen": "npx sanity typegen generate",
+    "deploy": "sanity graphql deploy"
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.2",

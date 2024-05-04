@@ -5,8 +5,15 @@ import { navLinks } from '@/utils/constants';
 import activeArrow from '@/public/active-arrow.svg';
 import externalWhite from '@/public/external-white.svg';
 import { Link } from '@/navigation';
+import { MenuItem } from '@/sanity.types';
 
-export default function Menu({isFooter = false} : {isFooter?: boolean}) {
+export default function Menu({
+    menu,
+    isFooter = false
+} : {
+    menu: MenuItem[],
+    isFooter?: boolean
+}) {
     const t = useTranslations();
 
     return (

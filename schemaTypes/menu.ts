@@ -16,14 +16,17 @@ export const menu = defineType({
     defineField({
       name: 'logo',
       type: 'url',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'buttonText',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'buttonLink',
       type: 'url',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'menuItems',

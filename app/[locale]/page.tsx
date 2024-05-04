@@ -83,7 +83,7 @@ export default async function HomePage() {
       /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
     )
   );
-  const events = await request(sanityGraphqlEndpoint!, query, { locale })
+  const events = await request(sanityGraphqlEndpoint, query, { locale })
   
   return <Home data={(events as any).allHomepage[0].sections} isMobile={isMobile} />
 }
