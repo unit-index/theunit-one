@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from "next/navigation";
+import { usePathname } from '@/navigation';
 import { ReactNode } from "react";
 
 export default function ClientLink({

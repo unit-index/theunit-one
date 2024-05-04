@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect, useState } from "react";
 import Hamburger from 'hamburger-react'
-import { usePathname } from "next/navigation";
+import { usePathname } from '@/navigation';
 
 export default function MobileMenu({children} : {children: ReactNode}) {
     const [active, setActive] = useState(false);

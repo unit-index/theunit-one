@@ -1,4 +1,5 @@
 import { ReactElement, ReactNodeArray } from "react";
+import { locales } from '@/navigation';
 
 export interface NavLink {
     link: string;
@@ -15,7 +16,9 @@ export interface BlogType {
 
 export type Translated = string | ReactElement | ReactNodeArray;
 
+export type SupportedLocale = 'en' | 'es' | 'cn';
+
 export interface SiteLocale {
-    locale: string;
+    locale: Supported_Locale;
     title: string;
 }

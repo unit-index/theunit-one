@@ -4,7 +4,7 @@ import ClientLink from './ClientLink';
 import { navLinks } from '@/utils/constants';
 import activeArrow from '@/public/active-arrow.svg';
 import externalWhite from '@/public/external-white.svg';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 
 export default function Menu({isFooter = false} : {isFooter?: boolean}) {
     const t = useTranslations();

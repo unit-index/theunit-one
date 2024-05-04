@@ -112,7 +112,7 @@ function Home({
   return <div className='bg-home-bottom bg-no-repeat bg-bottom bg-contain pb-56'>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
-    <div className='mt-16 lg:mt-0 xl:mt-0 flex items-center'>
+    <div className='mt-16 lg:mt-0 xl:mt-0 flex items-center overflow-hidden'>
       <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-xs sm:max-w-md flex-none'>
         <div className='text-7xl text-white mb-4'>
           <span className='font-bold'>{hero.sectionTitle}</span>

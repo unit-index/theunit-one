@@ -7,7 +7,7 @@ import { appUrl } from '@/utils/constants';
 import MobileMenu from './MobileMenu';
 import LanguageSwitcher from '../LanguageSwitcher';
 import AvailableLocales from '../LocaleLinks';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 
 export default function Header() {
 

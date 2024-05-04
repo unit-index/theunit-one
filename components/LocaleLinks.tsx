@@ -1,8 +1,8 @@
 'use client'
 
+import { Link, usePathname } from '@/navigation';
 import { AVAILABLE_LOCALES } from '@/utils/constants';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { SupportedLocale } from '@/utils/types';
 
 export default function AvailableLocales() {
 
@@ -25,7 +25,7 @@ function LocaleLink({
     title,
     path,
 } : {
-    language: string,
+    language: SupportedLocale,
     title: string,
     path: string,
 }) {
