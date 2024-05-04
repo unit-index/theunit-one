@@ -279,6 +279,7 @@ export type CommunityPage = {
     [internalGroqTypeReferenceTo]?: "socialItem";
   }>;
   assetsTitle: string;
+  downloadText: string;
   brandAssets: Array<{
     _ref: string;
     _type: "reference";
@@ -296,6 +297,8 @@ export type AssetItem = {
   _rev: string;
   title?: string;
   type: string;
+  width: number;
+  height: number;
   assetUrls: Array<string>;
 };
 

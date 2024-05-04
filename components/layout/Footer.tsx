@@ -19,7 +19,7 @@ export default function Footer({
                 {menu.socialItems.map((sl) => {
                     const socialLink = sl as unknown as SocialItem
                     return (
-                        <SocialLink key={sl._key} icon={socialLink.logo} link={socialLink.link} />
+                        <SocialLink key={socialLink.name} icon={socialLink.logo} link={socialLink.link} />
                     )
                 })}
             </div>

@@ -1,15 +1,14 @@
-import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
 import Image from "next/image"
 import ExternalLinkButton from "@/components/button/ExternalLinkButton"
 import externalWhite from '@/public/external-white.svg';
-import { communityUrl, githubUrl, twitterUrl } from "@/utils/constants";
-import twitter from '@/public/twitter.svg'
-import community from '@/public/community.svg';
-import github from '@/public/github.svg'
 import LinkButton from "@/components/button/LinkButton";
 import PageTemplate from "@/components/layout/PageTemplate";
-import { whiteTrans } from "@/utils/TranslationHelper";
 import BlurContainer from "@/components/BlurContainer";
+import request, { gql } from "graphql-request";
+import { sanityGraphqlEndpoint } from "@/sanity/lib/client";
+import { AssetItem, CommunityPage, SocialItem } from "@/sanity.types";
+import Description from "@/components/Description";
 
 interface BrandAssetType {
     name: string;
@@ -18,48 +17,55 @@ interface BrandAssetType {
     title?: string;
 }
 
-export default function CommunityPage() {
-
-    const t = useTranslations('Community')
-
-    const assets: BrandAssetType[] = [
-        {
-            name: 'asset',
-            width: 132,
-            height: 132,
-            title: t('logo')
-        },
-        {
-            name: 'vasset',
-            width: 132,
-            height: 182,
-            title: t('stacked')
-        },
-        {
-            name: 'hasset',
-            width: 234,
-            height: 88,
-            title: t('horizontal')
+const query = gql`
+  query getCommunityPage($locale: String!) {
+    allCommunityPage(where: { language: { eq: $locale }}) {
+        pageTitle
+        description: descriptionRaw
+        socials {
+            logo
+            link
+            description
         }
-    ]
+        assetsTitle
+        downloadText
+        brandAssets {
+            type
+            assetUrls
+            width
+            height
+        }
+    }
+  }
+`
+
+export default async function CommunityPage() {
+
+    const locale = useLocale();
+    const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
+    const page: CommunityPage = pageData.allCommunityPage[0];
+    const socials: SocialItem[] = page.socials as unknown as SocialItem[];
+    const assetItems: AssetItem[] = page.brandAssets as unknown as AssetItem[];
 
     return <>
         <PageTemplate 
-            title={t('title')}
-            subtitle={t.rich('intro', whiteTrans)}
+            title={page.pageTitle}
+            subtitle={(
+                <Description text={page.description} />
+            )}
             className="bg-[url(/community.png),url(/page-bgd.png)]"
         >
             <div className="grid gap-12 grid-cols-1 md:grid-cols-3 mx-8 xl:mx-16 2xl:mx-36 pb-32 text-xl text-white">
-                <CommunityLink title={t('discord')} icon={community} link={communityUrl} />
-                <CommunityLink title={t('twitter')} icon={twitter} link={twitterUrl} />
-                <CommunityLink title={t('github')} icon={github} link={githubUrl} />
+                {socials.map((so) => (
+                    <CommunityLink key={so.name} title={so.description} icon={so.logo} link={so.link} />
+                ))}
             </div>
             <div className="border-t border-t-gray-border pt-32">
                 <div className="font-semibold text-4xl mb-6 text-white">
-                    {t('brand-assets')}
+                    {page.assetsTitle}
                 </div>
-                {assets.map((asset) => (
-                        <BrandAssets key={asset.name} asset={asset} />
+                {assetItems.map((asset) => (
+                    <BrandAssets key={asset.type} asset={asset} downloadText={page.downloadText} />
                 ))}
             </div>
         </PageTemplate>
@@ -75,15 +81,24 @@ function CommunityLink({
     icon: string,
     link: string,
 }) {
+    const imageSize = 48;
  return (
         <div className="relative">
             <Image 
                 className="absolute scale-[3.5] opacity-10 right-1/3 top-1/3" 
                 src={icon} 
                 alt={title} 
+                width={imageSize}
+                height={imageSize}
             /> 
             <ExternalLinkButton hover link={link} className="h-full text-center">
-                <Image className="inline-block scale-[2]" src={icon} alt={title} />
+                <Image 
+                    className="inline-block scale-[2]" 
+                    src={icon} 
+                    alt={title} 
+                    width={imageSize}
+                    height={imageSize}
+                />
                 <div className="mt-6">
                     {title} 
                     <Image 
@@ -97,23 +112,27 @@ function CommunityLink({
  )
 }
 
-function BrandAssets({asset} : {asset: BrandAssetType}) {
-
-    const t = useTranslations('Community')
+function BrandAssets({
+    asset,
+    downloadText,
+} : {
+    asset: AssetItem,
+    downloadText: string,
+}) {
 
     return <>
-        { asset.title && (
+        { asset.type && (
             <div className="text-white mt-20 mb-8">
-                {asset.title}
+                {asset.type}
             </div>
         )}
         <div className="flex gap-8 md:gap-36">
-            {[1, 2].map((index) => (
+            {asset.assetUrls.map((url, index) => (
                 <div key={index} className="flex flex-col gap-8">
-                    <BlurContainer className={index == 1 ? ' bg-black-bgd/60' : ''}>
+                    <BlurContainer className={index%2 == 1 ? ' bg-black-bgd/60' : ''}>
                         <div className="lg:p-8">
                             <Image 
-                                src={`/${asset.name}-${index}.png`}  
+                                src={url}  
                                 width={asset.width}
                                 height={asset.height}
                                 alt="asset" 
@@ -121,8 +140,8 @@ function BrandAssets({asset} : {asset: BrandAssetType}) {
                         </div>
                     </BlurContainer>
                     <LinkButton 
-                        title={t('download')} 
-                        link={`/${asset.name}-${index}.png`} 
+                        title={downloadText} 
+                        link={url} 
                         download
                     />
                 </div>

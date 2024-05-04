@@ -15,6 +15,16 @@ export const assetItem = defineType({
       validation: rule => rule.required()
     }),
     defineField({
+      name: 'width',
+      type: 'number',
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'height',
+      type: 'number',
+      validation: rule => rule.required()
+    }),
+    defineField({
       name: 'assetUrls',
       type: 'array', 
       of: [{type: 'url'}],

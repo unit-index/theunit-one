@@ -43,6 +43,11 @@ export const communityPage = defineType({
       validation: rule => rule.required()
     }),
     defineField({
+      name: 'downloadText',
+      type: 'string',
+      validation: rule => rule.required()
+    }),
+    defineField({
       name: 'brandAssets',
       type: 'array',
       of: [
