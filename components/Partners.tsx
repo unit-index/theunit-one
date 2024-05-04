@@ -1,7 +1,7 @@
-import { Partner } from "@/sanity.types"
+import { Partner as PartnerItem } from "@/sanity.types"
 import Image from "next/image"
 
-export default function Partners({ partners }: { partners: Partner[]}) {
+export default function Partners({ partners }: { partners: PartnerItem[]}) {
     return <>
         <PartnersRow names={partners.slice(0, 3)} />
         <PartnersRow names={partners.slice(3, 7)} />
@@ -9,7 +9,7 @@ export default function Partners({ partners }: { partners: Partner[]}) {
     </>
 }
 
-function PartnersRow({names} : {names: Partner[]}) {
+function PartnersRow({names} : {names: PartnerItem[]}) {
 
     return (
         <div className="flex gap-5 justify-center mb-5">

@@ -1,7 +1,7 @@
 import Description from "@/components/Description"
 import FAQ from "@/components/FAQ"
 import PageTemplate from "@/components/layout/PageTemplate"
-import { AboutPage, FaqItem } from "@/sanity.types"
+import { AboutPage as AboutPageType, FaqItem } from "@/sanity.types"
 import { sanityGraphqlEndpoint } from "@/sanity/lib/client"
 import request, { gql } from "graphql-request"
 import { useLocale } from "next-intl"
@@ -25,7 +25,7 @@ export default async function AboutPage() {
 
     const locale = useLocale();
     const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
-    const page: AboutPage = pageData.allAboutPage[0];
+    const page: AboutPageType = pageData.allAboutPage[0];
     const faqs: FaqItem[] = page.faqs as unknown as FaqItem[];
 
     return (

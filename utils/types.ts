@@ -19,6 +19,6 @@ export type Translated = string | ReactElement | ReactNodeArray;
 export type SupportedLocale = 'en' | 'es' | 'cn';
 
 export interface SiteLocale {
-    locale: Supported_Locale;
+    locale: SupportedLocale;
     title: string;
 }

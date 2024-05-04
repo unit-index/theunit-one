@@ -7,15 +7,8 @@ import PageTemplate from "@/components/layout/PageTemplate";
 import BlurContainer from "@/components/BlurContainer";
 import request, { gql } from "graphql-request";
 import { sanityGraphqlEndpoint } from "@/sanity/lib/client";
-import { AssetItem, CommunityPage, SocialItem } from "@/sanity.types";
+import { AssetItem, CommunityPage as CommunityPageType, SocialItem } from "@/sanity.types";
 import Description from "@/components/Description";
-
-interface BrandAssetType {
-    name: string;
-    width: number;
-    height: number;
-    title?: string;
-}
 
 const query = gql`
   query getCommunityPage($locale: String!) {
@@ -43,7 +36,7 @@ export default async function CommunityPage() {
 
     const locale = useLocale();
     const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
-    const page: CommunityPage = pageData.allCommunityPage[0];
+    const page: CommunityPageType = pageData.allCommunityPage[0];
     const socials: SocialItem[] = page.socials as unknown as SocialItem[];
     const assetItems: AssetItem[] = page.brandAssets as unknown as AssetItem[];
 

@@ -6,7 +6,7 @@ import PageTemplate from "@/components/layout/PageTemplate"
 import Description from "@/components/Description"
 import request, { gql } from "graphql-request"
 import { sanityGraphqlEndpoint } from "@/sanity/lib/client"
-import { DeveloperLink, DeveloperPage, MilestoneItem } from "@/sanity.types"
+import { DeveloperLink as DeveloperLinkType, DeveloperPage, MilestoneItem } from "@/sanity.types"
 import { ReactNode } from "react"
 
 const query = gql`
@@ -35,7 +35,7 @@ export default async function DevelopersPage() {
     const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
     const page: DeveloperPage = pageData.allDeveloperPage[0];
     const milestones: MilestoneItem[] = page.milestones as unknown as MilestoneItem[];
-    const links: DeveloperLink[] = page.developerLinks as unknown as DeveloperLink[];
+    const links: DeveloperLinkType[] = page.developerLinks as unknown as DeveloperLinkType[];
 
     return <>
         <PageTemplate
