@@ -189,7 +189,7 @@ export type Blogs = {
   _rev: string;
   title?: string;
   sectionTitle: string;
-  descriptionRaw: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -217,7 +217,7 @@ export type Traders = {
   _rev: string;
   title?: string;
   sectionTitle: string;
-  descriptionRaw: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -246,7 +246,7 @@ export type Youtube = {
   _rev: string;
   title?: string;
   sectionTitle: string;
-  descriptionRaw: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -276,7 +276,7 @@ export type Unit = {
   _rev: string;
   title?: string;
   sectionTitle: string;
-  descriptionRaw: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -330,7 +330,7 @@ export type Supports = {
   _rev: string;
   title?: string;
   sectionTitle: string;
-  descriptionRaw: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -371,7 +371,7 @@ export type Hero = {
   _rev: string;
   title?: string;
   sectionTitle: string;
-  descriptionRaw: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;

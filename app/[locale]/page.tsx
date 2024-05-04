@@ -20,12 +20,12 @@ const query = gql`
       ... on Blogs {
         _type
         sectionTitle
-        descriptionRaw
+        description: descriptionRaw
       }
       ... on Hero {
         _type
         sectionTitle
-        descriptionRaw
+        description: descriptionRaw
         ctaText
         ctaLink
         image
@@ -47,24 +47,24 @@ const query = gql`
       ... on Supports {
         _type
         sectionTitle
-        descriptionRaw
+        description: descriptionRaw
       }
       ... on Traders {
         _type
         sectionTitle
-        descriptionRaw
+        description: descriptionRaw
         image
       }
       ... on Unit {
         _type
         sectionTitle
-        descriptionRaw
+        description: descriptionRaw
         spline
       }
       ... on Youtube {
         _type
         sectionTitle
-        descriptionRaw
+        description: descriptionRaw
         videoUrl
         videoTitle
       }
@@ -118,7 +118,7 @@ function Home({
           <span className='font-bold'>{hero.sectionTitle}</span>
         </div>
         <div className='mb-10 px-2 sm:px-0'>
-          <Description text={hero.descriptionRaw} />
+          <Description text={hero.description} />
         </div>
         <LineButton link={appUrl} title={t('launch-app')} className='w-60' />
       </div>
@@ -140,7 +140,7 @@ function Home({
         <BlurContainer className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1 lg:px-16'>
           <div className='text-4xl font-semibold mb-4 text-white'>{supports.sectionTitle}</div>
           <div className='text-xl'>
-            <Description text={supports.descriptionRaw} />
+            <Description text={supports.description} />
           </div>
         </BlurContainer>
         <div className='block xl:flex-1'>
@@ -158,7 +158,7 @@ function Home({
       <BlurContainer className='text-center lg:text-left flex-1 xl:py-12 xl:px-16'>
         <div className='text-4xl font-semibold mb-4 text-white'>{unit.sectionTitle}</div>
         <div className='text-xl'>
-          <Description text={unit.descriptionRaw} />
+          <Description text={unit.description} />
         </div>
       </BlurContainer>
     </div>
@@ -167,7 +167,7 @@ function Home({
     {/* -------------------- Youtube Channel ------------------ */}
     <div className='text-4xl text-center font-semibold mb-4 text-white'>{youtube.sectionTitle}</div>
     <div className='text-xl text-center max-w-[44rem] mx-auto mb-7 w-full'>
-      <Description text={youtube.descriptionRaw} />
+      <Description text={youtube.description} />
     </div>
     <iframe
       src={youtube.videoUrl}
@@ -184,7 +184,7 @@ function Home({
         <div className='flex-1 px-3 lg:pl-11 lg:pr-0 text-center lg:text-left'>
           <div className='text-4xl font-semibold mb-4 text-white'>{traders.sectionTitle}</div>
           <div className='text-xl'>
-            <Description text={traders.descriptionRaw} />
+            <Description text={traders.description} />
           </div>
         </div>
         <div className='hidden lg:block flex-1'>
@@ -198,7 +198,7 @@ function Home({
       readMore={t('read-more')} 
       title={blogInfo.sectionTitle} 
     >
-      <Description text={blogInfo.descriptionRaw} />
+      <Description text={blogInfo.description} />
     </Blogs>
   </div>
 }
