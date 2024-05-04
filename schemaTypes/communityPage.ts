@@ -16,6 +16,7 @@ export const communityPage = defineType({
     defineField({
       name: 'pageTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'description',
@@ -39,6 +40,7 @@ export const communityPage = defineType({
     defineField({
       name: 'assetsTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'brandAssets',

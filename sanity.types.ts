@@ -178,7 +178,7 @@ export type DeveloperPage = {
   _rev: string;
   title?: string;
   language?: string;
-  pageTitle?: string;
+  pageTitle: string;
   description: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -197,7 +197,7 @@ export type DeveloperPage = {
     _type: "block";
     _key: string;
   }>;
-  milestoneTitle?: string;
+  milestoneTitle: string;
   milestones: Array<{
     _ref: string;
     _type: "reference";
@@ -252,7 +252,7 @@ export type CommunityPage = {
   _rev: string;
   title?: string;
   language?: string;
-  pageTitle?: string;
+  pageTitle: string;
   description: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -278,7 +278,7 @@ export type CommunityPage = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "socialItem";
   }>;
-  assetsTitle?: string;
+  assetsTitle: string;
   brandAssets: Array<{
     _ref: string;
     _type: "reference";
