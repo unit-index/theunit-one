@@ -16,6 +16,7 @@ export const aboutPage = defineType({
     defineField({
       name: 'pageTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'description',
@@ -26,6 +27,7 @@ export const aboutPage = defineType({
     defineField({
       name: 'faqTitle',
       type: 'string',
+      validation: rule => rule.required()
     }),
     defineField({
       name: 'faqs',

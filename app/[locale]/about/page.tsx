@@ -1,35 +1,52 @@
+import Description from "@/components/Description"
 import FAQ from "@/components/FAQ"
 import PageTemplate from "@/components/layout/PageTemplate"
-import { linkTrans, whiteTrans } from "@/utils/TranslationHelper"
-import { faqs } from "@/utils/constants"
-import { useTranslations } from "next-intl"
+import { AboutPage, FaqItem } from "@/sanity.types"
+import { sanityGraphqlEndpoint } from "@/sanity/lib/client"
+import request, { gql } from "graphql-request"
+import { useLocale } from "next-intl"
+
+const query = gql`
+  query getAboutPage($locale: String!) {
+    allAboutPage(where: { language: { eq: $locale }}) {
+        pageTitle
+        description: descriptionRaw
+        faqTitle
+        faqs {
+            question
+            answer: answerRaw
+        }
+    }
+  }
+`
 
 
-export default function AboutPage() {
+export default async function AboutPage() {
 
-    const t = useTranslations('About')
+    const locale = useLocale();
+    const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
+    const page: AboutPage = pageData.allAboutPage[0];
+    const faqs: FaqItem[] = page.faqs as unknown as FaqItem[];
 
     return (
         <PageTemplate 
             className="bg-[url(/about-the-unit.png),url(/page-bgd.png)]"
-            title={t('title')}
-            subtitle={t.rich('about-the-unit', whiteTrans)}
+            title={page.pageTitle}
+            subtitle={(
+                <Description text={page.description} />
+            )}
         >
             <div className="font-bold text-4xl text-white mt-56 mb-6">
-                {t('faq')}
+                {page.faqTitle}
             </div>
             <div className="flex flex-col gap-6">
                 {faqs.map((faq) => (
                     <FAQ 
-                        key={faq}
-                        question={t.rich(`faq-${faq}`, whiteTrans)} 
-                        answer={
-                            t.rich(`ans-${faq}`, { 
-                                ...whiteTrans, 
-                                ...linkTrans('docsSelectionCriteria', 'https://docs.theunit.one/theunit/the-unit/the-unit-selection-criteria'),
-                                ...linkTrans('docsAlgorithm', 'https://docs.theunit.one/theunit/the-unit/algorithm')
-                            })
-                        } 
+                        key={faq._id}
+                        question={faq.question} 
+                        answer={(
+                            <Description text={faq.answer} />
+                        )} 
                     />
                 ))}
             </div>

@@ -1,4 +1,3 @@
-import { Translated } from "@/utils/types"
 import { ReactNode } from "react"
 
 export default function PageTemplate({
@@ -8,7 +7,7 @@ export default function PageTemplate({
     children
 } : {
     title: string,
-    subtitle: Translated,
+    subtitle: ReactNode,
     className?: string,
     children: ReactNode
 }) {

@@ -2006,7 +2006,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "description": {
         "type": "objectAttribute",
@@ -2192,7 +2192,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "faqs": {
         "type": "objectAttribute",

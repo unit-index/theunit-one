@@ -307,7 +307,7 @@ export type AboutPage = {
   _rev: string;
   title?: string;
   language?: string;
-  pageTitle?: string;
+  pageTitle: string;
   description: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -326,7 +326,7 @@ export type AboutPage = {
     _type: "block";
     _key: string;
   }>;
-  faqTitle?: string;
+  faqTitle: string;
   faqs: Array<{
     _ref: string;
     _type: "reference";
