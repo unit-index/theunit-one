@@ -14,7 +14,7 @@ export default function Header({
 }) {
 
     return (
-        <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-3 px-8 xl:px-20 backdrop-blur-md bg-background/60 z-[999]">
+        <nav className="w-full flex items-center justify-between py-3 px-8 xl:px-20">
             <Link href='/'>
                 <Image className='flex-none' src={menu.logo ?? '/logo.svg'} alt='logo' width={99} height={34} />
             </Link>

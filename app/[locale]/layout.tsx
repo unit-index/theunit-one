@@ -37,17 +37,22 @@ export const metadata: Metadata = {
 const avenirFont = localFont({
   src: [
     {
-      path: '../../public/fonts/Avenir-Black.ttf',
+      path: '../../public/fonts/ApercuPro-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/Avenir-Book.ttf',
+      path: '../../public/fonts/ApercuPro.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/Avenir-Medium.ttf',
+      path: '../../public/fonts/ApercuPro-Italic.ttf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/ApercuPro-Medium.ttf',
       weight: '600',
       style: 'normal',
     },
@@ -67,15 +72,10 @@ export default function LocaleLayout({
   if (params.locale !== locale) {
     notFound();
   }
-
-  let textStyle = 'text-2xl';
-  if (locale === 'cn') {
-    textStyle = 'text-xl leading-8';
-  }
  
   return (
     <html lang={locale} className={avenirFont.className}>
-      <body className={'bg-background text-secondary ' + textStyle}>
+      <body className='text-black text-xl'>
         <MainLayout>
           {children}
         </MainLayout>
