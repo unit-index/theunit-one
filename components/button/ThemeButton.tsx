@@ -10,7 +10,7 @@ export default function ThemeButton({
   return (
     <Link 
       href={link}
-      className="px-4 py-3 rounded-full bg-black text-white text-sm"
+      className="px-7 py-3 rounded-full bg-black text-white text-sm"
     >
       {title}
     </Link>

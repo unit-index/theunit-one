@@ -6,6 +6,7 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import AvailableLocales from '../LocaleLinks';
 import { Link } from '@/navigation';
 import { Menu as MenuItems } from '@/sanity.types';
+import ThemeButton from '../button/ThemeButton';
 
 export default function Header({
     menu
@@ -16,13 +17,11 @@ export default function Header({
     return (
         <nav className="w-full flex items-center justify-between py-3 px-8 xl:px-20">
             <Link href='/'>
-                <Image className='flex-none' src={menu.logo ?? '/logo.svg'} alt='logo' width={99} height={34} />
+                <Image className='flex-none' src={menu.logo ?? '/logo.png'} alt='logo' width={118} height={41} />
             </Link>
-            <div className='hidden xl:flex flex-auto text-base gap-20 justify-center text-white'>
+            <div className='hidden xl:flex flex-none text-sm gap-10 items-center'>
                 <Menu menu={menu.menuItems as any} />
-            </div>
-            <div className='hidden xl:flex items-center gap-12 flex-none'>
-                <LinkButton title={menu.buttonText} link={menu.buttonLink} />
+                <ThemeButton title={menu.buttonText} link={menu.buttonLink} />
                 <LanguageSwitcher />
             </div>
             <div className='xl:hidden'>

@@ -1,16 +1,18 @@
 import Image from 'next/image'
-import earth from '@/public/earth.svg'
 import AvailableLocales from './LocaleLinks';
+import { useLocale } from 'next-intl';
 
 export default function LanguageSwitcher() {
 
+    const locale = useLocale();
+
     return (
-        <div className="relative group">
-            <Image className='cursor-pointer' src={earth} alt="language" />
-            <div className='hidden group-hover:block absolute pt-4 rounded-lg bg-gray-heavy/60 backdrop-blur-sm'>
-                <div className='flex flex-col gap-4 p-4 rounded-lg border border-gray-medium text-white text-base'>
+        <div className="relative group border border-black px-4 py-2.5 rounded-full flex items-center gap-2">
+            <Image className='cursor-pointer' src="/earth.svg" width={21} height={21} alt="language" />
+            <div>{locale.toUpperCase()}</div>
+            <div className='hidden group-hover:flex flex-col gap-3 px-8 absolute top-10 right-0 py-4 rounded-lg bg-white/60 backdrop-blur-sm'>
                     <AvailableLocales />
-                </div>
+                
             </div>
         </div>
     )
