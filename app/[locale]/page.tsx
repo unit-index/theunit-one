@@ -114,13 +114,15 @@ function Home({
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
     <div className='h-screen flex flex-col justify-center items-center gap-6'>
-      <div className='font-bold text-[80px] max-w-[808px]'>{hero.sectionTitle}</div>
+      <div className='font-bold text-[80px] leading-[100px] max-w-[808px] text-center'>
+        {hero.sectionTitle}
+      </div>
       <div className='max-w-[808px] text-center'>
         <Description text={hero.description} />
       </div>
-      <div>
+      <div className='w-full flex flex-col gap-0 items-center'>
         <ThemeButton link={hero.ctaText} title={hero.ctaText} />
-        <img src='/home-stripe.png' alt='UNIT' className='w-full' />
+        <img src={hero.image} alt='UNIT' className='w-full' />
       </div>
     </div>
 
