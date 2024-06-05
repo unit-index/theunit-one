@@ -110,7 +110,7 @@ function Home({
   const traders = data.find((d: any) => d._type === 'traders') as Traders;
   const blogInfo = data.find((d: any) => d._type === 'blogs') as BlogInfo;
 
-  return <div className='bg-home-bottom bg-no-repeat bg-bottom bg-contain pb-56'>
+  return <div className='flex flex-col gap-32'>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
     <div className='h-screen flex flex-col justify-center items-center gap-6'>
@@ -127,7 +127,18 @@ function Home({
     </div>
 
 
-    <div className='bg-home-bgd1 bg-no-repeat bg-left pt-16 pb-16'>
+
+    {/* -------------------- Partners Section ------------------ */}
+    <div className='flex flex-col items-center gap-16'>
+        <div className='text-[48px] text-center'>{supports.sectionTitle}</div>
+        <div className='max-w-screen-xl'>
+          <Partners partners={partners.partners as any} />
+        </div>
+      </div>
+
+
+
+
       {/* -------------------- Value Accounted ------------------ */}
       <div className='lg:flex items-center gap-24 justify-center my-32'>
         <Accounted title={caps.unitCapTitle} data={caps.unitCap} />
@@ -136,19 +147,6 @@ function Home({
       </div>
 
 
-      {/* -------------------- Partners Section ------------------ */}
-      <div className='block xl:flex items-center xl:gap-48 p-8 xl:p-32 bg-partners bg-cover mt-20'>
-        <BlurContainer className='block text-center mb-12 xl:mb-0 xl:text-left xl:flex-1 lg:px-16'>
-          <div className='text-4xl font-semibold mb-4 text-white'>{supports.sectionTitle}</div>
-          <div className='text-xl'>
-            <Description text={supports.description} />
-          </div>
-        </BlurContainer>
-        <div className='block xl:flex-1'>
-          <Partners partners={partners.partners as any} />
-        </div>
-      </div>
-    </div>
 
 
     {/* -------------------- UNIT Ø Introduction ------------------ */}
