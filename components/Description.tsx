@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 const components: PortableTextComponents = {
   marks: {
-    strong: ({children}) => <strong className="text-white font-normal">{children}</strong>,
     link: ({children, value}) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
       const target = value.href.startsWith('http') ? '_blank' : '_self'

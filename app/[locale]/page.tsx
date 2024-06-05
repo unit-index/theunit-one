@@ -11,6 +11,7 @@ import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
 import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Traders, Unit, Youtube } from '@/sanity.types'
+import ThemeButton from '@/components/button/ThemeButton';
 
 const query = gql`
   query getHomePage($locale: String!) {
@@ -112,17 +113,15 @@ function Home({
   return <div className='bg-home-bottom bg-no-repeat bg-bottom bg-contain pb-56'>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
-    <div className='mt-16 lg:mt-0 xl:mt-0 flex items-center overflow-hidden'>
-      <div className='mx-auto text-center lg:text-left lg:ml-12 xl:ml-36 max-w-xs sm:max-w-md flex-none'>
-        <div className='text-7xl text-white mb-4'>
-          <span className='font-bold'>{hero.sectionTitle}</span>
-        </div>
-        <div className='mb-10 px-2 sm:px-0'>
-          <Description text={hero.description} />
-        </div>
-        <LineButton link={appUrl} title={t('launch-app')} className='w-60' />
+    <div className='h-screen flex flex-col justify-center items-center gap-6'>
+      <div className='font-bold text-[80px] max-w-[808px]'>{hero.sectionTitle}</div>
+      <div className='max-w-[808px] text-center'>
+        <Description text={hero.description} />
       </div>
-      <img className='h-screen' src={hero.image!} alt='The Unit' />
+      <div>
+        <ThemeButton link={hero.ctaText} title={hero.ctaText} />
+        <img src='/home-stripe.png' alt='UNIT' className='w-full' />
+      </div>
     </div>
 
 
