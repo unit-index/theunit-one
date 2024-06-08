@@ -12,6 +12,7 @@ import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
 import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Traders, Unit, Youtube } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
+import GradientBox from '@/components/GradientBox';
 
 const query = gql`
   query getHomePage($locale: String!) {
@@ -59,8 +60,10 @@ const query = gql`
       ... on Unit {
         _type
         sectionTitle
-        description: descriptionRaw
-        spline
+        feature1Title
+        feature1: feature1Raw
+        feature2Title
+        feature2: feature2Raw
       }
       ... on Youtube {
         _type
@@ -110,7 +113,7 @@ function Home({
   const traders = data.find((d: any) => d._type === 'traders') as Traders;
   const blogInfo = data.find((d: any) => d._type === 'blogs') as BlogInfo;
 
-  return <div className='flex flex-col gap-32'>
+  return <>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
     <div className='h-screen flex flex-col justify-center items-center gap-6'>
@@ -127,13 +130,11 @@ function Home({
     </div>
 
 
-
+    <div className='flex flex-col gap-32 max-w-[1248px] mx-auto mt-32'>
     {/* -------------------- Partners Section ------------------ */}
     <div className='flex flex-col items-center gap-16'>
         <div className='text-[48px] text-center'>{supports.sectionTitle}</div>
-        <div className='max-w-screen-xl'>
           <Partners partners={partners.partners as any} />
-        </div>
       </div>
 
 
@@ -153,21 +154,23 @@ function Home({
         </div>
       </div>
 
-
-
-
-    {/* -------------------- UNIT Ø Introduction ------------------ */}
-    <div className='flex items-center gap-32 xl:gap-40 px-8 xl:px-40 mb-32'>
-      {!isMobile && <div className='hidden lg:block lg:flex-1 pointer-events-none lg:h-96 lg:w-40 xl:h-[36rem]'>
-        <SplineClient url={unit.spline} />
-      </div>}
-      <BlurContainer className='text-center lg:text-left flex-1 xl:py-12 xl:px-16'>
-        <div className='text-4xl font-semibold mb-4 text-white'>{unit.sectionTitle}</div>
-        <div className='text-xl'>
-          <Description text={unit.description} />
+      <GradientBox className='relative flex justify-between pl-20 py-28 items-center'>
+        <div className='font-bold text-[64px] leading-[80px]'>{unit.sectionTitle}</div>
+        <div className='absolute -right-8 flex items-center gap-8'>
+          <div className='rounded-lg py-8 px-12 bg-white max-w-[395px] shadow-2xl'>
+            <GradientBox className='rounded-full py-2 px-3 font-bold mb-2.5 inline-block'>
+              {unit.feature1Title}
+            </GradientBox>
+            <Description text={unit.feature1} />
+          </div>
+          <div className='rounded-lg py-8 px-12 bg-white max-w-[439px] shadow-2xl'>
+            <GradientBox className='rounded-full py-2 px-3 font-bold mb-2.5 inline-block'>
+              {unit.feature2Title}
+            </GradientBox>
+            <Description text={unit.feature2} />
+          </div>
         </div>
-      </BlurContainer>
-    </div>
+      </GradientBox>
     
 
     {/* -------------------- Youtube Channel ------------------ */}
@@ -206,5 +209,6 @@ function Home({
     >
       <Description text={blogInfo.description} />
     </Blogs>
-  </div>
+    </div>
+  </>
 }

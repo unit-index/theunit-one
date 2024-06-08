@@ -15,15 +15,26 @@ export const unit = defineType({
       validation: rule => rule.required()
     }),
     defineField({
-      name: 'description',
+      name: 'feature1Title',
+      type: 'string',
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'feature1',
       type: 'array', 
       of: [{type: 'block'}],
       validation: rule => rule.required()
     }),
     defineField({
-      name: 'spline',
-      type: 'url',
-      validation: rule => rule.required(),
+      name: 'feature2Title',
+      type: 'string',
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'feature2',
+      type: 'array', 
+      of: [{type: 'block'}],
+      validation: rule => rule.required()
     }),
   ],
 })
