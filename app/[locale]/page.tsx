@@ -140,10 +140,17 @@ function Home({
 
 
       {/* -------------------- Value Accounted ------------------ */}
-      <div className='lg:flex items-center gap-24 justify-center my-32'>
-        <Accounted title={caps.unitCapTitle} data={caps.unitCap} />
-        <div className='w-0 h-12 lg:block lg:w-[1px] lg:h-7 bg-gray-light'></div>
-        <Accounted title={caps.usdCapTitle} data={caps.usdCap} isUSD />
+      <div>
+        <div className='w-full flex items-center mb-2'>
+          <div className='bg-[#C6C6C6] h-[1px] flex-auto' />
+          <div className='flex-none px-8 font-bold text-[72px] leading-[90px]'>
+            {caps.unitCap}
+          </div>
+          <div className='bg-[#C6C6C6] h-[1px] flex-auto' />
+        </div>
+        <div className='text-center font-light'>
+          {caps.unitCapTitle}
+        </div>
       </div>
 
 
