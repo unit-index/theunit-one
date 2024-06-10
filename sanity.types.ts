@@ -366,6 +366,15 @@ export type Menu = {
   }>;
 };
 
+export type BottomSection = {
+  _id: string;
+  _type: "bottomSection";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  image: string;
+};
+
 export type SocialItem = {
   _id: string;
   _type: "socialItem";
@@ -427,12 +436,22 @@ export type Homepage = {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "traders";
+    [internalGroqTypeReferenceTo]?: "unit";
   } | {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "unit";
+    [internalGroqTypeReferenceTo]?: "dao";
+  } | {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "farm";
+  } | {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "bottomSection";
   } | {
     _ref: string;
     _type: "reference";
@@ -441,9 +460,68 @@ export type Homepage = {
   }>;
 };
 
+export type Dao = {
+  _id: string;
+  _type: "dao";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  sectionTitle: string;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  buttonText: string;
+  buttonLink: string;
+  image: string;
+};
+
 export type Blogs = {
   _id: string;
   _type: "blogs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  sectionTitle: string;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
+
+export type Farm = {
+  _id: string;
+  _type: "farm";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;

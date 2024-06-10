@@ -22,8 +22,10 @@ export const homepage = defineType({
             {type: 'marketCap'},
             {type: 'supports'},
             {type: 'partners'},
-            {type: 'traders'},
             {type: 'unit'},
+            {type: 'dao'},
+            {type: 'farm'},
+            {type: 'bottomSection'},
             {type: 'youtube'},
           ]
         }

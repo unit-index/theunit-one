@@ -19,6 +19,9 @@ import { developerLink } from "@/schemaTypes/developerLink";
 import { developerPage } from "@/schemaTypes/developerPage";
 import { faqItem } from "@/schemaTypes/faqItem";
 import { milestoneItem } from "@/schemaTypes/milestoneItem";
+import { dao } from "@/schemaTypes/dao";
+import { farm } from "@/schemaTypes/farm";
+import { bottomSection } from "@/schemaTypes/bottomSection";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -30,10 +33,13 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     unit,
     youtube,
     traders,
+    farm,
     blogs,
+    dao,
     homepage,
     menuItem,
     socialItem,
+    bottomSection,
     menu,
     aboutPage,
     assetItem,

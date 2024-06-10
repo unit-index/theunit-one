@@ -10,7 +10,7 @@ import BlurContainer from '@/components/BlurContainer'
 import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
-import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Traders, Unit, Youtube } from '@/sanity.types'
+import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Traders, Unit, Youtube, Dao, Farm, BottomSection } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
 import GradientBox from '@/components/GradientBox';
 
@@ -51,10 +51,21 @@ const query = gql`
         sectionTitle
         description: descriptionRaw
       }
-      ... on Traders {
+      ... on Dao {
         _type
         sectionTitle
         description: descriptionRaw
+        buttonText
+        buttonLink
+        image
+      }
+      ... on Farm {
+        _type
+        sectionTitle
+        description: descriptionRaw
+      }
+      ... on BottomSection {
+        _type
         image
       }
       ... on Unit {
@@ -110,7 +121,9 @@ function Home({
   const partners = data.find((d: any) => d._type === 'partners') as PartnerItems;
   const unit = data.find((d: any) => d._type === 'unit') as Unit;
   const youtube = data.find((d: any) => d._type === 'youtube') as Youtube;
-  const traders = data.find((d: any) => d._type === 'traders') as Traders;
+  const dao = data.find((d: any) => d._type === 'dao') as Dao;
+  const farm = data.find((d: any) => d._type === 'farm') as Farm;
+  const bottomSection = data.find((d: any) => d._type === 'bottomSection') as BottomSection;
   const blogInfo = data.find((d: any) => d._type === 'blogs') as BlogInfo;
 
   return <>
@@ -171,6 +184,22 @@ function Home({
           </div>
         </div>
       </GradientBox>
+
+      <div className='flex items-center border border-[#E7E7E7] gap-[59px]'>
+        <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
+        <div>
+          <div className='font-medium text-[48px] leading-[60px] mb-2'>{dao.sectionTitle}</div>
+          <Description text={dao.description} />
+          <ThemeButton link={dao.buttonLink} title={dao.buttonText} className='mt-11 inline-block' />
+        </div>
+      </div>
+
+      <div className='max-w-[450px]'>
+        <div className='mb-5 font-medium text-[48px] leading-[60px]'>
+          {farm.sectionTitle}
+        </div>
+        <Description text={farm.description} />
+      </div>
     
 
     {/* -------------------- Youtube Channel ------------------ */}
@@ -185,22 +214,6 @@ function Home({
       allowFullScreen
       className='max-w-4xl mx-auto w-full aspect-video shadow-2xl shadow-white/20'
     ></iframe>
-
-    {/* -------------------- Index Table ------------------ */}
-    <div className='px-8 lg:px-32 py-16 my-40 relative'>
-      <div className='absolute left-0 lg:left-32 bottom-16 top-16 right-32 rounded-lg' />
-      <div className='flex items-center gap-20 bg-black-bgd/40 backdrop-blur-sm rounded-lg border border-gray-border px-1 md:px-9 py-8 md:py-24 bg-index bg-no-repeat bg-[length:60%] bg-right-bottom'>
-        <div className='flex-1 px-3 lg:pl-11 lg:pr-0 text-center lg:text-left'>
-          <div className='text-4xl font-semibold mb-4 text-white'>{traders.sectionTitle}</div>
-          <div className='text-xl'>
-            <Description text={traders.description} />
-          </div>
-        </div>
-        <div className='hidden lg:block flex-1'>
-          <img src={traders.image} alt='Index Fund' className='w-full' />
-        </div>
-      </div>
-    </div>
 
     {/* -------------------- From the blog ------------------ */}
     <Blogs 
