@@ -22,6 +22,7 @@ import { milestoneItem } from "@/schemaTypes/milestoneItem";
 import { dao } from "@/schemaTypes/dao";
 import { farm } from "@/schemaTypes/farm";
 import { bottomSection } from "@/schemaTypes/bottomSection";
+import { aboutItem } from "@/schemaTypes/aboutItem";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -41,6 +42,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     socialItem,
     bottomSection,
     menu,
+    aboutItem,
     aboutPage,
     assetItem,
     communityPage,

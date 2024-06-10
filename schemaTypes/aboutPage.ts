@@ -25,18 +25,13 @@ export const aboutPage = defineType({
       validation: rule => rule.required()
     }),
     defineField({
-      name: 'faqTitle',
-      type: 'string',
-      validation: rule => rule.required()
-    }),
-    defineField({
-      name: 'faqs',
-      type: 'array',
+      name: 'items',
+      type: 'array', 
       of: [
         {
           type: 'reference',
           to: [
-            {type: 'faqItem'}
+            {type: 'aboutItem'}
           ]
         }
       ],

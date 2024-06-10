@@ -18,10 +18,14 @@ export default function Header({
 
     return (
         <nav className="w-full flex items-center justify-between py-3 px-8 xl:px-20">
-            <Link href='/'>
+            <Link href='/' className={isFooter ? 'w-[251px]' : ''}>
                 <Image className='flex-none' src={menu.logo ?? '/logo.png'} alt='logo' width={118} height={41} />
             </Link>
-            {isFooter && <Menu menu={menu.menuItems as any} />}
+            {isFooter && (
+                <div className='text-sm flex gap-10'>
+                    <Menu menu={menu.menuItems as any} />
+                </div>
+            )}
             <div className='hidden xl:flex flex-none text-sm gap-10 items-center'>
                 {!isFooter && <Menu menu={menu.menuItems as any} />}
                 <ThemeButton title={menu.buttonText} link={menu.buttonLink} />

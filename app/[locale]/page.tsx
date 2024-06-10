@@ -6,13 +6,11 @@ import Blogs from '@/components/Blogs'
 import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
-import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Unit, Youtube, Dao, Farm, BottomSection, FaqItem, SocialItem } from '@/sanity.types'
+import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Unit, Dao, Farm, BottomSection, FaqItem, SocialItem } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
 import GradientBox from '@/components/GradientBox';
 import Image from 'next/image';
-import ExternalLinkButton from '@/components/button/ExternalLinkButton';
 import FAQ from '@/components/FAQ';
-import { bottomSection } from '@/schemaTypes/bottomSection';
 
 const socialColors = [
   '#000000',
@@ -241,8 +239,7 @@ function Home({
                 ))}
             </div>
 
-
-            <div className='flex items-center justify-center mb-8'>
+            <div className='flex items-center justify-center mb-32'>
                 <Image src={bottomSection.image} alt='UNIT' width={386} height={124} />
             </div>
     </div>
