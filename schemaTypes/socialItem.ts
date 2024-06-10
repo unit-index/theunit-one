@@ -25,7 +25,12 @@ export const socialItem = defineType({
       validation: rule => rule.required()
     }),
     defineField({
-      name: 'link',
+      name: 'ctaText',
+      type: 'string',
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'ctaLink',
       type: 'string',
       validation: rule => rule.required()
     }),

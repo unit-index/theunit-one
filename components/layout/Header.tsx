@@ -9,8 +9,10 @@ import { Menu as MenuItems } from '@/sanity.types';
 import ThemeButton from '../button/ThemeButton';
 
 export default function Header({
+    isFooter = false,
     menu
 }: {
+    isFooter?: boolean,
     menu: MenuItems
 }) {
 
@@ -19,8 +21,9 @@ export default function Header({
             <Link href='/'>
                 <Image className='flex-none' src={menu.logo ?? '/logo.png'} alt='logo' width={118} height={41} />
             </Link>
+            {isFooter && <Menu menu={menu.menuItems as any} />}
             <div className='hidden xl:flex flex-none text-sm gap-10 items-center'>
-                <Menu menu={menu.menuItems as any} />
+                {!isFooter && <Menu menu={menu.menuItems as any} />}
                 <ThemeButton title={menu.buttonText} link={menu.buttonLink} />
                 <LanguageSwitcher />
             </div>

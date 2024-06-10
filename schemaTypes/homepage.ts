@@ -26,7 +26,32 @@ export const homepage = defineType({
             {type: 'dao'},
             {type: 'farm'},
             {type: 'bottomSection'},
-            {type: 'youtube'},
+          ]
+        }
+      ],
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'socials',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'socialItem'}
+          ]
+        }
+      ],
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'faqs',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'faqItem'}
           ]
         }
       ],

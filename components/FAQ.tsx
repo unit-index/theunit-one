@@ -4,6 +4,7 @@ import Image from "next/image"
 import { ReactNode, useEffect, useState } from "react"
 import useMeasure from 'react-use-measure'
 import angleDown from "@/public/angle-down.svg"
+import { twMerge } from "tailwind-merge"
 
 export default function FAQ({
     question,
@@ -31,11 +32,11 @@ export default function FAQ({
 
     return (
         <div 
-            className="bg-gray-heavy/60 backdrop-blur-sm rounded-lg border border-gray-border px-10 transition-all duration-500 ease-in-out overflow-hidden hover:bg-black-bgd/60"
+            className="border-b border-[#DFDFDF] transition-all duration-500 ease-in-out overflow-hidden"
             style={{ height: show ? faqHeight+ansHeight+'px' : faqHeight+'px' }}
         >
             <div 
-                className={"flex items-center cursor-pointer font-semibold text-white pt-6"}
+                className={twMerge("flex items-center cursor-pointer font-bold text-[#9E9E9E]", show ? 'text-black': '')}
                 ref={ref}
                 onClick={() => {
                     setShow(!show)
@@ -50,7 +51,7 @@ export default function FAQ({
             </div>
             <div 
                 ref={refAns} 
-                className={"transition-opacity duration-500 ease-in-out text-lg pt-4 " + (show ? 'opacity-100' : 'opacity-0')}
+                className={"transition-opacity duration-500 ease-in-out text-base pt-4 " + (show ? 'opacity-100' : 'opacity-0')}
             >
                 {answer}
             </div>

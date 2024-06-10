@@ -385,7 +385,8 @@ export type SocialItem = {
   name: string;
   logo: string;
   description: string;
-  link: string;
+  ctaText: string;
+  ctaLink: string;
 };
 
 export type MenuItem = {
@@ -452,11 +453,20 @@ export type Homepage = {
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "bottomSection";
-  } | {
+  }>;
+  socials: Array<{
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "youtube";
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "socialItem";
+  }>;
+  faqs: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "faqItem";
   }>;
 };
 

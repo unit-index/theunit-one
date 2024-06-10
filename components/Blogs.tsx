@@ -26,13 +26,9 @@ export default function Blogs({
     const blogs = data.items.slice(0, 3) as BlogType[];
 
     return (
-        <div className="px-2 md:px-8 lg:px-32">
-            <div className='text-4xl text-center font-semibold mb-4 text-white'>{title}</div>
-            <div className='text-xl text-center max-w-2xl mx-auto mb-10 w-full'>{children}</div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {blogs.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
             </div>
-        </div>
     )
 }
 
@@ -67,7 +63,6 @@ function Blog({
     const blogTitle = decodeHtml(blog.title);
 
     return (
-        <BlurContainer hover>
             <a 
                 className="cursor-pointer"
                 href={blog.link}
@@ -87,18 +82,14 @@ function Blog({
                     />
                 </div>
                 <div className="mt-6 mb-6 h-48 line-clamp-6">
-                    <span className="text-white font-semibold text-xl">
+                    <div className="font-semibold text-xl mb-2 line-clamp-1 w-full overflow-ellipsis">
                         {blogTitle}
-                    </span><br />
-                    <span className="text-lg">
+                    </div>
+                    <div className="w-full line-clamp-4 overflow-ellipsis text-base">
                         {ToText(blog.content)}
-                    </span>
-                </div>
-                <div className="text-center xl:text-right">
-                    <Button title={readMore} />
+                    </div>
                 </div>
             </a>
-        </BlurContainer>
     )
 }
 

@@ -22,7 +22,7 @@ const query = gql`
             name
             logo
             description
-            link
+            ctaLink
         }
     }
   }

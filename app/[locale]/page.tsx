@@ -1,18 +1,24 @@
 import Partners from '@/components/Partners'
-import SplineClient from '@/components/SplineClient'
-import LineButton from '@/components/button/LineButton'
-import { appUrl, localUSDPlaceholder } from '@/utils/constants'
+import { localUSDPlaceholder } from '@/utils/constants'
 import { headers } from 'next/headers';
 import { useLocale, useTranslations } from 'next-intl'
 import Blogs from '@/components/Blogs'
-import Accounted from '@/components/Accounted'
-import BlurContainer from '@/components/BlurContainer'
 import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
-import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Traders, Unit, Youtube, Dao, Farm, BottomSection } from '@/sanity.types'
+import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Unit, Youtube, Dao, Farm, BottomSection, FaqItem, SocialItem } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
 import GradientBox from '@/components/GradientBox';
+import Image from 'next/image';
+import ExternalLinkButton from '@/components/button/ExternalLinkButton';
+import FAQ from '@/components/FAQ';
+import { bottomSection } from '@/schemaTypes/bottomSection';
+
+const socialColors = [
+  '#000000',
+  '#8259DD',
+  '#29BDFD',
+]
 
 const query = gql`
   query getHomePage($locale: String!) {
@@ -76,14 +82,17 @@ const query = gql`
         feature2Title
         feature2: feature2Raw
       }
-      ... on Youtube {
-        _type
-        sectionTitle
-        description: descriptionRaw
-        videoUrl
-        videoTitle
-      }
     } 
+    socials {
+      logo
+      ctaLink
+      ctaText
+      description
+    }
+    faqs {
+      question
+      answer: answerRaw
+    }
   }
   }
 `
@@ -100,31 +109,34 @@ export default async function HomePage() {
   );
   const events = await request(sanityGraphqlEndpoint, query, { locale })
   
-  return <Home data={(events as any).allHomepage[0].sections} isMobile={isMobile} />
+  return <Home allData={(events as any).allHomepage[0]} isMobile={isMobile} />
 }
 
 
 
 function Home({
-  data,
+  allData,
   isMobile
 } : {
-  data: any,
+  allData: any,
   isMobile: boolean
 }) {
 
   const t = useTranslations('Index');
+  const data = allData.sections;
 
   const hero = data.find((d: any) => d._type === 'hero') as Hero;
   const caps = data.find((d: any) => d._type === 'marketCap') as MarketCap;
   const supports = data.find((d: any) => d._type === 'supports') as Supports;
   const partners = data.find((d: any) => d._type === 'partners') as PartnerItems;
   const unit = data.find((d: any) => d._type === 'unit') as Unit;
-  const youtube = data.find((d: any) => d._type === 'youtube') as Youtube;
   const dao = data.find((d: any) => d._type === 'dao') as Dao;
   const farm = data.find((d: any) => d._type === 'farm') as Farm;
-  const bottomSection = data.find((d: any) => d._type === 'bottomSection') as BottomSection;
   const blogInfo = data.find((d: any) => d._type === 'blogs') as BlogInfo;
+  const bottomSection = data.find((d: any) => d._type === 'bottomSection') as BottomSection;
+  const faqs: FaqItem[] = allData.faqs as unknown as FaqItem[];
+  const socials: SocialItem[] = allData.socials as unknown as SocialItem[];
+  
 
   return <>
 
@@ -200,20 +212,14 @@ function Home({
         </div>
         <Description text={farm.description} />
       </div>
-    
 
-    {/* -------------------- Youtube Channel ------------------ */}
-    <div className='text-4xl text-center font-semibold mb-4 text-white'>{youtube.sectionTitle}</div>
-    <div className='text-xl text-center max-w-[44rem] mx-auto mb-7 w-full'>
-      <Description text={youtube.description} />
-    </div>
-    <iframe
-      src={youtube.videoUrl}
-      title={youtube.videoTitle}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className='max-w-4xl mx-auto w-full aspect-video shadow-2xl shadow-white/20'
-    ></iframe>
+
+      <div className="grid gap-10 grid-cols-1 md:grid-cols-3 text-white">
+          {socials.map((so, index) => (
+              <CommunityLink key={so.name} item={so} index={index} />
+          ))}
+      </div>
+    
 
     {/* -------------------- From the blog ------------------ */}
     <Blogs 
@@ -222,6 +228,53 @@ function Home({
     >
       <Description text={blogInfo.description} />
     </Blogs>
+
+    <div className="flex flex-col gap-6">
+                {faqs.map((faq) => (
+                    <FAQ 
+                        key={faq._id}
+                        question={faq.question} 
+                        answer={(
+                            <Description text={faq.answer} />
+                        )} 
+                    />
+                ))}
+            </div>
+
+
+            <div className='flex items-center justify-center mb-8'>
+                <Image src={bottomSection.image} alt='UNIT' width={386} height={124} />
+            </div>
     </div>
   </>
+}
+
+
+function CommunityLink({
+  index,
+  item,
+} : {
+  item: SocialItem,
+  index: number,
+}) {
+return (
+      <div className="h-56 flex gap-9 p-8 rounded-xl items-start" style={{ backgroundColor: socialColors[index] }}>
+        <img className='flex-none' src={item.logo} alt={item.name} width={80} height={80} />
+        <div className='h-full flex flex-col'>
+          <div className='flex-auto'>
+            {item.description}
+          </div>
+          <div className='w-fit flex-none rounded bg-white inline-flex px-3 py-1 items-center' style={{ color: socialColors[index] }}>
+            {item.ctaText}
+            
+        <img 
+                  src={`/social-${index+1}.svg`}
+                  alt={item.name} 
+                  width={20}
+                  className="inline-block pl-1"
+              />
+          </div>
+        </div>
+      </div>
+)
 }
