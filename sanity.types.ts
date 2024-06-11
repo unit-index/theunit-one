@@ -244,9 +244,9 @@ export type DeveloperLink = {
   }>;
 };
 
-export type CommunityPage = {
+export type GovernancePage = {
   _id: string;
-  _type: "communityPage";
+  _type: "governancePage";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -277,15 +277,6 @@ export type CommunityPage = {
     _weak?: boolean;
     _key: string;
     [internalGroqTypeReferenceTo]?: "socialItem";
-  }>;
-  assetsTitle: string;
-  downloadText: string;
-  brandAssets: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "assetItem";
   }>;
 };
 

@@ -247,7 +247,7 @@ function Home({
 }
 
 
-function CommunityLink({
+export function CommunityLink({
   index,
   item,
 } : {

@@ -15,7 +15,7 @@ export default function PageTemplate({
             <div className="font-semibold text-5xl mb-12 text-center">
                 {title}
             </div>
-            <div className="mb-32 text-center">
+            <div className="max-w-[1000px] mx-auto mb-32 text-center rich-text">
                 {subtitle}
             </div>
             {children}

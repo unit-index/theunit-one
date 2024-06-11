@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
-export const communityPage = defineType({
-  name: 'communityPage',
-  title: 'Community Page',
+export const governancePage = defineType({
+  name: 'governancePage',
+  title: 'Governance Page',
   type: 'document',
   fields: [
     defineField({
@@ -32,29 +32,6 @@ export const communityPage = defineType({
           type: 'reference',
           to: [
             {type: 'socialItem'}
-          ]
-        }
-      ],
-      validation: rule => rule.required()
-    }),
-    defineField({
-      name: 'assetsTitle',
-      type: 'string',
-      validation: rule => rule.required()
-    }),
-    defineField({
-      name: 'downloadText',
-      type: 'string',
-      validation: rule => rule.required()
-    }),
-    defineField({
-      name: 'brandAssets',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [
-            {type: 'assetItem'}
           ]
         }
       ],

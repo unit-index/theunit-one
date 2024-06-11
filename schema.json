@@ -1560,7 +1560,7 @@
     }
   },
   {
-    "name": "communityPage",
+    "name": "governancePage",
     "type": "document",
     "attributes": {
       "_id": {
@@ -1573,7 +1573,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "communityPage"
+          "value": "governancePage"
         }
       },
       "_createdAt": {
@@ -1823,64 +1823,6 @@
               }
             },
             "dereferencesTo": "socialItem",
-            "rest": {
-              "type": "object",
-              "attributes": {
-                "_key": {
-                  "type": "objectAttribute",
-                  "value": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "optional": false
-      },
-      "assetsTitle": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": false
-      },
-      "downloadText": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": false
-      },
-      "brandAssets": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
-                },
-                "optional": true
-              }
-            },
-            "dereferencesTo": "assetItem",
             "rest": {
               "type": "object",
               "attributes": {

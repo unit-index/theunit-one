@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.rich-text p {
+  min-height: 20px;
+}
+
 @layer components {
   .text-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-unit-blue to-unit-orange;

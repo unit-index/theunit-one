@@ -14,7 +14,6 @@ import { menu } from "@/schemaTypes/menu";
 import { socialItem } from "@/schemaTypes/socialItem";
 import { aboutPage } from "@/schemaTypes/aboutPage";
 import { assetItem } from "@/schemaTypes/assetItem";
-import { communityPage } from "@/schemaTypes/communityPage";
 import { developerLink } from "@/schemaTypes/developerLink";
 import { developerPage } from "@/schemaTypes/developerPage";
 import { faqItem } from "@/schemaTypes/faqItem";
@@ -23,6 +22,7 @@ import { dao } from "@/schemaTypes/dao";
 import { farm } from "@/schemaTypes/farm";
 import { bottomSection } from "@/schemaTypes/bottomSection";
 import { aboutItem } from "@/schemaTypes/aboutItem";
+import { governancePage } from "@/schemaTypes/governancePage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -45,7 +45,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutItem,
     aboutPage,
     assetItem,
-    communityPage,
+    governancePage,
     developerLink,
     developerPage,
     faqItem,
