@@ -5,7 +5,7 @@ import MobileMenu from './MobileMenu';
 import LanguageSwitcher from '../LanguageSwitcher';
 import AvailableLocales from '../LocaleLinks';
 import { Link } from '@/navigation';
-import { Menu as MenuItems } from '@/sanity.types';
+import { MenuItem, Menu as MenuItems } from '@/sanity.types';
 import ThemeButton from '../button/ThemeButton';
 
 export default function Header({
@@ -16,6 +16,8 @@ export default function Header({
     menu: MenuItems
 }) {
 
+    const menuItems = menu.menuItems as unknown as MenuItem[];
+
     return (
         <nav className="w-full flex items-center justify-between py-3 px-8 xl:px-20">
             <Link href='/' className={isFooter ? 'w-[251px]' : ''}>
@@ -23,18 +25,18 @@ export default function Header({
             </Link>
             {isFooter && (
                 <div className='text-sm flex gap-10'>
-                    <Menu menu={menu.menuItems as any} />
+                    <Menu menus={menuItems} />
                 </div>
             )}
             <div className='hidden xl:flex flex-none text-sm gap-10 items-center'>
-                {!isFooter && <Menu menu={menu.menuItems as any} />}
+                {!isFooter && <Menu menus={menuItems} />}
                 <ThemeButton title={menu.buttonText} link={menu.buttonLink} />
                 <LanguageSwitcher />
             </div>
             <div className='xl:hidden'>
                 <MobileMenu>
                     <div className='flex flex-col text-base gap-14'>
-                        <Menu menu={menu.menuItems as any} />
+                        <Menu menus={menuItems} />
                         <LinkButton title={menu.buttonText} link={menu.buttonLink} />
                         <div className='flex flex-col text-white gap-6'>
                             <AvailableLocales />

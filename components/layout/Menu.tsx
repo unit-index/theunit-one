@@ -1,34 +1,31 @@
-import { useTranslations } from 'next-intl';
+'use client';
+
 import Image from 'next/image';
-import ClientLink from './ClientLink';
-import { navLinks } from '@/utils/constants';
-import { Link } from '@/navigation';
+import { Link, usePathname } from '@/navigation';
 import { MenuItem } from '@/sanity.types';
 
 export default function Menu({
-    menu,
+    menus,
     isFooter = false
 } : {
-    menu: MenuItem[],
+    menus: MenuItem[],
     isFooter?: boolean
 }) {
-    const t = useTranslations();
+
+    const pathname = usePathname();
 
     return (
         <>
-            {navLinks.map((link) => {
-                return <ClientLink 
-                            linkKey={link.key} 
-                            key={link.key}
-                        >
+            {menus.map((link) => {
+                return ( 
                     <Link 
-                        key={link.key}
+                        key={link.menuTitle}
                         className='block'
-                        href={link.link}
+                        href={link.menuLink}
                         target={link.external ? '_blank' : '_self'}
                     >
                         <span className={"group-hover:text-gradient" + (isFooter ? '' : ' group-[.is-active]:text-gradient')}>
-                            {t(link.key)}
+                            {link.menuTitle}
                         </span> 
                         {link.external && <>
                             <Image 
@@ -47,7 +44,7 @@ export default function Menu({
                             />
                         </>}
                     </Link>
-                </ClientLink>
+                )
             })}
         </>
     )
