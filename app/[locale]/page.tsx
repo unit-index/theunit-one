@@ -153,7 +153,7 @@ function Home({
     </div>
 
 
-    <div className='flex flex-col gap-32 max-w-[1248px] mx-auto mt-32'>
+    <div className='flex flex-col gap-32 max-w-[1300px] mx-auto mt-32'>
     {/* -------------------- Partners Section ------------------ */}
     <div className='flex flex-col items-center gap-16'>
         <div className='text-[48px] text-center'>{supports.sectionTitle}</div>
