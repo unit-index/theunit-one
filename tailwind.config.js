@@ -17,8 +17,10 @@ module.exports = {
         'gray-border': '#2D2D2D',
         'gray-light': '#E4E4E4',
         'gray-heavy': '#1D1D1F',
-        'unit-orange': '#FFDFCD',
-        'unit-blue': '#DBFDFF',
+        'unit-orange': '#FF7629',
+        'unit-blue': '#495AFF',
+        'title': '#1E344D',
+        'body': '#5F7179',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -31,6 +33,7 @@ module.exports = {
         'home-bgd1': 'url(/home-bgd-1.png)',
         'home-bottom': 'url(/home-bottom.png)',
         'layout': 'url(/layout-bgd.svg)',
+        'union': 'url(/union.svg)',
       },
       backgroundSize: {
         'auto': 'auto',

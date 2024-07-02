@@ -20,16 +20,13 @@ export default function Header({
 
     return (
         <nav className="w-full flex items-center justify-between py-3 px-8 xl:px-20">
-            <Link href='/' className={isFooter ? 'w-[251px]' : ''}>
+            <Link href='/' className='w-[235px]'>
                 <Image className='flex-none' src={menu.logo ?? '/logo.png'} alt='logo' width={118} height={41} />
             </Link>
-            {isFooter && (
-                <div className='text-sm flex gap-10'>
-                    <Menu menus={menuItems} />
-                </div>
-            )}
-            <div className='hidden xl:flex flex-none text-sm gap-10 items-center'>
-                {!isFooter && <Menu menus={menuItems} />}
+            <div className='flex gap-10 text-base'>
+                <Menu menus={menuItems} />
+            </div>
+            <div className='hidden xl:flex flex-none text-sm gap-6 items-center'>
                 <ThemeButton title={menu.buttonText} link={menu.buttonLink} />
                 <LanguageSwitcher />
             </div>

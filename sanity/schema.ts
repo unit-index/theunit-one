@@ -23,6 +23,8 @@ import { farm } from "@/schemaTypes/farm";
 import { bottomSection } from "@/schemaTypes/bottomSection";
 import { aboutItem } from "@/schemaTypes/aboutItem";
 import { governancePage } from "@/schemaTypes/governancePage";
+import { homeVault } from "@/schemaTypes/homeVault";
+import { homeAlpha } from "@/schemaTypes/homeAlpha";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -37,6 +39,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     farm,
     blogs,
     dao,
+    homeVault,
+    homeAlpha,
     homepage,
     menuItem,
     socialItem,

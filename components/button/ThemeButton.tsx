@@ -13,7 +13,7 @@ export default function ThemeButton({
   return (
     <Link 
       href={link}
-      className={twMerge("px-7 py-3 rounded-full bg-black text-white text-sm", className)}
+      className={twMerge("px-7 py-3 rounded-full bg-gradient-to-r from-unit-blue to-unit-orange text-white text-sm", className)}
     >
       {title}
     </Link>

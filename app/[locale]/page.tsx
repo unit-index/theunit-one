@@ -6,7 +6,7 @@ import Blogs from '@/components/Blogs'
 import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
-import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Unit, Dao, Farm, BottomSection, FaqItem, SocialItem } from '@/sanity.types'
+import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Unit, Dao, Farm, BottomSection, FaqItem, SocialItem, HomeVault, HomeAlpha } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
 import GradientBox from '@/components/GradientBox';
 import Image from 'next/image';
@@ -72,13 +72,21 @@ const query = gql`
         _type
         image
       }
-      ... on Unit {
+      ... on HomeAlpha {
         _type
         sectionTitle
-        feature1Title
-        feature1: feature1Raw
-        feature2Title
-        feature2: feature2Raw
+        description: descriptionRaw
+        image
+        btnTitle
+        btnLink
+      }
+      ... on HomeVault {
+        _type
+        sectionTitle
+        description: descriptionRaw
+        image
+        btnTitle
+        btnLink
       }
     } 
     socials {
@@ -127,7 +135,8 @@ function Home({
   const caps = data.find((d: any) => d._type === 'marketCap') as MarketCap;
   const supports = data.find((d: any) => d._type === 'supports') as Supports;
   const partners = data.find((d: any) => d._type === 'partners') as PartnerItems;
-  const unit = data.find((d: any) => d._type === 'unit') as Unit;
+  const homeVault = data.find((d: any) => d._type === 'homeVault') as HomeVault;
+  const homeAlpha = data.find((d: any) => d._type === 'homeAlpha') as HomeAlpha;
   const dao = data.find((d: any) => d._type === 'dao') as Dao;
   const farm = data.find((d: any) => d._type === 'farm') as Farm;
   const blogInfo = data.find((d: any) => d._type === 'blogs') as BlogInfo;
@@ -139,8 +148,8 @@ function Home({
   return <>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
-    <div className='h-screen flex flex-col justify-center items-center gap-6'>
-      <div className='font-bold text-[80px] leading-[100px] max-w-[808px] text-center'>
+    <div className='h-screen flex flex-col justify-center items-center gap-7'>
+      <div className='font-bold text-[80px] text-title leading-[100px] max-w-[808px] text-center'>
         {hero.sectionTitle}
       </div>
       <div className='max-w-[808px] text-center'>
@@ -148,15 +157,15 @@ function Home({
       </div>
       <div className='w-full flex flex-col gap-0 items-center'>
         <ThemeButton link={hero.ctaText} title={hero.ctaText} />
-        <img src={hero.image} alt='UNIT' className='w-full' />
       </div>
     </div>
 
 
     <div className='flex flex-col gap-32 max-w-[1300px] mx-auto mt-32'>
     {/* -------------------- Partners Section ------------------ */}
-    <div className='flex flex-col items-center gap-16'>
-        <div className='text-[48px] text-center'>{supports.sectionTitle}</div>
+    <div className='bg-union bg-center bg-no-repeat'>
+    <div className='flex flex-col items-center gap-16 mb-32'>
+        <div className='text-[48px] text-center text-title'>{supports.sectionTitle}</div>
           <Partners partners={partners.partners as any} />
       </div>
 
@@ -164,7 +173,7 @@ function Home({
 
 
       {/* -------------------- Value Accounted ------------------ */}
-      <div>
+      <div className='text-title'>
         <div className='w-full flex items-center mb-2'>
           <div className='bg-[#C6C6C6] h-[1px] flex-auto' />
           <div className='flex-none px-8 font-bold text-[72px] leading-[90px]'>
@@ -176,24 +185,33 @@ function Home({
           {caps.unitCapTitle}
         </div>
       </div>
+    </div>
 
-      <GradientBox className='relative flex justify-between pl-20 py-28 items-center'>
-        <div className='font-bold text-[64px] leading-[80px]'>{unit.sectionTitle}</div>
-        <div className='absolute -right-8 flex items-center gap-8'>
-          <div className='rounded-lg py-8 px-12 bg-white max-w-[395px] shadow-2xl'>
-            <GradientBox className='rounded-full py-2 px-3 font-bold mb-2.5 inline-block'>
-              {unit.feature1Title}
-            </GradientBox>
-            <Description text={unit.feature1} />
+      <div className='grid grid-cols-2 items-center'>
+        <img src={homeVault.image} alt="TINU" className='w-full' />
+        <div className='px-12 text-center'>
+          <div className='text-[48px] text-title mb-2 leading-[1.3]'>
+            {homeVault.sectionTitle}
           </div>
-          <div className='rounded-lg py-8 px-12 bg-white max-w-[439px] shadow-2xl'>
-            <GradientBox className='rounded-full py-2 px-3 font-bold mb-2.5 inline-block'>
-              {unit.feature2Title}
-            </GradientBox>
-            <Description text={unit.feature2} />
+          <div className='text-2xl mb-11'>
+            <Description text={homeVault.description} />
           </div>
+          <ThemeButton link={homeVault.btnLink} title={homeVault.btnTitle} className='px-24' />
         </div>
-      </GradientBox>
+      </div>
+
+      <div className='grid grid-cols-2 items-center'>
+        <div className='px-12 text-center'>
+          <div className='text-[48px] text-title mb-2 leading-[1.3]'>
+            {homeAlpha.sectionTitle}
+          </div>
+          <div className='text-2xl mb-11'>
+            <Description text={homeAlpha.description} />
+          </div>
+          <ThemeButton link={homeAlpha.btnLink} title={homeAlpha.btnTitle} className='px-10' />
+        </div>
+        <img src={homeAlpha.image} alt="TINU" className='w-full h-auto' />
+      </div>
 
       <div className='flex items-center border border-[#E7E7E7] gap-[59px]'>
         <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
