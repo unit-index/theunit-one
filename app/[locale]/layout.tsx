@@ -75,7 +75,7 @@ export default function LocaleLayout({
  
   return (
     <html lang={locale} className={avenirFont.className}>
-      <body className='text-body text-xl'>
+      <body className='text-body text-2xl'>
         <MainLayout>
           {children}
         </MainLayout>

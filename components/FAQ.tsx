@@ -36,7 +36,7 @@ export default function FAQ({
             style={{ height: show ? faqHeight+ansHeight+'px' : faqHeight+'px' }}
         >
             <div 
-                className={twMerge("flex items-center cursor-pointer font-bold text-[#9E9E9E]", show ? 'text-black': '')}
+                className={twMerge("flex items-center cursor-pointer font-semibold text-[#9E9E9E]", show ? 'text-black': '')}
                 ref={ref}
                 onClick={() => {
                     setShow(!show)

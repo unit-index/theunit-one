@@ -46,6 +46,9 @@ module.exports = {
         '3/2': '3 / 2',
         '2/1': '2 / 1'
       },
+      fontSize: {
+        xxl: ['48px', '60px'],
+      }
     },
   },
   plugins: [

@@ -23,11 +23,15 @@ export default function Blogs({
         return null;
     }
 
-    const blogs = data.items.slice(0, 3) as BlogType[];
+    const blogs = data.items.slice(0, 4) as BlogType[];
 
     return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {blogs.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
+            <div>
+                <div className="text-title text-xxl mb-[18px] text-center">{title}</div>
+                <div className="mb-12 text-center">{children}</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    {blogs.map((blog) => <Blog key={blog.title} blog={blog} readMore={readMore} />)}
+                </div>
             </div>
     )
 }

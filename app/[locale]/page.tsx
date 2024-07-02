@@ -165,7 +165,7 @@ function Home({
     {/* -------------------- Partners Section ------------------ */}
     <div className='bg-union bg-center bg-no-repeat'>
     <div className='flex flex-col items-center gap-16 mb-32'>
-        <div className='text-[48px] text-center text-title'>{supports.sectionTitle}</div>
+        <div className='text-xxl text-center text-title'>{supports.sectionTitle}</div>
           <Partners partners={partners.partners as any} />
       </div>
 
@@ -190,7 +190,7 @@ function Home({
       <div className='grid grid-cols-2 items-center'>
         <img src={homeVault.image} alt="TINU" className='w-full' />
         <div className='px-12 text-center'>
-          <div className='text-[48px] text-title mb-2 leading-[1.3]'>
+          <div className='text-xxl text-title mb-2'>
             {homeVault.sectionTitle}
           </div>
           <div className='text-2xl mb-11'>
@@ -200,9 +200,11 @@ function Home({
         </div>
       </div>
 
+      <div className='relative overflow-visible'>
+      <img src='/dao-bgd.svg' alt='' className='-right-64 -top-64 absolute w-screen h-auto' />
       <div className='grid grid-cols-2 items-center'>
         <div className='px-12 text-center'>
-          <div className='text-[48px] text-title mb-2 leading-[1.3]'>
+          <div className='text-xxl text-title mb-2'>
             {homeAlpha.sectionTitle}
           </div>
           <div className='text-2xl mb-11'>
@@ -212,21 +214,27 @@ function Home({
         </div>
         <img src={homeAlpha.image} alt="TINU" className='w-full h-auto' />
       </div>
+      <img src='/dao-arrow.svg' width="50%" className='block mx-auto' alt='Arrow' />
 
       <div className='flex items-center border border-[#E7E7E7] gap-[59px]'>
         <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
         <div>
-          <div className='font-medium text-[48px] leading-[60px] mb-2'>{dao.sectionTitle}</div>
+          <div className='font-medium text-xxl mb-2'>{dao.sectionTitle}</div>
           <Description text={dao.description} />
           <ThemeButton link={dao.buttonLink} title={dao.buttonText} className='mt-11 inline-block' />
         </div>
       </div>
 
-      <div className='max-w-[450px]'>
-        <div className='mb-5 font-medium text-[48px] leading-[60px]'>
+      <img src='/farm-arrow.svg' width={208} className='relative left-1/2' alt='Arrow' />
+
+      <div className='text-center'>
+        <div className='mb-5 text-title font-medium text-xxl'>
           {farm.sectionTitle}
         </div>
         <Description text={farm.description} />
+      </div>
+
+
       </div>
 
 
@@ -245,7 +253,7 @@ function Home({
       <Description text={blogInfo.description} />
     </Blogs>
 
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 mb-64">
                 {faqs.map((faq) => (
                     <FAQ 
                         key={faq._id}
@@ -255,10 +263,6 @@ function Home({
                         )} 
                     />
                 ))}
-            </div>
-
-            <div className='flex items-center justify-center mb-32'>
-                <Image src={bottomSection.image} alt='UNIT' width={386} height={124} />
             </div>
     </div>
   </>
@@ -273,13 +277,14 @@ export function CommunityLink({
   index: number,
 }) {
 return (
-      <div className="h-56 flex gap-9 p-8 rounded-xl items-start" style={{ backgroundColor: socialColors[index] }}>
+      <div className="relative h-48 flex gap-9 p-8 rounded-xl items-start" style={{ backgroundColor: socialColors[index] }}>
+        <img className='absolute top-1 -left-12 opacity-20' src={item.logo} alt={item.name} width={140} height={140} />
         <img className='flex-none' src={item.logo} alt={item.name} width={80} height={80} />
-        <div className='h-full flex flex-col'>
+        <div className='h-full flex flex-col items-end'>
           <div className='flex-auto'>
             {item.description}
           </div>
-          <div className='w-fit flex-none rounded bg-white inline-flex px-3 py-1 items-center' style={{ color: socialColors[index] }}>
+          <div className='w-fit flex-none rounded bg-white inline-flex px-3 py-1 items-center text-sm' style={{ color: socialColors[index] }}>
             {item.ctaText}
             
         <img 

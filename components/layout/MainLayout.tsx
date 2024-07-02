@@ -35,7 +35,7 @@ export default async function MainLayout({children} : {children: React.ReactNode
     const menu: Menu = menuData.allMenu[0];
 
     return <>
-        <main className="bg-layout bg-[length:100%_auto] bg-no-repeat">
+        <main className="bg-layout bg-[length:100%_auto] bg-no-repeat overflow-x-hidden">
             <Header menu={menu} />
             <Suspense fallback={<Loading />}>
                 { children }
