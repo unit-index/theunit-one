@@ -14,10 +14,10 @@ export default function PageTemplate({
     return (
         <Suspense fallback={<Loading />}>
             <div className="pt-24 min-h-screen pb-56 max-w-7xl mx-auto">
-                <div className="text-title mb-8">
+                <div className="mb-8">
                     {title}
                 </div>
-                <div className="rich-text">
+                <div className="rich-text text-title">
                     {subtitle}
                 </div>
                 {children}

@@ -11,9 +11,16 @@ const query = gql`
     allAboutPage(where: { language: { eq: $locale }}) {
         pageTitle
         description: descriptionRaw
+        itemsTitle
         items {
             title
+            itemTitle
+            image
             description: descriptionRaw
+        }
+        faqs {
+            question
+            answer: answerRaw
         }
     }
   }
@@ -26,6 +33,7 @@ export default async function AboutPage() {
     const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
     const page: AboutPageType = pageData.allAboutPage[0];
     const items: AboutItem[] = page.items as unknown as AboutItem[];
+    const faqs: FaqItem[] = page.faqs as unknown as FaqItem[];
 
     return (
         <PageTemplate 
@@ -34,29 +42,34 @@ export default async function AboutPage() {
                 <Description text={page.description} />
             )}
         >
-            <div className="grid grid-cols-2 gap-x-12">
-                <div className="flex flex-col gap-8">
-                    {items.filter((ite, index) => index % 2 == 0).map((item, index) => (
-                        <div key={item.title} className="border border-[#E7E7E7] rounded-xl px-14 py-6">
-                            <ul>
-                                <li className="list-disc">
-                                    <Description text={item.description} />
-                                </li>
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-                <div className="flex flex-col gap-8">
-                {items.filter((ite, index) => index % 2 != 0).map((item, index) => (
-                        <div key={item.title} className="border border-[#E7E7E7] rounded-xl px-14 py-6">
-                            <ul>
-                                <li className="list-disc">
-                                    <Description text={item.description} />
-                                </li>
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+            <div className="mt-24 mb-8">{page.itemsTitle}</div>
+            <div className="grid grid-cols-3 gap-6">
+                {items.map((item) => (
+                    <div 
+                        key={item.itemTitle} 
+                        className="rounded-2xl bg-white p-10 bg-no-repeat"
+                        style={{
+                            backgroundImage: `url(${item.image})`,
+                            backgroundSize: '70%',
+                            backgroundPosition: 'right bottom'
+                        }}
+                    >
+                        <div className="text-gradient mb-8">{item.itemTitle}</div>
+                        <Description text={item.description} />
+                    </div>
+                ))}
+            </div>
+            <div className="mt-32 mb-8">FAQ</div>
+            <div className="flex flex-col gap-6 mb-64">
+                {faqs.map((faq) => (
+                    <FAQ 
+                        key={faq._id}
+                        question={faq.question} 
+                        answer={(
+                            <Description text={faq.answer} />
+                        )} 
+                    />
+                ))}
             </div>
         </PageTemplate>
     )
