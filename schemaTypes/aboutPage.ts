@@ -25,6 +25,11 @@ export const aboutPage = defineType({
       validation: rule => rule.required()
     }),
     defineField({
+      name: 'itemsTitle',
+      type: 'string',
+      validation: rule => rule.required()
+    }),
+    defineField({
       name: 'items',
       type: 'array', 
       of: [
@@ -32,6 +37,19 @@ export const aboutPage = defineType({
           type: 'reference',
           to: [
             {type: 'aboutItem'}
+          ]
+        }
+      ],
+      validation: rule => rule.required()
+    }),
+    defineField({
+      name: 'faqs',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'faqItem'}
           ]
         }
       ],

@@ -320,12 +320,20 @@ export type AboutPage = {
     _type: "block";
     _key: string;
   }>;
+  itemsTitle: string;
   items: Array<{
     _ref: string;
     _type: "reference";
     _weak?: boolean;
     _key: string;
     [internalGroqTypeReferenceTo]?: "aboutItem";
+  }>;
+  faqs: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "faqItem";
   }>;
 };
 
@@ -336,6 +344,8 @@ export type AboutItem = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  itemTitle: string;
+  image: string;
   description: Array<{
     children?: Array<{
       marks?: Array<string>;

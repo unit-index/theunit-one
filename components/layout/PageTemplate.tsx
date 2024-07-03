@@ -13,11 +13,11 @@ export default function PageTemplate({
 
     return (
         <Suspense fallback={<Loading />}>
-            <div className="pt-28 min-h-screen pb-56 max-w-[1248px] mx-auto">
-                <div className="font-semibold text-5xl mb-12 text-center">
+            <div className="pt-24 min-h-screen pb-56 max-w-7xl mx-auto">
+                <div className="text-title mb-8">
                     {title}
                 </div>
-                <div className="max-w-[1000px] mx-auto mb-32 text-center rich-text">
+                <div className="rich-text">
                     {subtitle}
                 </div>
                 {children}
