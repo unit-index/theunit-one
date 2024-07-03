@@ -277,7 +277,7 @@ export function CommunityLink({
   index: number,
 }) {
 return (
-      <div className="relative h-48 flex gap-9 p-8 rounded-xl items-start" style={{ backgroundColor: socialColors[index] }}>
+      <div className="relative h-48 flex gap-9 p-8 rounded-xl items-start overflow-hidden" style={{ backgroundColor: socialColors[index] }}>
         <img className='absolute top-1 -left-12 opacity-20' src={item.logo} alt={item.name} width={140} height={140} />
         <img className='flex-none' src={item.logo} alt={item.name} width={80} height={80} />
         <div className='h-full flex flex-col items-end'>

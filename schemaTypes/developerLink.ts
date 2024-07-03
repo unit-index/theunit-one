@@ -25,6 +25,10 @@ export const developerLink = defineType({
       validation: rule => rule.required()
     }),
     defineField({
+      name: 'buttonText',
+      type: 'string',
+    }),
+    defineField({
       name: 'description',
       type: 'array', 
       of: [{type: 'block'}],

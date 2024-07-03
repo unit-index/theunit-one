@@ -37,5 +37,13 @@ export const governancePage = defineType({
       ],
       validation: rule => rule.required()
     }),
+    defineField({
+      name: 'DAO',
+      type: 'reference',
+          to: [
+            {type: 'dao'}
+          ],
+      validation: rule => rule.required()
+    }),
   ],
 })

@@ -224,6 +224,7 @@ export type DeveloperLink = {
   linkTitle: string;
   linkLogo: string;
   link: string;
+  buttonText?: string;
   description: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -278,6 +279,12 @@ export type GovernancePage = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "socialItem";
   }>;
+  DAO: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "dao";
+  };
 };
 
 export type AssetItem = {
