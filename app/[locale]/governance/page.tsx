@@ -1,13 +1,8 @@
 import { useLocale } from "next-intl"
-import Image from "next/image"
-import ExternalLinkButton from "@/components/button/ExternalLinkButton"
-import externalWhite from '@/public/external-white.svg';
-import LinkButton from "@/components/button/LinkButton";
 import PageTemplate from "@/components/layout/PageTemplate";
-import BlurContainer from "@/components/BlurContainer";
 import request, { gql } from "graphql-request";
 import { sanityGraphqlEndpoint } from "@/sanity/lib/client";
-import { AssetItem, Dao, GovernancePage, SocialItem } from "@/sanity.types";
+import { Dao, GovernancePage, SocialItem } from "@/sanity.types";
 import Description from "@/components/Description";
 import { CommunityLink } from "../page";
 import ThemeButton from "@/components/button/ThemeButton";
