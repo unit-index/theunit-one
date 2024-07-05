@@ -31,7 +31,6 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  console.log('AAAA', params);
 
   if (!params.id) {
     return {};
