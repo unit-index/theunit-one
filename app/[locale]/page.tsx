@@ -1,16 +1,15 @@
 import Partners from '@/components/Partners'
 import { localUSDPlaceholder } from '@/utils/constants'
 import { headers } from 'next/headers';
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import Blogs from '@/components/Blogs'
 import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
-import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Unit, Dao, Farm, BottomSection, FaqItem, SocialItem, HomeVault, HomeAlpha } from '@/sanity.types'
+import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Dao, Farm, BottomSection, FaqItem, SocialItem, HomeVault, HomeAlpha, BlogItem } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
-import GradientBox from '@/components/GradientBox';
-import Image from 'next/image';
 import FAQ from '@/components/FAQ';
+import { queryBlog } from './blog/page';
 
 const socialColors = [
   '#000000',
@@ -26,6 +25,7 @@ const query = gql`
       ... on Blogs {
         _type
         sectionTitle
+        readMoreText
         description: descriptionRaw
       }
       ... on Hero {
@@ -113,22 +113,25 @@ export default async function HomePage() {
       /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
     )
   );
-  const events = await request(sanityGraphqlEndpoint, query, { locale })
+  const events = await request(sanityGraphqlEndpoint, query, { locale });
+  const blogsData: any = await request(sanityGraphqlEndpoint, queryBlog, { locale, limit: 4 })
+  const allBlogs: BlogItem[] = blogsData.allBlogItem;
   
-  return <Home allData={(events as any).allHomepage[0]} isMobile={isMobile} />
+  return <Home allData={(events as any).allHomepage[0]} isMobile={isMobile} blogsData={allBlogs} />
 }
 
 
 
 function Home({
   allData,
+  blogsData,
   isMobile
 } : {
   allData: any,
+  blogsData: BlogItem[],
   isMobile: boolean
 }) {
 
-  const t = useTranslations('Index');
   const data = allData.sections;
 
   const hero = data.find((d: any) => d._type === 'hero') as Hero;
@@ -143,7 +146,6 @@ function Home({
   const bottomSection = data.find((d: any) => d._type === 'bottomSection') as BottomSection;
   const faqs: FaqItem[] = allData.faqs as unknown as FaqItem[];
   const socials: SocialItem[] = allData.socials as unknown as SocialItem[];
-  
 
   return <>
 
@@ -247,8 +249,9 @@ function Home({
 
     {/* -------------------- From the blog ------------------ */}
     <Blogs 
-      readMore={t('read-more')} 
+      readMore={blogInfo.readMoreText} 
       title={blogInfo.sectionTitle} 
+      allBlogs={blogsData}
     >
       <Description text={blogInfo.description} />
     </Blogs>

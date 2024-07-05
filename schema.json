@@ -2003,6 +2003,13 @@
         },
         "optional": false
       },
+      "blogIntro": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": false
+      },
       "cover": {
         "type": "objectAttribute",
         "value": {
@@ -4400,14 +4407,14 @@
         },
         "optional": true
       },
-      "sectionTitle": {
+      "language": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
         "optional": false
       },
-      "language": {
+      "sectionTitle": {
         "type": "objectAttribute",
         "value": {
           "type": "string"

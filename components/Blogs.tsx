@@ -1,29 +1,22 @@
 'use client'
 
-import { mediumApi } from "@/utils/constants";
-import { BlogType } from "@/utils/types";
-import useData from "@/utils/useData"
 import Image from "next/image";
-import Button from "./button/Button";
-import { ReactNode, useEffect, useState } from "react";
-import BlurContainer from "./BlurContainer";
+import { ReactNode } from "react";
+import { BlogItem } from "@/sanity.types";
 
-export default function Blogs({
+export default async function Blogs({
     readMore,
+    allBlogs,
     title,
     children,
 } : {
     readMore: string,
+    allBlogs: BlogItem[],
     title: string,
     children: ReactNode,
 }) {
-    const { data } = useData<any>(mediumApi);
 
-    if (!data?.items || data.items.length < 3) {
-        return null;
-    }
-
-    const blogs = data.items.slice(0, 4) as BlogType[];
+    const blogs = allBlogs.slice(0, Math.min(4)) as BlogItem[];
 
     return (
             <div>
@@ -36,48 +29,25 @@ export default function Blogs({
     )
 }
 
-function decodeHtml(html: string) {
-    var txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
-}
-
-function Blog({
+export function Blog({
     blog, 
     readMore
 } : {
-    blog: BlogType, 
+    blog: BlogItem, 
     readMore: string
 }) {
-    const [blogUrl, setBlogUrl] = useState('/post-placeholder.JPG');
-
-    useEffect(() => {
-        if (blog.thumbnail) {
-            setBlogUrl(blog.thumbnail)
-        } else {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(blog.content, 'text/html');
-            const firstImageSrc = doc.querySelector('img')?.src;
-            if (firstImageSrc) {
-                setBlogUrl(firstImageSrc)
-            }
-        }
-    }, [blog])
-
-    const blogTitle = decodeHtml(blog.title);
 
     return (
             <a 
                 className="cursor-pointer"
-                href={blog.link}
-                target="_blank"
+                href={`/blog/${blog._id}`}
             >
                 <div className="w-full aspect-2/1 relative overflow-hidden">
                     <Image 
-                        src={blogUrl}
-                        alt={blogTitle} 
+                        src={blog.cover}
+                        alt={blog.blogTitle} 
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-3xl"
                         placeholder="blur"
                         blurDataURL="/post-placeholder.JPG"
                         onError={() => {
@@ -85,21 +55,20 @@ function Blog({
                         }}
                     />
                 </div>
-                <div className="mt-6 mb-6 h-48 line-clamp-6">
-                    <div className="font-semibold text-xl mb-2 line-clamp-1 w-full overflow-ellipsis">
-                        {blogTitle}
+                <div className="mt-4 text-base font-normal mb-2">
+                    {(new Date(blog._createdAt)).toLocaleDateString()}
+                </div>
+                <div className="mb-6 line-clamp-6">
+                    <div className="font-semibold text-xl text-title mb-2 line-clamp-2 w-full overflow-ellipsis">
+                        {blog.blogTitle}
                     </div>
-                    <div className="w-full line-clamp-4 overflow-ellipsis text-base">
-                        {ToText(blog.content)}
+                    <div className="w-full line-clamp-3 overflow-ellipsis text-base">
+                        {blog.blogIntro}
                     </div>
+                </div>
+                <div className="text-title text-base flex items-center gap-2 font-light">
+                    {readMore} <Image src="/external.svg" alt="link" width={20} height={20} />
                 </div>
             </a>
     )
-}
-
-function ToText(node: string) {
-    let tag = document.createElement('div');
-    tag.innerHTML = node;
-    node = tag.innerText;
-    return node;
 }

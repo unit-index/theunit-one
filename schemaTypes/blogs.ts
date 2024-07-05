@@ -10,12 +10,12 @@ export const blogs = defineType({
       type: 'string'
     }),
     defineField({
-      name: 'sectionTitle',
+      name: 'language',
       type: 'string',
       validation: rule => rule.required()
     }),
     defineField({
-      name: 'language',
+      name: 'sectionTitle',
       type: 'string',
       validation: rule => rule.required()
     }),

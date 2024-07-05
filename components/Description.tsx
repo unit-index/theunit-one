@@ -1,8 +1,33 @@
 import { TypedObject } from 'sanity'
+import urlBuilder from '@sanity/image-url'
+import {getImageDimensions} from '@sanity/asset-utils'
 import { PortableText, PortableTextComponents } from "@portabletext/react"
 import Image from 'next/image'
+import { client } from '@/sanity/lib/client'
+
+const SampleImageComponent = ({value}: {value: any}) => {
+  const {width, height} = getImageDimensions(value)
+  return (
+    <img
+      src={urlBuilder(client).image(value).width(800).fit('max').auto('format').url()}
+      alt={value.alt || ' '}
+      loading="lazy"
+      style={{
+        // Avoid jumping around with aspect-ratio CSS property
+        aspectRatio: width / height,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: '48px',
+        marginBottom: '48px',
+      }}
+    />
+  )
+}
 
 const components: PortableTextComponents = {
+  types: {
+    image: SampleImageComponent,
+  },
   marks: {
     strong: ({children}) => <strong className="text-gradient font-semibold">{children}</strong>,
     link: ({children, value}) => {

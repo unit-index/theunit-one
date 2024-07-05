@@ -296,6 +296,7 @@ export type BlogItem = {
   title?: string;
   language: string;
   blogTitle: string;
+  blogIntro: string;
   cover: string;
   content: Array<{
     children?: Array<{
@@ -652,8 +653,8 @@ export type Blogs = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  sectionTitle: string;
   language: string;
+  sectionTitle: string;
   subitle: string;
   tag1: string;
   tag2: string;

@@ -20,6 +20,11 @@ export const blogItem = defineType({
       validation: rule => rule.required()
     }),
     defineField({
+      name: 'blogIntro',
+      type: 'string',
+      validation: rule => rule.required()
+    }),
+    defineField({
       name: 'cover',
       type: 'url',
       validation: rule => rule.required()

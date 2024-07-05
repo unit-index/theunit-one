@@ -3,26 +3,30 @@ import request, { gql } from "graphql-request";
 import { sanityGraphqlEndpoint } from "@/sanity/lib/client";
 import { BlogItem, Blogs } from "@/sanity.types";
 import PageTemplate from "@/components/layout/PageTemplate";
+import { Blog } from "@/components/Blogs";
 
 const query = gql`
   query getBlogs($locale: String!) {
     allBlogs(where: { language: { eq: $locale }}) {
         sectionTitle
         subitle
+        readMoreText
         tag1
         tag2
     }
   }
 `
 
-const query2 = gql`
-  query getBlogItem($locale: String!) {
-    allBlogItem(where: { language: { eq: $locale }}) {
-        blogTitle
-        _createdAt
-        cover
-        content: contentRaw
-        category
+export const queryBlog = gql`
+  query getBlogItem($locale: String!, $limit: Int!) {
+    allBlogItem(where: { language: { eq: $locale }}, limit: $limit) {
+      _id
+      blogTitle
+      _createdAt
+      cover
+      blogIntro
+      content: contentRaw
+      category
     }
   }
 `
@@ -32,7 +36,8 @@ export default async function BlogPage() {
   const locale = useLocale();
     const pageData: any = await request(sanityGraphqlEndpoint, query, { locale })
     const page: Blogs = pageData.allBlogs[0];
-    const blogsData: any = await request(sanityGraphqlEndpoint, query2, { locale })
+    const readMoreText = page.readMoreText;
+    const blogsData: any = await request(sanityGraphqlEndpoint, queryBlog, { locale, limit: 24 })
     const blogs: BlogItem[] = blogsData.allBlogItem;
     
 
@@ -48,8 +53,8 @@ export default async function BlogPage() {
           {page.tag2}
         </div>
       </div>
-      <div className="grid grid-cols-3">
-        
+      <div className="grid grid-cols-3 gap-14">
+        {blogs.map((b) => <Blog key={b._id} blog={b} readMore={page.readMoreText} />)}
       </div>
     </PageTemplate>
   )
