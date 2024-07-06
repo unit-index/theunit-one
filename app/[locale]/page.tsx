@@ -9,13 +9,26 @@ import { request, gql } from 'graphql-request'
 import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Dao, Farm, BottomSection, FaqItem, SocialItem, HomeVault, HomeAlpha, BlogItem } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
 import FAQ from '@/components/FAQ';
-import { queryBlog } from './blog/page';
 
 const socialColors = [
   '#000000',
   '#8259DD',
   '#29BDFD',
 ]
+
+const queryBlog = gql`
+  query getBlogItem($locale: String!, $limit: Int!) {
+    allBlogItem(where: { language: { eq: $locale }}, limit: $limit) {
+      _id
+      blogTitle
+      _createdAt
+      cover
+      blogIntro
+      content: contentRaw
+      category
+    }
+  }
+`
 
 const query = gql`
   query getHomePage($locale: String!) {

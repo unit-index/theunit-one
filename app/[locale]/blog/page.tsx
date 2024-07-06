@@ -17,7 +17,7 @@ const query = gql`
   }
 `
 
-export const queryBlog = gql`
+const queryBlog = gql`
   query getBlogItem($locale: String!, $limit: Int!) {
     allBlogItem(where: { language: { eq: $locale }}, limit: $limit) {
       _id
