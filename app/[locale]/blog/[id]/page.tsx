@@ -8,6 +8,9 @@ import Image from "next/image";
 import Description from "@/components/Description";
 import ShareButton from "@/components/button/ShareButton";
 import { Metadata, ResolvingMetadata } from 'next'
+import ThemeButton from "@/components/button/ThemeButton";
+import { Link } from "@/navigation";
+import { format } from "date-fns";
 
 const blogQuery = gql`
   query blogItems($id: ID!) {
@@ -64,16 +67,26 @@ export default async function SingleBlogPage({ params }: Props) {
   return (
     <Suspense fallback={<Loading />}>
         <div className="pt-24 min-h-screen pb-56 max-w-7xl mx-auto">
-            <div className="flex items-center gap-2">
-              <Image src="/arrow-back.svg" alt="back" width={21} height={19} /> Back
-            </div>
+            <Link href="/blog" className="group flex items-center gap-2 cursor-pointer">
+              <Image src="/arrow-back.svg" alt="back" width={21} height={19} /> 
+              <div className="group-hover:text-gradient">Back</div>
+            </Link>
             <div className="text-[64px] leading-[1.2] text-title mt-9">
               {blogData.blogTitle}
             </div>
-            <div className="flex justify-end mt-4 mb-24">
+            <div className="flex justify-end mt-4 gap-6">
+              <Link href="https://x.com/unit_index" target="_blank">
+                <Image src="/blog-x.svg" alt="X" width={24} height={24} />
+              </Link>
+              <Link href="https://twitter.com/i/communities/1675073163980591111" target="_blank">
+                <Image src="/blog-community.svg" alt="X" width={24} height={24} />
+              </Link>
               <ShareButton blogId={blogData._id} blogTitle={blogData.blogTitle} />
             </div>
-            <div className="text-title">
+            <div className="text-right text-title text-xl mt-4 mb-6">
+              {format(new Date(blogData._createdAt), 'dd MMM, yyyy')}
+            </div>
+            <div className="text-title border-t border-t-[#6B6767] pt-9">
               <Description text={blogData.content} />
             </div>
         </div>

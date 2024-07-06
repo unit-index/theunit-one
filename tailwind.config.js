@@ -21,6 +21,8 @@ module.exports = {
         'unit-blue': '#495AFF',
         'title': '#1E344D',
         'body': '#5F7179',
+        'hover-orange': '#FF9051',
+        'hover-blue': '#6E7BFF',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

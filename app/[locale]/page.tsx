@@ -77,6 +77,7 @@ const query = gql`
         sectionTitle
         description: descriptionRaw
         image
+        bgdImage
         btnTitle
         btnLink
       }
@@ -150,7 +151,7 @@ function Home({
   return <>
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
-    <div className='h-screen flex flex-col justify-center items-center gap-7'>
+    <div className=' mt-44 flex flex-col justify-center items-center gap-7'>
       <div className='font-bold text-[80px] text-title leading-[100px] max-w-[808px] text-center'>
         {hero.sectionTitle}
       </div>
@@ -163,7 +164,7 @@ function Home({
     </div>
 
 
-    <div className='flex flex-col gap-32 max-w-[1300px] mx-auto mt-32'>
+    <div className='flex flex-col gap-32 max-w-[1300px] mx-auto mt-48'>
     {/* -------------------- Partners Section ------------------ */}
     <div className='bg-union bg-center bg-no-repeat'>
     <div className='flex flex-col items-center gap-16 mb-32'>
@@ -203,8 +204,12 @@ function Home({
       </div>
 
       <div className='relative overflow-visible'>
-      <img src='/dao-bgd.svg' alt='' className='-right-64 -top-64 absolute w-screen h-auto' />
-      <div className='grid grid-cols-2 items-center'>
+      <img src='/dao-bgd.svg' alt='' className='-right-64 -top-64 absolute w-screen h-auto z-0' />
+      <div className='relative z-10'>
+      <div 
+        className='grid grid-cols-2 items-center bg-[length:100%_100%] px-24 py-40'
+        style={{ backgroundImage: `url(${homeAlpha.bgdImage})`}}
+      >
         <div className='px-12 text-center'>
           <div className='text-xxl text-title mb-2'>
             {homeAlpha.sectionTitle}
@@ -218,12 +223,12 @@ function Home({
       </div>
       <img src='/dao-arrow.svg' width="50%" className='block mx-auto' alt='Arrow' />
 
-      <div className='flex items-center border border-[#E7E7E7] gap-[59px]'>
+      <div className='flex items-center border border-[#E7E7E7]'>
         <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
-        <div>
-          <div className='font-medium text-xxl mb-2'>{dao.sectionTitle}</div>
+        <div className='w-full h-[417px] flex flex-col justify-center bg-white pl-14'>
+          <div className='font-medium text-xxl mb-2 text-title'>{dao.sectionTitle}</div>
           <Description text={dao.description} />
-          <ThemeButton link={dao.buttonLink} title={dao.buttonText} className='mt-11 inline-block' />
+          <ThemeButton link={dao.buttonLink} title={dao.buttonText} className='mt-11 w-fit' />
         </div>
       </div>
 
@@ -234,6 +239,7 @@ function Home({
           {farm.sectionTitle}
         </div>
         <Description text={farm.description} />
+      </div>
       </div>
 
 

@@ -16,13 +16,18 @@ export default function ShareButton({
   }
 
   return (
-    <Image
-      src='/x-black.svg'
-      alt="X"
-      width={24}
-      height={24}
-      className="cursor-pointer"
-      onClick={share}
-    />
+    <div className="relative group">
+      <Image
+        src='/blog-share.svg'
+        alt="X"
+        width={24}
+        height={24}
+        className="cursor-pointer"
+        onClick={share}
+      />
+      <div className="absolute hidden group-hover:block w-20 text-sm -left-5">
+        Share on X
+      </div>
+    </div>
   )
 }

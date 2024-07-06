@@ -53,7 +53,7 @@ export default async function BlogPage() {
           {page.tag2}
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-14">
+      <div className="grid grid-cols-3 gap-14 border-t border-t-[#6B6767] pt-12">
         {blogs.map((b) => <Blog key={b._id} blog={b} readMore={page.readMoreText} />)}
       </div>
     </PageTemplate>

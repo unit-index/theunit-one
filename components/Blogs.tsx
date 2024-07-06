@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { BlogItem } from "@/sanity.types";
+import { format } from "date-fns";
 
 export default async function Blogs({
     readMore,
@@ -56,7 +57,7 @@ export function Blog({
                     />
                 </div>
                 <div className="mt-4 text-base font-normal mb-2">
-                    {(new Date(blog._createdAt)).toLocaleDateString()}
+                    {format(new Date(blog._createdAt), 'dd MMM, yyyyy')}
                 </div>
                 <div className="mb-6 line-clamp-6">
                     <div className="font-semibold text-xl text-title mb-2 line-clamp-2 w-full overflow-ellipsis">
@@ -66,7 +67,7 @@ export function Blog({
                         {blog.blogIntro}
                     </div>
                 </div>
-                <div className="text-title text-base flex items-center gap-2 font-light">
+                <div className="w-fit text-title text-base flex items-center gap-2 font-light hover:bg-white hover:shadow-lg rounded-lg py-3 pr-4 pl-0 hover:pl-4">
                     {readMore} <Image src="/external.svg" alt="link" width={20} height={20} />
                 </div>
             </a>
