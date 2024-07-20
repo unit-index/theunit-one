@@ -74,6 +74,36 @@ export type Slug = {
   source?: string;
 };
 
+export type HomeBlogs = {
+  _id: string;
+  _type: "homeBlogs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  language: string;
+  sectionTitle: string;
+  readMoreText: string;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
+
 export type MilestoneItem = {
   _id: string;
   _type: "milestoneItem";
@@ -494,7 +524,7 @@ export type Homepage = {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "blogs";
+    [internalGroqTypeReferenceTo]?: "homeBlogs";
   } | {
     _ref: string;
     _type: "reference";
@@ -655,7 +685,6 @@ export type Blogs = {
   title?: string;
   language: string;
   sectionTitle: string;
-  subitle: string;
   tag1: string;
   tag2: string;
   readMoreText: string;

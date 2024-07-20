@@ -6,7 +6,7 @@ import Blogs from '@/components/Blogs'
 import { sanityGraphqlEndpoint } from '@/sanity/lib/client'
 import Description from '@/components/Description'
 import { request, gql } from 'graphql-request'
-import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Dao, Farm, BottomSection, FaqItem, SocialItem, HomeVault, HomeAlpha, BlogItem } from '@/sanity.types'
+import { Blogs as BlogInfo, Hero, MarketCap, Partners as PartnerItems, Supports, Dao, Farm, BottomSection, FaqItem, SocialItem, HomeVault, HomeAlpha, BlogItem, HomeBlogs } from '@/sanity.types'
 import ThemeButton from '@/components/button/ThemeButton';
 import FAQ from '@/components/FAQ';
 
@@ -35,7 +35,7 @@ const query = gql`
     allHomepage(where: {language: {eq: $locale}}) {
     _id
   	sections {
-      ... on Blogs {
+      ... on HomeBlogs {
         _type
         sectionTitle
         readMoreText
@@ -156,7 +156,7 @@ function Home({
   const homeAlpha = data.find((d: any) => d._type === 'homeAlpha') as HomeAlpha;
   const dao = data.find((d: any) => d._type === 'dao') as Dao;
   const farm = data.find((d: any) => d._type === 'farm') as Farm;
-  const blogInfo = data.find((d: any) => d._type === 'blogs') as BlogInfo;
+  const blogInfo = data.find((d: any) => d._type === 'homeBlogs') as HomeBlogs;
   const bottomSection = data.find((d: any) => d._type === 'bottomSection') as BottomSection;
   const faqs: FaqItem[] = allData.faqs as unknown as FaqItem[];
   const socials: SocialItem[] = allData.socials as unknown as SocialItem[];

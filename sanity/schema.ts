@@ -26,6 +26,7 @@ import { governancePage } from "@/schemaTypes/governancePage";
 import { homeVault } from "@/schemaTypes/homeVault";
 import { homeAlpha } from "@/schemaTypes/homeAlpha";
 import { blogItem } from "@/schemaTypes/blogItem";
+import { homeBlogs } from "@/schemaTypes/homeBlogs";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -56,5 +57,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     developerPage,
     faqItem,
     milestoneItem,
+    homeBlogs,
   ],
 };

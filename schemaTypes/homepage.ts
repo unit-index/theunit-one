@@ -18,7 +18,7 @@ export const homepage = defineType({
           type: 'reference',
           to: [
             {type: 'hero'},
-            {type: 'blogs'},
+            {type: 'homeBlogs'},
             {type: 'marketCap'},
             {type: 'supports'},
             {type: 'partners'},
