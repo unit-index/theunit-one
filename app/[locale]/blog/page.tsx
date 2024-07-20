@@ -4,6 +4,7 @@ import { sanityGraphqlEndpoint } from "@/sanity/lib/client";
 import { BlogItem, Blogs } from "@/sanity.types";
 import PageTemplate from "@/components/layout/PageTemplate";
 import { Blog } from "@/components/Blogs";
+import Description from "@/components/Description";
 
 const query = gql`
   query getBlogs($locale: String!) {
@@ -43,7 +44,7 @@ export default async function BlogPage() {
 
   return (
     <PageTemplate title={page.sectionTitle} subtitle={(
-      <div>{page.subitle}</div>
+      <Description text={page.description} />
     )}>
       <div className="mt-11 flex gap-3">
         <div className="text-gradient">
