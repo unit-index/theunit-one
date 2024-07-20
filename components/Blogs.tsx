@@ -40,7 +40,7 @@ export function Blog({
 
     return (
             <a 
-                className="cursor-pointer"
+                className="group"
                 href={`/blog/${blog._id}`}
             >
                 <div className="w-full aspect-2/1 relative overflow-hidden">
@@ -67,8 +67,8 @@ export function Blog({
                         {blog.blogIntro}
                     </div>
                 </div>
-                <div className="w-fit text-title text-base flex items-center gap-2 font-light hover:bg-white hover:shadow-lg rounded-lg py-3 pr-4 pl-0 hover:pl-4">
-                    {readMore} <Image src="/external.svg" alt="link" width={20} height={20} />
+                <div className="w-fit text-title group-hover:text-body text-base flex items-center gap-2 font-light rounded-lg py-3 pr-4 pl-0">
+                    {readMore} <Image src="/readmore.svg" className="group-hover:translate-x-3 transition-transform" alt="link" width={11} height={10} />
                 </div>
             </a>
     )

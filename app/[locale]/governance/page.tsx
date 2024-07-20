@@ -46,14 +46,14 @@ export default async function CommunityPage() {
                 <Description text={page.description} />
             )}
         >
-            <div className='flex items-center border border-[#E7E7E7] gap-[59px] my-28'>
-        <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
-        <div>
-          <div className='font-medium text-xxl mb-2'>{dao.sectionTitle}</div>
-          <Description text={dao.description} />
-          <ThemeButton link={dao.buttonLink} title={dao.buttonText} className='mt-11 inline-block' />
-        </div>
-      </div>
+            <div className='flex items-center border border-[#E7E7E7] my-28'>
+                <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
+                <div className='w-full h-[417px] flex flex-col justify-center bg-white pl-14'>
+                <div className='font-medium text-xxl mb-2 text-title'>{dao.sectionTitle}</div>
+                <Description text={dao.description} />
+                <ThemeButton link={dao.buttonLink} title={dao.buttonText} className='mt-11 w-fit' />
+                </div>
+            </div>
             <div className="grid gap-10 grid-cols-1 md:grid-cols-3 text-white">
           {socials.map((so, index) => (
               <CommunityLink key={so.name} item={so} index={index} />

@@ -8,7 +8,6 @@ import Image from "next/image";
 import Description from "@/components/Description";
 import ShareButton from "@/components/button/ShareButton";
 import { Metadata, ResolvingMetadata } from 'next'
-import ThemeButton from "@/components/button/ThemeButton";
 import { Link } from "@/navigation";
 import { format } from "date-fns";
 
