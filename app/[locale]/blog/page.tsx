@@ -10,7 +10,7 @@ const query = gql`
   query getBlogs($locale: String!) {
     allBlogs(where: { language: { eq: $locale }}) {
         sectionTitle
-        subitle
+        description: descriptionRaw
         readMoreText
         tag1
         tag2
