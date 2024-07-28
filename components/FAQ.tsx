@@ -42,7 +42,7 @@ export default function FAQ({
                     setShow(!show)
                 }}
             >
-                <div className="flex-auto">{question}</div>
+                <div className="flex-auto text-xl">{question}</div>
                 <Image 
                     src={angleDown} 
                     alt="faq" 

@@ -93,8 +93,8 @@ function DeveloperLink({
             style={{ height: `${height}px` }}
         >
             <div>
-            <div className="flex items-center justify-between">
-                <div className="font-bold text-2xl text-gradient">{link.linkTitle}</div>
+            <div className="flex items-center justify-between mb-3">
+                <div className="font-bold text-3xl text-gradient">{link.linkTitle}</div>
                 <Image 
                     width={48} 
                     height={48}
@@ -103,7 +103,9 @@ function DeveloperLink({
                 />
             </div>
             {btnText && (
-                <Description text={link.description} />
+                <div className="text-xl">
+                    <Description text={link.description} />
+                </div>
             )}
             </div>
             {btnText ? (

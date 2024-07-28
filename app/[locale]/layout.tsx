@@ -37,22 +37,22 @@ export const metadata: Metadata = {
 const avenirFont = localFont({
   src: [
     {
-      path: '../../public/fonts/ApercuPro-Bold.ttf',
+      path: '../../public/fonts/Apercu-Bold.otf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/ApercuPro.ttf',
+      path: '../../public/fonts/Apercu-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/ApercuPro-Italic.ttf',
+      path: '../../public/fonts/Apercu-Italic.otf',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../../public/fonts/ApercuPro-Medium.ttf',
+      path: '../../public/fonts/Apercu-Medium.otf',
       weight: '600',
       style: 'normal',
     },

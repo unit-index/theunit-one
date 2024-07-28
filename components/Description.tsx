@@ -34,10 +34,10 @@ const components: PortableTextComponents = {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
       const target = value.href.startsWith('http') ? '_blank' : '_self'
       return (
-        <a href={value.href} rel={rel} target={target} className='text-white'>
-          <div className='flex items-center gap-1'>
-            {children} 
-            <Image src="/external-white.svg" alt="link" width={20} height={20} />
+        <a href={value.href} rel={rel} target={target}>
+          <div className='inline-flex items-center gap-1'>
+            <div className='text-gradient underline font-semibold'>{children} </div>
+            <Image src="/external.svg" alt="link" width={20} height={20} />
           </div>
         </a>
       )

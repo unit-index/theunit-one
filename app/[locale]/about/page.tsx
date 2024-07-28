@@ -43,19 +43,21 @@ export default async function AboutPage() {
             )}
         >
             <div className="mt-24 mb-8">{page.itemsTitle}</div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-10">
                 {items.map((item) => (
                     <div 
                         key={item.itemTitle} 
-                        className="rounded-2xl bg-white p-10 bg-no-repeat"
+                        className="rounded-2xl bg-white p-10 bg-no-repeat min-h-[323px]"
                         style={{
                             backgroundImage: `url(${item.image})`,
                             backgroundSize: '70%',
                             backgroundPosition: 'right bottom'
                         }}
                     >
-                        <div className="text-gradient mb-8">{item.itemTitle}</div>
+                        <div className="text-gradient mb-8 font-bold">{item.itemTitle}</div>
+                        <div className="text-base text-title">
                         <Description text={item.description} />
+                        </div>
                     </div>
                 ))}
             </div>
