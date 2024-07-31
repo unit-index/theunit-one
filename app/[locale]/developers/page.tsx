@@ -47,7 +47,7 @@ export default async function DevelopersPage() {
             )}
         >
 
-            <div className="grid grid-cols-2 gap-5 mt-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-24">
                 <DeveloperLink link={firstLink} height={380} btnText={firstLink.buttonText} />
                 <div className="flex flex-col gap-5">
                 <DeveloperLink link={secondLink} />
@@ -56,7 +56,7 @@ export default async function DevelopersPage() {
             </div>
 
             {links.length > 3 && (
-                <div className="grid grid-cols-2 gap-5 mt-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
                     {links.slice(3).map((link) => <DeveloperLink key={link.linkTitle} link={link} />)}
                 </div>
             )}

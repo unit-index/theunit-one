@@ -46,7 +46,7 @@ export default async function BlogPage() {
     <PageTemplate title={page.sectionTitle} subtitle={(
       <Description text={page.description} />
     )}>
-      <div className="mt-11 flex gap-3">
+      <div className="mt-11 flex flex-wrap gap-3">
         <div className="text-gradient">
           {page.tag1}
         </div>
@@ -54,7 +54,7 @@ export default async function BlogPage() {
           {page.tag2}
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-14 border-t border-t-[#6B6767] pt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-14 border-t border-t-[#6B6767] pt-12">
         {blogs.map((b) => <Blog key={b._id} blog={b} readMore={page.readMoreText} />)}
       </div>
     </PageTemplate>

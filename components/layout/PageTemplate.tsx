@@ -13,7 +13,7 @@ export default function PageTemplate({
 
     return (
         <Suspense fallback={<Loading />}>
-            <div className="pt-24 min-h-screen pb-56 max-w-7xl mx-auto">
+            <div className="pt-24 min-h-screen pb-56 max-w-7xl mx-auto px-6 xl:px-0">
                 <div className="mb-8 text-2xl">
                     {title}
                 </div>

@@ -13,7 +13,7 @@ export default function MobileMenu({children} : {children: ReactNode}) {
       }, [pathname])
 
     return <div className={`group/mobile ${active ? 'is-show' : ''}`}>
-        <Hamburger size={23} color='#ffffff' toggled={active} toggle={setActive} />
+        <Hamburger size={23} color='#000' toggled={active} toggle={setActive} />
         <div 
             onClick={() => {
                 setActive(false)

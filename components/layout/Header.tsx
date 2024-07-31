@@ -23,7 +23,7 @@ export default function Header({
             <Link href='/' className='w-[235px]'>
                 <Image className='flex-none' src={menu.logo ?? '/logo.png'} alt='logo' width={118} height={41} />
             </Link>
-            <div className='flex gap-10 text-base'>
+            <div className='hidden md:flex gap-10 text-base'>
                 <Menu menus={menuItems} />
             </div>
             <div className='hidden xl:flex flex-none text-sm gap-6 items-center'>

@@ -165,7 +165,7 @@ function Home({
 
     {/* -------------------- First Screen: slogan and the balance animation ------------------ */}
     <div className=' mt-44 flex flex-col justify-center items-center gap-7'>
-      <div className='font-bold text-[80px] text-title leading-[100px] max-w-[808px] text-center'>
+      <div className='font-bold text-4xl lg:text-[80px] text-title lg:leading-[100px] max-w-[808px] text-center'>
         {hero.sectionTitle}
       </div>
       <div className='max-w-[808px] text-center'>
@@ -192,7 +192,7 @@ function Home({
       <div className='text-title'>
         <div className='w-full flex items-center mb-2'>
           <div className='bg-[#C6C6C6] h-[1px] flex-auto' />
-          <div className='flex-none px-8 font-bold text-[72px] leading-[90px]'>
+          <div className='flex-none px-8 font-bold text-2xl xl:text-[72px] xl:leading-[90px]'>
             {caps.unitCap}
           </div>
           <div className='bg-[#C6C6C6] h-[1px] flex-auto' />
@@ -203,7 +203,7 @@ function Home({
       </div>
     </div>
 
-      <div className='grid grid-cols-2 items-center'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
         <img src={homeVault.image} alt="TINU" className='w-full' />
         <div className='px-12 text-center'>
           <div className='text-xxl text-title mb-2'>
@@ -217,13 +217,13 @@ function Home({
       </div>
 
       <div className='relative overflow-visible'>
-      <img src='/dao-bgd.svg' alt='' className='-right-64 -top-64 absolute w-screen h-auto z-0' />
+      <img src='/dao-bgd.svg' alt='' className='hidden lg:block -right-64 -top-64 absolute w-screen h-auto z-0' />
       <div className='relative z-10'>
       <div 
-        className='grid grid-cols-2 items-center bg-[length:100%_100%] px-24 py-40'
+        className='grid grid-cols-1 lg:grid-cols-2 items-center bg-cover lg:bg-[length:100%_100%] px-0 lg:px-24 py-40'
         style={{ backgroundImage: `url(${homeAlpha.bgdImage})`}}
       >
-        <div className='px-12 text-center'>
+        <div className='px-0 lg:px-12 text-center'>
           <div className='text-xxl text-title mb-2'>
             {homeAlpha.sectionTitle}
           </div>
@@ -232,12 +232,12 @@ function Home({
           </div>
           <ThemeButton link={homeAlpha.btnLink} title={homeAlpha.btnTitle} className='px-10' />
         </div>
-        <img src={homeAlpha.image} alt="TINU" className='w-full h-auto' />
+        <img src={homeAlpha.image} alt="TINU" className='w-full h-auto mt-12 lg:mt-0' />
       </div>
       <img src='/dao-arrow.svg' width="50%" className='block mx-auto' alt='Arrow' />
 
-      <div className='flex items-center border border-[#E7E7E7]'>
-        <img className='flex-none h-[417px]' src={dao.image} alt='UNIT DAO' />
+      <div className='flex items-center flex-wrap border border-[#E7E7E7]'>
+        <img className='flex-none h-auto lg:h-[417px]' src={dao.image} alt='UNIT DAO' />
         <div className='w-full h-[417px] flex flex-col justify-center bg-white pl-14'>
           <div className='font-medium text-xxl mb-2 text-title'>{dao.sectionTitle}</div>
           <Description text={dao.description} />
@@ -259,7 +259,7 @@ function Home({
       </div>
 
 
-      <div className="grid gap-10 grid-cols-1 md:grid-cols-3 text-white">
+      <div className="grid gap-10 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 text-white">
           {socials.map((so, index) => (
               <CommunityLink key={so.name} item={so} index={index} />
           ))}

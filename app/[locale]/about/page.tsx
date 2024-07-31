@@ -43,7 +43,7 @@ export default async function AboutPage() {
             )}
         >
             <div className="mt-24 mb-8">{page.itemsTitle}</div>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
                 {items.map((item) => (
                     <div 
                         key={item.itemTitle} 
